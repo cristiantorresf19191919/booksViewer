@@ -52,6 +52,8 @@ export default function Home() {
   const [tocOpen, setTocOpen] = useState(false);
   const [selectionPopup, setSelectionPopup] = useState<{ x: number; y: number; text: string } | null>(null);
   const [scrollToParagraph, setScrollToParagraph] = useState<number | null>(null);
+  const [scrollMode, setScrollMode] = useState(false);
+  const [fullscreenMode, setFullscreenMode] = useState(false);
   const articleRef = useRef<HTMLElement>(null);
 
   const goToPage = useCallback((nextIndex: number, paragraphIndex?: number) => {
@@ -166,11 +168,19 @@ export default function Home() {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLElement && (e.target.isContentEditable || e.target.closest("input, textarea, [role=textbox]"))) return;
-      if (e.key === "ArrowLeft") {
-        goToPage(Math.max(0, pageIndex - 1));
-      } else if (e.key === "ArrowRight") {
-        goToPage(Math.min(totalPages - 1, pageIndex + 1));
-      } else if (e.key === "Escape") {
+      // Only handle arrow keys in paginated mode
+      if (!scrollMode && !fullscreenMode) {
+        if (e.key === "ArrowLeft") {
+          goToPage(Math.max(0, pageIndex - 1));
+        } else if (e.key === "ArrowRight") {
+          goToPage(Math.min(totalPages - 1, pageIndex + 1));
+        }
+      }
+      if (e.key === "Escape") {
+        // Exit fullscreen on Escape
+        if (fullscreenMode) {
+          setFullscreenMode(false);
+        }
         // Stop speech on Escape
         if (speechStatus !== "idle") {
           stopSpeech();
@@ -180,7 +190,7 @@ export default function Home() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [totalPages, pageIndex, speechStatus, stopSpeech, goToPage]);
+  }, [totalPages, pageIndex, speechStatus, stopSpeech, goToPage, scrollMode, fullscreenMode]);
 
   // Close popup when clicking outside
   useEffect(() => {
@@ -262,6 +272,36 @@ export default function Home() {
               >
                 {t("Contents", "Indice")}
               </button>
+              {/* Scroll/Paginated Toggle */}
+              <button
+                type="button"
+                onClick={() => setScrollMode(!scrollMode)}
+                className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
+                  scrollMode
+                    ? "border-emerald-400 bg-emerald-50 text-emerald-700 dark:border-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-300"
+                    : "border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+                }`}
+                title={scrollMode ? t("Switch to paginated", "Cambiar a paginado") : t("Switch to scroll", "Cambiar a scroll")}
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {scrollMode ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  )}
+                </svg>
+              </button>
+              {/* Fullscreen Toggle */}
+              <button
+                type="button"
+                onClick={() => setFullscreenMode(true)}
+                className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+                title={t("Fullscreen reading", "Lectura pantalla completa")}
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+              </button>
               <LanguageToggle />
               <ThemeToggle />
               <GlossaryPanel />
@@ -272,55 +312,68 @@ export default function Home() {
       </header>
 
       {/* Page nav + hint */}
-      <div className="mx-auto max-w-3xl px-4 py-3 sm:px-6 flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-amber-800 dark:text-amber-200">
-          {content.paragraphs.length} {t("paragraphs", "parrafos")} · {t("Use left/right to turn pages", "Usa izquierda/derecha para cambiar de pagina")}
-          {speechSupported && (
-            <span className="ml-2">· {t("Select text to read aloud", "Selecciona texto para leer en voz alta")}</span>
-          )}
-        </p>
-        <nav className="flex items-center gap-2 flex-wrap" aria-label={t("Pagination", "Paginacion")}>
-          <button
-            type="button"
-            onClick={() => goToPage(Math.max(0, pageIndex - 1))}
-            disabled={pageIndex === 0}
-            aria-label={t("Previous page", "Pagina anterior")}
-            className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
-          >
-            {t("Previous", "Anterior")}
-          </button>
-          <span className="text-sm text-stone-600 dark:text-stone-400" aria-live="polite">
-            {t("Page", "Pagina")} {pageIndex + 1} / {totalPages}
-          </span>
-          <button
-            type="button"
-            onClick={() => goToPage(Math.min(totalPages - 1, pageIndex + 1))}
-            disabled={pageIndex >= totalPages - 1}
-            aria-label={t("Next page", "Pagina siguiente")}
-            className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
-          >
-            {t("Next", "Siguiente")}
-          </button>
-          <button
-            type="button"
-            onClick={() => goToPage(totalPages - 1)}
-            disabled={pageIndex >= totalPages - 1}
-            aria-label={t("Go to last page", "Ir a la ultima pagina")}
-            className="rounded-lg border border-amber-400 bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-amber-100 dark:border-amber-600 dark:bg-amber-900/30 dark:text-amber-300 dark:hover:bg-amber-900/50"
-          >
-            {t("Latest", "Ultima")}
-          </button>
-          <GoToPageModal
-            totalPages={totalPages}
-            currentPage={pageIndex}
-            onNavigate={goToPage}
-          />
-          <BookmarksPanel
-            currentPageIndex={pageIndex}
-            onNavigate={goToPage}
-          />
-        </nav>
-      </div>
+      {!scrollMode && (
+        <div className="mx-auto max-w-3xl px-4 py-3 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm text-amber-800 dark:text-amber-200">
+            {content.paragraphs.length} {t("paragraphs", "parrafos")} · {t("Use left/right to turn pages", "Usa izquierda/derecha para cambiar de pagina")}
+            {speechSupported && (
+              <span className="ml-2">· {t("Select text to read aloud", "Selecciona texto para leer en voz alta")}</span>
+            )}
+          </p>
+          <nav className="flex items-center gap-2 flex-wrap" aria-label={t("Pagination", "Paginacion")}>
+            <button
+              type="button"
+              onClick={() => goToPage(Math.max(0, pageIndex - 1))}
+              disabled={pageIndex === 0}
+              aria-label={t("Previous page", "Pagina anterior")}
+              className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+            >
+              {t("Previous", "Anterior")}
+            </button>
+            <span className="text-sm text-stone-600 dark:text-stone-400" aria-live="polite">
+              {t("Page", "Pagina")} {pageIndex + 1} / {totalPages}
+            </span>
+            <button
+              type="button"
+              onClick={() => goToPage(Math.min(totalPages - 1, pageIndex + 1))}
+              disabled={pageIndex >= totalPages - 1}
+              aria-label={t("Next page", "Pagina siguiente")}
+              className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+            >
+              {t("Next", "Siguiente")}
+            </button>
+            <button
+              type="button"
+              onClick={() => goToPage(totalPages - 1)}
+              disabled={pageIndex >= totalPages - 1}
+              aria-label={t("Go to last page", "Ir a la ultima pagina")}
+              className="rounded-lg border border-amber-400 bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-amber-100 dark:border-amber-600 dark:bg-amber-900/30 dark:text-amber-300 dark:hover:bg-amber-900/50"
+            >
+              {t("Latest", "Ultima")}
+            </button>
+            <GoToPageModal
+              totalPages={totalPages}
+              currentPage={pageIndex}
+              onNavigate={goToPage}
+            />
+            <BookmarksPanel
+              currentPageIndex={pageIndex}
+              onNavigate={goToPage}
+            />
+          </nav>
+        </div>
+      )}
+
+      {scrollMode && (
+        <div className="mx-auto max-w-3xl px-4 py-3 sm:px-6">
+          <p className="text-sm text-emerald-800 dark:text-emerald-200">
+            {t("Scroll mode active - showing all content", "Modo scroll activo - mostrando todo el contenido")} · {content.paragraphs.length} {t("paragraphs", "parrafos")}
+            {speechSupported && (
+              <span className="ml-2">· {t("Select text to read aloud", "Selecciona texto para leer en voz alta")}</span>
+            )}
+          </p>
+        </div>
+      )}
 
       {/* Book content */}
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-2 sm:px-6 relative">
@@ -330,41 +383,23 @@ export default function Home() {
             onMouseUp={handleMouseUp}
             className="book-content rounded-2xl border border-stone-200/60 bg-white/70 p-8 shadow-sm dark:border-stone-700/60 dark:bg-stone-900/70 md:p-12 select-text min-h-[420px]"
           >
-            <div className="mb-6 flex items-baseline justify-between border-b border-stone-200 pb-2 dark:border-stone-700">
-              <span className="text-xs font-medium uppercase tracking-wider text-amber-700 dark:text-amber-400">
-                {t("Page", "Pagina")} {pageIndex + 1}
-              </span>
-            </div>
+            {!scrollMode && (
+              <div className="mb-6 flex items-baseline justify-between border-b border-stone-200 pb-2 dark:border-stone-700">
+                <span className="text-xs font-medium uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                  {t("Page", "Pagina")} {pageIndex + 1}
+                </span>
+              </div>
+            )}
             <div className="relative overflow-hidden">
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div
-                  key={pageIndex}
-                  initial={{ opacity: 0, x: pageDirection * 60 }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                      x: { type: "tween", duration: 0.35, ease: [0.25, 0.1, 0.25, 1] },
-                      opacity: { duration: 0.25, ease: "easeOut" },
-                    },
-                  }}
-                  exit={{
-                    opacity: 0,
-                    x: -pageDirection * 60,
-                    transition: {
-                      x: { type: "tween", duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
-                      opacity: { duration: 0.2, ease: "easeIn" },
-                    },
-                  }}
-                  className="font-literata text-stone-800 dark:text-stone-200"
-                >
-                  {pageParagraphs.map((block, idx) => {
-                    const globalParagraphIndex = start + idx;
+              {scrollMode ? (
+                // Scroll mode: show all content without pagination
+                <div className="font-literata text-stone-800 dark:text-stone-200 space-y-4">
+                  {content.paragraphs.map((block, idx) => {
                     if (isImageBlock(block)) {
                       return (
                         <figure
-                          key={`img-${globalParagraphIndex}`}
-                          id={`paragraph-${globalParagraphIndex}`}
+                          key={`img-${idx}`}
+                          id={`paragraph-${idx}`}
                           className="my-6 first:mt-4 scroll-mt-32 transition-colors duration-500"
                         >
                           <Image
@@ -384,8 +419,8 @@ export default function Home() {
                     if (lines.length <= 1) {
                       return (
                         <div
-                          key={`${globalParagraphIndex}`}
-                          id={`paragraph-${globalParagraphIndex}`}
+                          key={`${idx}`}
+                          id={`paragraph-${idx}`}
                           className="scroll-mt-32 transition-colors duration-500"
                         >
                           <ParagraphWithTooltips text={para} />
@@ -394,8 +429,8 @@ export default function Home() {
                     }
                     return (
                       <div
-                        key={`${globalParagraphIndex}`}
-                        id={`paragraph-${globalParagraphIndex}`}
+                        key={`${idx}`}
+                        id={`paragraph-${idx}`}
                         className="mb-4 scroll-mt-32 transition-colors duration-500"
                       >
                         {lines.map((line, i) => (
@@ -404,8 +439,80 @@ export default function Home() {
                       </div>
                     );
                   })}
-                </motion.div>
-              </AnimatePresence>
+                </div>
+              ) : (
+                // Paginated mode: show current page with animation
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={pageIndex}
+                    initial={{ opacity: 0, x: pageDirection * 60 }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                      transition: {
+                        x: { type: "tween", duration: 0.35, ease: [0.25, 0.1, 0.25, 1] },
+                        opacity: { duration: 0.25, ease: "easeOut" },
+                      },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      x: -pageDirection * 60,
+                      transition: {
+                        x: { type: "tween", duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+                        opacity: { duration: 0.2, ease: "easeIn" },
+                      },
+                    }}
+                    className="font-literata text-stone-800 dark:text-stone-200"
+                  >
+                    {pageParagraphs.map((block, idx) => {
+                      const globalParagraphIndex = start + idx;
+                      if (isImageBlock(block)) {
+                        return (
+                          <figure
+                            key={`img-${globalParagraphIndex}`}
+                            id={`paragraph-${globalParagraphIndex}`}
+                            className="my-6 first:mt-4 scroll-mt-32 transition-colors duration-500"
+                          >
+                            <Image
+                              src={block.src}
+                              alt=""
+                              width={800}
+                              height={500}
+                              className="w-full h-auto rounded-lg border border-stone-200/60 dark:border-stone-600/60 shadow-sm"
+                              unoptimized
+                            />
+                          </figure>
+                        );
+                      }
+                      const para = getBlockText(block, language);
+                      if (!para) return null;
+                      const lines = splitParagraphLines(para);
+                      if (lines.length <= 1) {
+                        return (
+                          <div
+                            key={`${globalParagraphIndex}`}
+                            id={`paragraph-${globalParagraphIndex}`}
+                            className="scroll-mt-32 transition-colors duration-500"
+                          >
+                            <ParagraphWithTooltips text={para} />
+                          </div>
+                        );
+                      }
+                      return (
+                        <div
+                          key={`${globalParagraphIndex}`}
+                          id={`paragraph-${globalParagraphIndex}`}
+                          className="mb-4 scroll-mt-32 transition-colors duration-500"
+                        >
+                          {lines.map((line, i) => (
+                            <ParagraphWithTooltips key={i} text={line} />
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </motion.div>
+                </AnimatePresence>
+              )}
             </div>
           </article>
 
@@ -475,6 +582,90 @@ export default function Home() {
 
       {/* Read Aloud Controls */}
       <ReadAloudControls />
+
+      {/* Fullscreen Reading Modal */}
+      {fullscreenMode && (
+        <div className="fixed inset-0 z-[100] bg-white dark:bg-stone-950 overflow-y-auto">
+          {/* Fullscreen Header */}
+          <div className="sticky top-0 z-10 border-b border-stone-200/80 bg-white/95 backdrop-blur-md dark:border-stone-700/80 dark:bg-stone-900/95 shadow-sm">
+            <div className="mx-auto max-w-4xl px-6 py-4 flex items-center justify-between">
+              <div className="flex-1 min-w-0">
+                <h2 className="font-literata text-lg font-semibold tracking-tight text-stone-800 dark:text-stone-200 truncate">
+                  {bookTitle}
+                </h2>
+                <p className="text-xs text-stone-500 dark:text-stone-400">
+                  {currentBook.author}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setFullscreenMode(false)}
+                className="flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700 transition-colors"
+                title={t("Exit fullscreen", "Salir de pantalla completa")}
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                {t("Exit", "Salir")}
+              </button>
+            </div>
+          </div>
+
+          {/* Fullscreen Content */}
+          <div className="mx-auto max-w-4xl px-6 py-8">
+            <article className="font-literata text-lg leading-relaxed text-stone-800 dark:text-stone-200 space-y-6">
+              {content.paragraphs.map((block, idx) => {
+                if (isImageBlock(block)) {
+                  return (
+                    <figure
+                      key={`fullscreen-img-${idx}`}
+                      className="my-8"
+                    >
+                      <Image
+                        src={block.src}
+                        alt=""
+                        width={1000}
+                        height={600}
+                        className="w-full h-auto rounded-lg border border-stone-200/60 dark:border-stone-600/60 shadow-md"
+                        unoptimized
+                      />
+                    </figure>
+                  );
+                }
+                const para = getBlockText(block, language);
+                if (!para) return null;
+                const lines = splitParagraphLines(para);
+                if (lines.length <= 1) {
+                  return (
+                    <div key={`fullscreen-${idx}`}>
+                      <ParagraphWithTooltips text={para} />
+                    </div>
+                  );
+                }
+                return (
+                  <div key={`fullscreen-${idx}`} className="space-y-3">
+                    {lines.map((line, i) => (
+                      <ParagraphWithTooltips key={i} text={line} />
+                    ))}
+                  </div>
+                );
+              })}
+            </article>
+          </div>
+
+          {/* Scroll to top button */}
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-8 right-8 rounded-full bg-amber-500 p-4 text-white shadow-lg hover:bg-amber-600 transition-colors"
+            title={t("Scroll to top", "Ir arriba")}
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+          </button>
+        </div>
+      )}
 
       {/* Footer */}
       <footer
