@@ -18,8 +18,11 @@ export function GoToPageModal({ totalPages, currentPage, onNavigate }: GoToPageM
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
-      setInputValue(String(currentPage + 1));
-      inputRef.current.select();
+      // Delay state update to avoid synchronous setState in effect
+      queueMicrotask(() => {
+        setInputValue(String(currentPage + 1));
+        inputRef.current?.select();
+      });
     }
   }, [isOpen, currentPage]);
 

@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useCallback, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { BookContent, ContentBlock, ContentImage } from "@/types/book";
 import Image from "next/image";
+import Link from "next/link";
 import { ParagraphWithTooltips } from "@/components/ParagraphWithTooltips";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { GlossaryPanel } from "@/components/GlossaryPanel";
@@ -86,18 +87,36 @@ export default function Home() {
 
   // Load book content when book changes
   useEffect(() => {
-    setLoading(true);
-    setError(null);
-    setPageIndex(0); // Reset to first page when switching books
+    let cancelled = false;
 
-    fetch(currentBook.contentPath)
-      .then((res) => {
+    async function loadContent() {
+      if (!cancelled) {
+        setLoading(true);
+        setError(null);
+        setPageIndex(0); // Reset to first page when switching books
+      }
+
+      try {
+        const res = await fetch(currentBook.contentPath);
         if (!res.ok) throw new Error("Failed to load book");
-        return res.json();
-      })
-      .then((d: BookContent) => setContent(d))
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
+        const d: BookContent = await res.json();
+        if (!cancelled) {
+          setContent(d);
+          setLoading(false);
+        }
+      } catch (e) {
+        if (!cancelled) {
+          setError((e as Error).message);
+          setLoading(false);
+        }
+      }
+    }
+
+    loadContent();
+
+    return () => {
+      cancelled = true;
+    };
   }, [currentBook.contentPath]);
 
   const handleMouseUp = useCallback(() => {
@@ -214,7 +233,7 @@ export default function Home() {
       <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-white/90 backdrop-blur-md dark:border-stone-700/80 dark:bg-stone-900/90 shadow-sm">
         <div className="mx-auto max-w-3xl px-4 py-3 sm:px-6">
           {/* Logo on top */}
-          <a href="/" className="group flex items-center justify-center gap-2.5 py-2">
+          <Link href="/" className="group flex items-center justify-center gap-2.5 py-2">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-white shadow-md transition-transform group-hover:scale-105">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -223,7 +242,7 @@ export default function Home() {
             <span className="font-literata text-lg font-bold tracking-tight text-stone-900 dark:text-stone-100">
               Cristian<span className="text-amber-600 dark:text-amber-500">Lecturas</span>.com
             </span>
-          </a>
+          </Link>
           {/* Book navigation and tools below */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-stone-200/80 dark:border-stone-700/80">
             <div className="min-w-0 flex-1">
@@ -458,14 +477,28 @@ export default function Home() {
       <ReadAloudControls />
 
       {/* Footer */}
-      <footer className="border-t border-stone-200/80 bg-white/50 dark:border-stone-700/80 dark:bg-stone-900/50 py-6 mt-8">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
+      <footer
+        className="border-t border-stone-200/80 bg-white/50 dark:border-stone-700/80 dark:bg-stone-900/50 py-8 mt-8"
+        style={{ animation: "footer-fade-in 0.6s ease-out forwards" }}
+      >
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center space-y-4">
           <p className="text-sm text-stone-500 dark:text-stone-400 flex items-center justify-center gap-1.5">
             <span>Con amor para</span>
             <span className="font-semibold text-amber-600 dark:text-amber-500">Sandra Arisitzabal</span>
             <svg className="h-4 w-4 text-rose-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
             </svg>
+          </p>
+          <p className="text-xs text-stone-400 dark:text-stone-500 tracking-wide font-medium">
+            Created by{" "}
+            <a
+              href="https://agencypartner2.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-creator-link text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-400"
+            >
+              CristianScript
+            </a>
           </p>
         </div>
       </footer>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import type { Language } from "@/types/book";
 
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguage();

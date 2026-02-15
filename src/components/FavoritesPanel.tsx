@@ -7,7 +7,7 @@ import { useFavorites } from "@/context/FavoritesContext";
 export function FavoritesPanel() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
-  const { favorites, removeFavorite, getFavoritesForPage } = useFavorites();
+  const { favorites, removeFavorite } = useFavorites();
 
   const byPage = new Map<number, { word: string[]; quote: string[] }>();
   favorites.forEach((f) => {
@@ -51,7 +51,6 @@ export function FavoritesPanel() {
                 </li>
               ) : (
                 sortedPages.map((pageNum) => {
-                  const entry = byPage.get(pageNum)!;
                   const pageFavs = favorites.filter((f) => f.pageIndex === pageNum);
                   return (
                     <li key={pageNum} className="px-4 py-3">

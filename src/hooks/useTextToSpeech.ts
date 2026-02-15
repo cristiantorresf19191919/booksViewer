@@ -104,7 +104,7 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}): UseTextTo
   // Check browser support and load voices
   useEffect(() => {
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      setIsSupported(true);
+      queueMicrotask(() => setIsSupported(true));
 
       const loadVoices = () => {
         const voices = window.speechSynthesis.getVoices();
@@ -135,7 +135,7 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}): UseTextTo
       const langCode = lang.split("-")[0];
       const preferredVoice = findPreferredMaleVoice(availableVoices, langCode);
       if (preferredVoice) {
-        setSelectedVoice(preferredVoice);
+        queueMicrotask(() => setSelectedVoice(preferredVoice));
       }
     }
   }, [lang, availableVoices]);
@@ -279,7 +279,7 @@ export function useTextToSpeech(options: UseTextToSpeechOptions = {}): UseTextTo
 
       return () => clearTimeout(timeoutId);
     }
-  }, [selectedVoice, rate]); // Restart when voice or rate changes
+  }, [selectedVoice, rate, lang, pitch, status, onEnd, onError]); // Restart when voice or rate changes
 
   const pause = useCallback(() => {
     if (isSupported && status === "speaking") {

@@ -54,7 +54,9 @@ export function BookmarkProvider({ children }: { children: ReactNode }) {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
 
   useEffect(() => {
-    setBookmarks(loadBookmarks(currentBook.id));
+    queueMicrotask(() => {
+      setBookmarks(loadBookmarks(currentBook.id));
+    });
   }, [currentBook.id]);
 
   const addBookmark = useCallback((pageIndex: number, paragraphIndex?: number, note?: string) => {

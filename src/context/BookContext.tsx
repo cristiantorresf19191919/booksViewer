@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, ReactNode } from "react";
 import type { BookMetadata, DictionaryEntry } from "@/types/book";
 import { booksCatalog, getBookById, getBookDefinitionFn, getBookHasWordFn, DEFAULT_BOOK_ID } from "@/data/books";
 
@@ -33,11 +33,9 @@ function saveSelectedBook(bookId: string) {
 }
 
 export function BookProvider({ children }: { children: ReactNode }) {
-  const [bookId, setBookId] = useState<string>(DEFAULT_BOOK_ID);
+  const [bookId, setBookId] = useState<string>(() => loadSelectedBook());
 
-  useEffect(() => {
-    setBookId(loadSelectedBook());
-  }, []);
+  // No longer need the effect to load from storage - handled in useState initializer
 
   const selectBook = useCallback((newBookId: string) => {
     const book = getBookById(newBookId);

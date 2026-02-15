@@ -31,15 +31,13 @@ function getStoredTheme(): Theme {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("system");
+  const [theme, setThemeState] = useState<Theme>(() => getStoredTheme());
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>("light");
   const [mounted, setMounted] = useState(false);
 
-  // Initialize theme from localStorage
+  // Mark as mounted after initial render
   useEffect(() => {
-    const stored = getStoredTheme();
-    setThemeState(stored);
-    setMounted(true);
+    queueMicrotask(() => setMounted(true));
   }, []);
 
   // Update resolved theme and apply to document
@@ -47,7 +45,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     if (!mounted) return;
 
     const resolved = theme === "system" ? getSystemTheme() : theme;
-    setResolvedTheme(resolved);
 
     // Apply theme class to html element
     const root = document.documentElement;
@@ -56,6 +53,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     // Also set color-scheme for native elements
     root.style.colorScheme = resolved;
+
+    // Update state after DOM manipulation
+    queueMicrotask(() => {
+      setResolvedTheme(resolved);
+    });
   }, [theme, mounted]);
 
   // Listen for system theme changes

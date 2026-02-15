@@ -42,7 +42,9 @@ export function GlossaryProvider({ children }: { children: ReactNode }) {
 
   // Reload glossary when book changes
   useEffect(() => {
-    setGlossary(loadGlossary(currentBook.id));
+    queueMicrotask(() => {
+      setGlossary(loadGlossary(currentBook.id));
+    });
   }, [currentBook.id]);
 
   const addToGlossary = useCallback((word: string): boolean => {

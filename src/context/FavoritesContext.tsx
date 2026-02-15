@@ -46,7 +46,9 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
 
   // Reload favorites when book changes
   useEffect(() => {
-    setFavorites(loadFavorites(currentBook.id));
+    queueMicrotask(() => {
+      setFavorites(loadFavorites(currentBook.id));
+    });
   }, [currentBook.id]);
 
   const addFavorite = useCallback((pageIndex: number, type: "word" | "quote", content: string) => {
