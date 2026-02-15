@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   description: "Lee libros con toggle inglés/español, tooltips de vocabulario y glosario personal. CristianLecturas.com",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 // Script to prevent flash of unstyled content
 const themeScript = `
   (function() {
