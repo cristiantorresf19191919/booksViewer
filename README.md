@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project for reading **How to Win Friends and Influence People** (Dale Carnegie) with:
+
+- **Pagination** — Paragraph-based pages (← → keys or buttons).
+- **EN / ES** — UI and glossary definitions in English or Spanish.
+- **Glossary** — Uncommon words show a hover definition (and can be added to your personal glossary).
+
+## Book content
+
+The text is loaded from `public/data/book_content.json`. To regenerate it from the full book:
+
+1. Paste the full book text into `public/book_raw.txt` (paragraphs separated by blank lines).
+2. Run: `node scripts/parse-book-content.js`
 
 ## Getting Started
 

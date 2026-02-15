@@ -1,0 +1,132 @@
+import type { DictionaryEntry } from "@/types/book";
+
+/**
+ * Vocabulary from the book: definitions in English and Spanish.
+ * Words are lowercased for lookup; add more as you extend the book.
+ */
+export const dictionary: DictionaryEntry[] = [
+  { word: "temerity", definition: "Excessive confidence or boldness; audacity.", definitionEs: "Exceso de confianza o audacia; atrevimiento." },
+  { word: "finesse", definition: "Skillful handling of a situation; subtlety and tact.", definitionEs: "Manejo hábil de una situación; sutileza y tacto." },
+  { word: "auspices", definition: "Support, sponsorship, or protection (e.g. under the auspices of).", definitionEs: "Apoyo, patrocinio o protección (p. ej. bajo los auspicios de)." },
+  { word: "nominal", definition: "Very small; in name only (e.g. nominal salary).", definitionEs: "Muy pequeño; solo de nombre (p. ej. salario nominal)." },
+  { word: "heyday", definition: "The period of greatest success or vigour.", definitionEs: "El período de mayor éxito o vigor." },
+  { word: "erudite", definition: "Having or showing great knowledge or learning.", definitionEs: "Que tiene o muestra gran conocimiento o cultura." },
+  { word: "tomes", definition: "Large, heavy books.", definitionEs: "Libros grandes y pesados." },
+  { word: "ascertain", definition: "Find out for certain; make sure of.", definitionEs: "Averiguar con certeza; asegurarse de." },
+  { word: "brash", definition: "Self-assertive in a rude way; overly bold.", definitionEs: "Presumido de forma grosera; demasiado atrevido." },
+  { word: "breezy", definition: "Casual, relaxed, and cheerful in manner.", definitionEs: "Desenfadado, relajado y alegre." },
+  { word: "excisions", definition: "Things that have been cut out or removed.", definitionEs: "Cosas que han sido eliminadas o suprimidas." },
+  { word: "honing", definition: "Sharpening or refining (e.g. a skill or tool).", definitionEs: "Afilar o refinar (p. ej. una habilidad o herramienta)." },
+  { word: "colloquial", definition: "Used in ordinary conversation; informal.", definitionEs: "Usado en conversación ordinaria; informal." },
+  { word: "exuberant", definition: "Filled with lively energy and excitement.", definitionEs: "Lleno de energía y entusiasmo." },
+  { word: "quaint", definition: "Attractively unusual or old-fashioned.", definitionEs: "Atractivamente raro o anticuado." },
+  { word: "poise", definition: "Graceful composure and self-confidence.", definitionEs: "Compostura y confianza en uno mismo." },
+  { word: "sorely", definition: "Extremely; very much.", definitionEs: "Extremadamente; mucho." },
+  { word: "appalled", definition: "Greatly shocked or horrified.", definitionEs: "Muy conmocionado o horrorizado." },
+  { word: "boon", definition: "A thing that is helpful or beneficial.", definitionEs: "Algo que es útil o beneficioso." },
+  { word: "stint", definition: "Limit or restriction (without stint = without limit).", definitionEs: "Límite o restricción (sin stint = sin límite)." },
+  { word: "alien", definition: "Unfamiliar; not belonging (alien to his lips = he never said).", definitionEs: "Ajeno; no perteneciente (alien to his lips = nunca dijo)." },
+  { word: "arch-priest", definition: "Leading exponent or chief practitioner of something.", definitionEs: "Principal exponente o practicante de algo." },
+  { word: "pioneered", definition: "Developed or was the first to use.", definitionEs: "Desarrolló o fue el primero en usar." },
+  { word: "faddish", definition: "Temporary and following a fad.", definitionEs: "Pasajero y que sigue una moda." },
+  { word: "tamper", definition: "Interfere with something without permission.", definitionEs: "Interferir con algo sin permiso." },
+  { word: "tireless", definition: "Having or showing great effort or energy.", definitionEs: "Que tiene o muestra gran esfuerzo o energía." },
+  { word: "evergrowing", definition: "Constantly increasing in size or number.", definitionEs: "Constantemente creciente en tamaño o número." },
+  { word: "reviser", definition: "Person who revises or corrects work.", definitionEs: "Persona que revisa o corrige un trabajo." },
+  { word: "ploughing", definition: "Working through something laboriously (e.g. reading).", definitionEs: "Avanzar con esfuerzo por algo (p. ej. leyendo)." },
+  { word: "poring", definition: "Reading or studying intently (poring over).", definitionEs: "Leer o estudiar con atención (poring over)." },
+  { word: "literally", definition: "In a literal way; actually (used for emphasis).", definitionEs: "De forma literal; realmente (énfasis)." },
+  { word: "revolutionise", definition: "Change something radically or completely.", definitionEs: "Cambiar algo de forma radical o completa." },
+  { word: "discretion", definition: "Good judgment; caution (without discretion = recklessly).", definitionEs: "Buen juicio; cautela (sin discretion = sin mesura)." },
+  { word: "cherished", definition: "Held dear; treasured.", definitionEs: "Muy querido; atesorado." },
+  { word: "modest", definition: "Relatively small; not excessive.", definitionEs: "Relativamente pequeño; no excesivo." },
+  { word: "parodied", definition: "Imitated in a humorous or exaggerated way.", definitionEs: "Imitado de forma humorística o exagerada." },
+  { word: "innumerable", definition: "Too many to be counted.", definitionEs: "Demasiados para ser contados." },
+  { word: "tampering", definition: "Interfering with something.", definitionEs: "Interferir con algo." },
+  { word: "vigorous", definition: "Strong, healthy, and full of energy.", definitionEs: "Fuerte, sano y lleno de energía." },
+  { word: "recognition", definition: "Acknowledgment of something's existence or validity.", definitionEs: "Reconocimiento de la existencia o validez de algo." },
+  { word: "prominent", definition: "Important; famous.", definitionEs: "Importante; famoso." },
+  { word: "contemporary", definition: "Belonging to the same period; modern.", definitionEs: "Perteneciente al mismo período; moderno." },
+  { word: "intensively", definition: "With great concentration or effort.", definitionEs: "Con gran concentración o esfuerzo." },
+  // Part One & narrative
+  { word: "lurid", definition: "Vivid and shocking; sensational.", definitionEs: "Vivo y chocante; sensacional." },
+  { word: "repercussions", definition: "Unintended consequences of an action.", definitionEs: "Consecuencias no deseadas de una acción." },
+  { word: "condemn", definition: "Express complete disapproval of.", definitionEs: "Expresar desaprobación total." },
+  { word: "rationalise", definition: "Attempt to justify with plausible reasons.", definitionEs: "Intentar justificar con razones plausibles." },
+  { word: "fallacious", definition: "Based on a mistaken belief.", definitionEs: "Basado en una creencia errónea." },
+  { word: "futility", definition: "Pointlessness; uselessness.", definitionEs: "Inutilidad; falta de propósito." },
+  { word: "rebuke", definition: "Sharp disapproval or criticism.", definitionEs: "Desaprobación o crítica severa." },
+  { word: "tantamount", definition: "Equivalent in effect or significance.", definitionEs: "Equivalente en efecto o significado." },
+  { word: "procrastinate", definition: "Delay or postpone action.", definitionEs: "Retrasar o posponer una acción." },
+  { word: "adroit", definition: "Skillful and clever in handling situations.", definitionEs: "Hábil e ingenioso al manejar situaciones." },
+  { word: "approbation", definition: "Approval or praise.", definitionEs: "Aprobación o elogio." },
+  { word: "lavish", definition: "Generous or extravagant (e.g. lavish in praise).", definitionEs: "Generoso o extravagante (p. ej. pródigo en elogios)." },
+  { word: "loath", definition: "Unwilling; reluctant.", definitionEs: "Poco dispuesto; reacio." },
+  { word: "bawl", definition: "Shout or cry out loudly.", definitionEs: "Gritar o vociferar." },
+  { word: "subordinates", definition: "People under the authority of another.", definitionEs: "Personas bajo la autoridad de otro." },
+  { word: "remonstrated", definition: "Made a forcefully reproachful protest.", definitionEs: "Protestó de forma enérgica y reprobatoria." },
+  { word: "sullen", definition: "Bad-tempered and sulky.", definitionEs: "Malhumorado y hosco." },
+  { word: "scoop", definition: "Exclusive piece of news or information.", definitionEs: "Noticia o información exclusiva." },
+  { word: "sage", definition: "Wise person; wise (as adjective).", definitionEs: "Sabio; persona sabia." },
+  { word: "perspicacity", definition: "Keen insight or judgment.", definitionEs: "Agudeza de juicio o perspicacia." },
+  { word: "chivalrous", definition: "Courteous and gallant, especially toward women.", definitionEs: "Cortés y galante, especialmente con las mujeres." },
+  { word: "gallantry", definition: "Polite attention or respect.", definitionEs: "Atención o respeto cortés." },
+  { word: "countersign", definition: "Password or sign of recognition.", definitionEs: "Contraseña o señal de reconocimiento." },
+  { word: "doggerel", definition: "Comic verse of little literary value.", definitionEs: "Verso cómico de poco valor literario." },
+  { word: "wrangling", definition: "Engaging in long, noisy arguments.", definitionEs: "Participar en discusiones largas y ruidosas." },
+  { word: "conciliation", definition: "Action of ending conflict; making peace.", definitionEs: "Acción de acabar un conflicto; hacer las paces." },
+  { word: "vitiation", definition: "Spoiling or impairing the quality of something.", definitionEs: "Echar a perder o deteriorar la calidad de algo." },
+  { word: "iniquitous", definition: "Grossly unfair or morally wrong.", definitionEs: "Extremadamente injusto o moralmente incorrecto." },
+  { word: "forbear", definition: "Refrain from; hold back.", definitionEs: "Abstenerse de; contenerse." },
+  { word: "dogmatical", definition: "Inclined to state opinions as if they were facts.", definitionEs: "Inclinado a afirmar opiniones como si fueran hechos." },
+  { word: "diplomatic", definition: "Tactful and skilled in dealing with people.", definitionEs: "Táctico y hábil al tratar con la gente." },
+  { word: "cantankerous", definition: "Bad-tempered and uncooperative.", definitionEs: "Malhumorado y poco cooperativo." },
+  { word: "dilates", definition: "Expands or spreads out.", definitionEs: "Se expande o se extiende." },
+  { word: "rapt", definition: "Completely absorbed or fascinated.", definitionEs: "Completamente absorbido o fascinado." },
+  { word: "blasé", definition: "Unimpressed or indifferent from overfamiliarity.", definitionEs: "Poco impresionado o indiferente por exceso de familiaridad." },
+  { word: "fervor", definition: "Intense and passionate feeling.", definitionEs: "Sentimiento intenso y apasionado." },
+  { word: "rankle", definition: "Cause persistent annoyance or resentment.", definitionEs: "Causar molestia o resentimiento persistente." },
+  { word: "bristling", definition: "Reacting defensively or aggressively.", definitionEs: "Reaccionar a la defensiva o con agresividad." },
+  { word: "scowl", definition: "Frown in an angry or bad-tempered way.", definitionEs: "Fruncir el ceño con enfado o mal humor." },
+  { word: "gloat", definition: "Dwell on one's own success with smugness.", definitionEs: "Recrearse en el propio éxito con suficiencia." },
+  { word: "gnawing", definition: "Persistently worrying or distressing.", definitionEs: "Que preocupa o angustia persistentemente." },
+  { word: "imperious", definition: "Assuming power or authority without justification.", definitionEs: "Asumir poder o autoridad sin justificación." },
+  { word: "pedigreed", definition: "Having a recorded genealogy; purebred.", definitionEs: "Con genealogía registrada; de pura raza." },
+  { word: "lustre", definition: "Shine or glow; prestige.", definitionEs: "Brillo o resplandor; prestigio." },
+  { word: "invalids", definition: "People weakened by illness or disability.", definitionEs: "Personas debilitadas por enfermedad o discapacidad." },
+  { word: "appalling", definition: "Causing shock or dismay.", definitionEs: "Que causa conmoción o consternación." },
+  { word: "barkentines", definition: "Sailing ships (used here figuratively).", definitionEs: "Barcos de vela (usado aquí en sentido figurado)." },
+  { word: "flattery", definition: "Excessive or insincere praise.", definitionEs: "Elogio excesivo o insincero." },
+  { word: "trowel", definition: "Tool for spreading; 'spread with a trowel' = lay on thick.", definitionEs: "Herramienta para extender; 'aplicar con paleta' = exagerar." },
+  { word: "unmitigated", definition: "Absolute; not qualified.", definitionEs: "Absoluto; sin atenuantes." },
+  { word: "medulla", definition: "Inner region; 'medulla oblongata' = part of the brain.", definitionEs: "Región interna; bulbo raquídeo." },
+  { word: "drivel", definition: "Nonsense; silly talk.", definitionEs: "Disparates; hablar sin sentido." },
+  { word: "antagonism", definition: "Active hostility or opposition.", definitionEs: "Hostilidad u oposición activa." },
+  { word: "exhortations", definition: "Strong appeals or urgings.", definitionEs: "Apelaciones o instancias fuertes." },
+  { word: "sordid", definition: "Dirty, squalid; ignoble.", definitionEs: "Sucio, miserable; innoble." },
+  { word: "gauntlet", definition: "Challenge; 'throw down the gauntlet' = issue a challenge.", definitionEs: "Desafío; 'tirar el guante' = lanzar un desafío." },
+  { word: "infallible", definition: "Incapable of failing; never wrong.", definitionEs: "Incapaz de fallar; nunca equivocado." },
+  { word: "perseverance", definition: "Steady persistence in spite of difficulty.", definitionEs: "Persistencia constante a pesar de la dificultad." },
+  { word: "belligerence", definition: "Aggressive or warlike behaviour.", definitionEs: "Comportamiento agresivo o belicoso." },
+  { word: "vista", definition: "A view or prospect, especially a distant one.", definitionEs: "Una vista o perspectiva, especialmente lejana." },
+  { word: "dormant", definition: "Inactive; temporarily not in use.", definitionEs: "Inactivo; temporalmente no usado." },
+  { word: "naïve", definition: "Innocent; lacking experience or judgment.", definitionEs: "Inocente; falto de experiencia o juicio." },
+  { word: "forebears", definition: "Ancestors.", definitionEs: "Antepasados." },
+  { word: "eminently", definition: "To a notable degree; very.", definitionEs: "En grado notable; muy." },
+];
+
+/** Lowercased map for fast lookup */
+const dictMap = new Map<string, DictionaryEntry>();
+dictionary.forEach((entry) => {
+  dictMap.set(entry.word.toLowerCase(), entry);
+});
+
+export function getDefinition(word: string): DictionaryEntry | undefined {
+  const normalized = word.replace(/[^\w']/g, "").toLowerCase();
+  return dictMap.get(normalized) ?? dictMap.get(word.toLowerCase());
+}
+
+/** Check if a token might be a word we have (e.g. "temerity" or "finesse") */
+export function hasWord(word: string): boolean {
+  return getDefinition(word) !== undefined;
+}

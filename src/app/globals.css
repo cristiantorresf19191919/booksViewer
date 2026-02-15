@@ -1,26 +1,251 @@
 @import "tailwindcss";
 
+/* Configure Tailwind to use class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-literata: "Literata", serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-literata: var(--font-literata);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ===== LIGHT THEME ===== */
+html.light {
+  --background: #fffbf5;
+  --foreground: #1c1917;
+  --accent: #f59e0b;
+  --accent-soft: #fef3c7;
+  color-scheme: light;
+}
+
+html.light body {
+  background: linear-gradient(
+    180deg,
+    #fffbf5 0%,
+    #fef7ed 25%,
+    #fff7ed 50%,
+    #fffbf5 75%,
+    #fefce8 100%
+  );
+  background-attachment: fixed;
+}
+
+/* Light theme subtle paper texture */
+html.light .book-content {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(254, 252, 232, 0.7) 50%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  box-shadow:
+    0 4px 6px -1px rgba(120, 113, 108, 0.1),
+    0 2px 4px -2px rgba(120, 113, 108, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Light theme header glow */
+html.light header {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 251, 245, 0.95) 100%
+  );
+  backdrop-filter: blur(12px) saturate(1.5);
+}
+
+/* ===== DARK THEME ===== */
+html.dark {
+  --background: #0c0a09;
+  --foreground: #fafaf9;
+  --accent: #f59e0b;
+  --accent-soft: #451a03;
+  color-scheme: dark;
+}
+
+html.dark body {
+  background: linear-gradient(
+    180deg,
+    #0c0a09 0%,
+    #1c1917 25%,
+    #0f0d0c 50%,
+    #1c1917 75%,
+    #0c0a09 100%
+  );
+  background-attachment: fixed;
+}
+
+/* Dark theme subtle glow effect */
+html.dark .book-content {
+  background: linear-gradient(
+    145deg,
+    rgba(28, 25, 23, 0.95) 0%,
+    rgba(12, 10, 9, 0.9) 50%,
+    rgba(28, 25, 23, 0.95) 100%
+  );
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.4),
+    0 2px 4px -2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Dark theme header */
+html.dark header {
+  background: linear-gradient(
+    180deg,
+    rgba(28, 25, 23, 0.98) 0%,
+    rgba(12, 10, 9, 0.95) 100%
+  );
+  backdrop-filter: blur(12px) saturate(1.2);
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+.font-literata {
+  font-family: var(--font-literata), Georgia, serif;
+}
+
+/* ===== BEAUTIFUL SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d6d3d1 0%, #a8a29e 100%);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a8a29e 0%, #78716c 100%);
+  background-clip: padding-box;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #44403c 0%, #292524 100%);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #57534e 0%, #44403c 100%);
+  background-clip: padding-box;
+}
+
+/* ===== HIGHLIGHT FLASH ANIMATION ===== */
+@keyframes highlight-flash-light {
+  0% {
+    background-color: rgba(251, 191, 36, 0.4);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes highlight-flash-dark {
+  0% {
+    background-color: rgba(251, 191, 36, 0.25);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.15);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+html.light .highlight-flash {
+  animation: highlight-flash-light 2s ease-out;
+  border-radius: 0.5rem;
+}
+
+html.dark .highlight-flash {
+  animation: highlight-flash-dark 2s ease-out;
+  border-radius: 0.5rem;
+}
+
+/* ===== BEAUTIFUL SELECTION ===== */
+html.light ::selection {
+  background: rgba(251, 191, 36, 0.3);
+  color: #1c1917;
+}
+
+html.dark ::selection {
+  background: rgba(251, 191, 36, 0.25);
+  color: #fafaf9;
+}
+
+/* ===== SMOOTH TRANSITIONS ===== */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+}
+
+/* Exclude elements that shouldn't transition */
+*:where([class*="animate-"], [class*="transition-"]) {
+  transition-property: none;
+}
+
+/* ===== BEAUTIFUL FOCUS STATES ===== */
+html.light button:focus-visible,
+html.light a:focus-visible,
+html.light input:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+}
+
+html.dark button:focus-visible,
+html.dark a:focus-visible,
+html.dark input:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+}
+
+/* ===== PAGE TRANSITION STYLES ===== */
+.book-content {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== READING AREA ENHANCEMENTS ===== */
+html.light article {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark article {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sepia-tinted reading mode for light theme */
+html.light article p {
+  color: #44403c;
+}
+
+html.dark article p {
+  color: #d6d3d1;
 }
