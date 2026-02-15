@@ -797,332 +797,1044 @@
       "es": "Los indicadores se clasifican según su temporalidad relativa al ciclo: adelantados (predicen condiciones futuras), coincidentes (reflejan el presente) y rezagados (confirman que se ha producido un giro)."
     },
     {
-      "en": "How the markets react: When indicators are released (typically at 8:30 AM ET), bond and stock markets react within seconds. Strong economic data generally helps stocks and hurts bonds; weak data does the opposite.",
-      "es": "Cómo reaccionan los mercados: Cuando se publican los indicadores (normalmente a las 8:30 AM hora del este), los mercados de bonos y acciones reaccionan en cuestión de segundos. Los datos económicos sólidos generalmente favorecen a las acciones y perjudican a los bonos; los datos débiles producen el efecto contrario."
+      "en": "How the markets react: When indicators are released (typically at 8:30 AM ET), bond and stock markets react within seconds. Strong economic data generally helps stocks and hurts bonds; weak data does the opposite. Each chapter's structure follows a consistent format: the indicator's history (Evolution), data methodology (Digging for the Data), interpretation (What Does It All Mean?), application (How to Use What You See), and professional tips (Tricks From the Trenches).",
+      "es": "Cómo reaccionan los mercados: Cuando se publican los indicadores (normalmente a las 8:30 AM hora del este), los mercados de bonos y acciones reaccionan en cuestión de segundos. Los datos económicos sólidos generalmente favorecen a las acciones y perjudican a los bonos; los datos débiles producen el efecto contrario. La estructura de cada capítulo sigue un formato consistente: la historia del indicador (Evolución), la metodología de datos (Buscando los Datos), la interpretación (¿Qué Significa Todo Esto?), la aplicación (Cómo Usar Lo Que Ves) y consejos profesionales (Trucos desde las Trincheras)."
     },
     {
-      "en": "Key Figure: U.S. Business Cycle Durations Table — A comprehensive table listing every business cycle peak and trough from 1854 to 2001, with duration of each contraction and expansion in months. The average post-WWII expansion lasted about 57 months; the average contraction about 10 months. The longest expansion was March 1991–March 2001 (120 months).",
-      "es": "Figura clave: Tabla de duraciones de los ciclos económicos de EE.UU. — Una tabla exhaustiva que enumera cada pico y valle del ciclo económico desde 1854 hasta 2001, con la duración de cada contracción y expansión en meses. La expansión promedio posterior a la Segunda Guerra Mundial duró aproximadamente 57 meses; la contracción promedio, unos 10 meses. La expansión más larga fue de marzo de 1991 a marzo de 2001 (120 meses)."
+      "en": "Key Figure: U.S. Business Cycle Durations Table (Figure I-1) — A comprehensive table listing every business cycle peak and trough from 1854 to 2001, with duration of each contraction and expansion in months. The average post-WWII expansion lasted about 57 months; the average contraction about 10 months. The longest expansion was March 1991–March 2001 (120 months).",
+      "es": "Figura clave: Tabla de duraciones de los ciclos económicos de EE.UU. (Figura I-1) — Una tabla exhaustiva que enumera cada pico y valle del ciclo económico desde 1854 hasta 2001, con la duración de cada contracción y expansión en meses. La expansión promedio posterior a la Segunda Guerra Mundial duró aproximadamente 57 meses; la contracción promedio, unos 10 meses. La expansión más larga fue de marzo de 1991 a marzo de 2001 (120 meses)."
+    },
+    {
+      "en": "Key Figure: Real GDP and Recessions (Figure) — Charts GDP growth against shaded recession bars, visually demonstrating how declining GDP aligns with officially dated recessions.",
+      "es": "Figura clave: GDP Real y Recesiones (Figura) — Gráficos del crecimiento del GDP contra barras de recesión sombreadas, demostrando visualmente cómo la caída del GDP se alinea con las recesiones oficialmente fechadas."
     },
     {
       "en": "Summary: Chapter 1 — Gross Domestic Product (GDP)",
       "es": "Resumen: Capítulo 1 — Producto Interno Bruto (GDP)"
     },
     {
-      "en": "GDP is the single most comprehensive measure of the U.S. economy — the total market value of all final goods and services produced within the country during a given period.",
-      "es": "El GDP es la medida individual más completa de la economía estadounidense: el valor total de mercado de todos los bienes y servicios finales producidos dentro del país durante un periodo determinado."
+      "en": "The Big Picture: GDP is the single most comprehensive measure of the U.S. economy — the total market value of all final goods and services produced within the country during a given period. It's both an accounting exercise and the ultimate economic scorecard.",
+      "es": "El panorama general: El GDP es la medida individual más completa de la economía estadounidense — el valor total de mercado de todos los bienes y servicios finales producidos dentro del país durante un período determinado. Es tanto un ejercicio contable como el indicador económico definitivo."
     },
     {
-      "en": "GDP measurement was pioneered by Simon Kuznets in the 1930s, hired by the Commerce Department with NBER funding. In 1991, the U.S. switched from GNP to GDP as its primary measure.",
-      "es": "La medición del GDP fue desarrollada por Simon Kuznets en la década de 1930, contratado por el Departamento de Comercio con financiamiento del NBER. En 1991, Estados Unidos cambió del GNP al GDP como su medida principal."
+      "en": "Evolution",
+      "es": "Evolución"
     },
     {
-      "en": "The Bureau of Economic Analysis (BEA) releases quarterly GDP in three versions: the advance estimate (one month after quarter end), the preliminary (two months after), and the final (three months after).",
-      "es": "La Oficina de Análisis Económico (BEA) publica el GDP trimestral en tres versiones: la estimación anticipada (un mes después del cierre del trimestre), la preliminar (dos meses después) y la final (tres meses después)."
+      "en": "GDP measurement was pioneered by Simon Kuznets in the 1930s, hired by the Commerce Department with NBER funding. Before this, no comprehensive measure of total economic output existed. The system of National Income and Product Accounts (NIPAs) was formalized over subsequent decades. In 1991, the U.S. switched from GNP to GDP as its primary measure, aligning with international standards.",
+      "es": "La medición del GDP fue desarrollada por Simon Kuznets en la década de 1930, contratado por el Departamento de Comercio con financiamiento del NBER. Antes de esto, no existía una medida integral de la producción económica total. El sistema de Cuentas Nacionales de Ingreso y Producto (NIPAs) se formalizó durante las décadas siguientes. En 1991, Estados Unidos cambió del GNP al GDP como su medida principal, alineándose con los estándares internacionales."
     },
     {
-      "en": "The GDP equation: GDP = C + I + G + (X – M). C (Consumption) ≈ 70% of GDP — the largest component. I (Investment) ≈ 15%. G (Government) ≈ 20%. (X – M) Net Exports — typically negative.",
-      "es": "La ecuación del GDP: GDP = C + I + G + (X – M). C (Consumo) ≈ 70% del GDP — el componente más grande. I (Inversión) ≈ 15%. G (Gobierno) ≈ 20%. (X – M) Exportaciones netas — generalmente negativas."
+      "en": "How the Data Works",
+      "es": "Cómo funcionan los datos"
     },
     {
-      "en": "Nominal GDP reflects current prices; Real GDP strips out inflation using chain-weighted deflators. The Core PCE Deflator (personal consumption expenditure deflator excluding food and energy) is the Federal Reserve's preferred inflation gauge.",
-      "es": "El GDP nominal refleja los precios corrientes; el GDP real elimina la inflación mediante deflactores encadenados. El Core PCE Deflator (deflactor de gasto en consumo personal excluyendo alimentos y energía) es el indicador de inflación preferido de la Reserva Federal."
+      "en": "The Bureau of Economic Analysis (BEA) releases quarterly GDP in three versions: the advance estimate (one month after quarter end), the preliminary (two months after), and the final (three months after). Annual revisions update three years of data; benchmark revisions every five years can reshape the entire historical picture.",
+      "es": "La Oficina de Análisis Económico (BEA) publica el GDP trimestral en tres versiones: la estimación anticipada (un mes después del cierre del trimestre), la preliminar (dos meses después) y la final (tres meses después). Las revisiones anuales actualizan tres años de datos; las revisiones de referencia cada cinco años pueden reformar todo el panorama histórico."
     },
     {
-      "en": "Year-over-year GDP growth starts declining 4–5 quarters before a recession on average. Pronounced declines in consumption growth have preceded each of the six recessions since 1963.",
-      "es": "El crecimiento interanual del GDP comienza a disminuir entre 4 y 5 trimestres antes de una recesión en promedio. Descensos pronunciados en el crecimiento del consumo han precedido cada una de las seis recesiones desde 1963."
+      "en": "The GDP equation: GDP = C + I + G + (X – M)",
+      "es": "La ecuación del GDP: GDP = C + I + G + (X – M)"
     },
     {
-      "en": "Residential investment (~4.5% of GDP) has a massive multiplier effect. Final Sales to Domestic Purchasers (GDP minus inventories minus net exports) is an excellent recession predictor.",
-      "es": "La inversión residencial (~4.5% del GDP) tiene un enorme efecto multiplicador. Las ventas finales a compradores nacionales (GDP menos inventarios menos exportaciones netas) son un excelente predictor de recesiones."
+      "en": "• C (Consumption) ≈ 70% of GDP — the largest component, divided into durable goods (~11%), nondurable goods (~29%), and services (~60%)",
+      "es": "• C (Consumo) ≈ 70% del GDP — el componente más grande, dividido en bienes duraderos (~11%), bienes no duraderos (~29%) y servicios (~60%)"
     },
     {
-      "en": "When actual GDP exceeds potential GDP (positive output gap), inflation pressures build. When actual GDP falls below potential (negative output gap), unemployment rises and inflation subsides.",
-      "es": "Cuando el GDP real supera al GDP potencial (brecha de producción positiva), se acumulan presiones inflacionarias. Cuando el GDP real cae por debajo del potencial (brecha de producción negativa), el desempleo aumenta y la inflación disminuye."
+      "en": "• I (Investment) ≈ 15% — residential construction plus nonresidential business investment (equipment, software, structures)",
+      "es": "• I (Inversión) ≈ 15% — construcción residencial más inversión empresarial no residencial (equipos, software, estructuras)"
+    },
+    {
+      "en": "• G (Government) ≈ 20% — federal, state, and local spending on goods, services, and infrastructure",
+      "es": "• G (Gobierno) ≈ 20% — gasto federal, estatal y local en bienes, servicios e infraestructura"
+    },
+    {
+      "en": "• (X – M) Net Exports — typically negative (trade deficit), subtracting from GDP",
+      "es": "• (X – M) Exportaciones netas — generalmente negativas (déficit comercial), restando del GDP"
+    },
+    {
+      "en": "Nominal vs. Real: Nominal GDP reflects current prices; Real GDP strips out inflation using chain-weighted deflators. The BEA moved from fixed-weight to chain-weighted methodology to eliminate distortions that grew worse the further a period was from the base year.",
+      "es": "Nominal vs. Real: El GDP nominal refleja los precios actuales; el GDP real elimina la inflación mediante deflactores de ponderación encadenada. El BEA pasó de la metodología de pesos fijos a la de ponderación encadenada para eliminar distorsiones que empeoraban cuanto más se alejaba un período del año base."
+    },
+    {
+      "en": "The GDP Deflator: The difference between nominal and real GDP is essentially the economy's inflation rate. The Core PCE Deflator (personal consumption expenditure deflator excluding food and energy) is the Federal Reserve's preferred inflation gauge — broader and more representative than the CPI.",
+      "es": "El deflactor del GDP: La diferencia entre el GDP nominal y el real es esencialmente la tasa de inflación de la economía. El Core PCE Deflator (deflactor de gasto en consumo personal excluyendo alimentos y energía) es el indicador de inflación preferido de la Reserva Federal — más amplio y representativo que el CPI."
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analíticas clave"
+    },
+    {
+      "en": "• GDP Growth: Year-over-year growth starts declining 4–5 quarters before a recession on average. However, not every slowdown becomes a recession.",
+      "es": "• Crecimiento del GDP: El crecimiento interanual comienza a disminuir 4–5 trimestres antes de una recesión en promedio. Sin embargo, no toda desaceleración se convierte en recesión."
+    },
+    {
+      "en": "• Consumer Spending: Pronounced declines in year-over-year consumption growth have preceded each of the six recessions since 1963. Durable goods spending weakens first.",
+      "es": "• Gasto del consumidor: Descensos pronunciados en el crecimiento interanual del consumo han precedido cada una de las seis recesiones desde 1963. El gasto en bienes duraderos se debilita primero."
+    },
+    {
+      "en": "• Business Investment: Residential investment (~4.5% of GDP) has a massive multiplier effect — building homes triggers spending on furnishings, appliances, and services. Nonresidential investment (capital spending) depends on capacity utilization, interest rates, and management confidence.",
+      "es": "• Inversión empresarial: La inversión residencial (~4.5% del GDP) tiene un enorme efecto multiplicador — construir viviendas desencadena gasto en mobiliario, electrodomésticos y servicios. La inversión no residencial (gasto de capital) depende de la utilización de capacidad, las tasas de interés y la confianza de la gerencia."
+    },
+    {
+      "en": "• Government Spending: Relatively stable at ~15% of output since 1947; rises mainly during economic weakness or military conflict.",
+      "es": "• Gasto gubernamental: Relativamente estable en ~15% de la producción desde 1947; aumenta principalmente durante debilidad económica o conflictos militares."
+    },
+    {
+      "en": "• Net Exports: The U.S. has run a persistent trade deficit. A weak dollar boosts exports; a strong economy sucks in imports.",
+      "es": "• Exportaciones netas: Estados Unidos ha mantenido un déficit comercial persistente. Un dólar débil impulsa las exportaciones; una economía fuerte absorbe importaciones."
+    },
+    {
+      "en": "• Corporate Profits: The growth cycle starts with rising profits → companies invest in equipment and workers → the expansion broadens. After-tax profits with inventory and capital adjustments are the purest signal.",
+      "es": "• Ganancias corporativas: El ciclo de crecimiento comienza con ganancias en aumento → las empresas invierten en equipos y trabajadores → la expansión se amplía. Las ganancias después de impuestos con ajustes de inventarios y capital son la señal más pura."
+    },
+    {
+      "en": "• Final Sales to Domestic Purchasers: (GDP minus inventories minus net exports) An excellent predictor — each of the four recessions since 1980 was preceded by about three quarters of declining year-over-year growth in this measure.",
+      "es": "• Ventas finales a compradores nacionales: (GDP menos inventarios menos exportaciones netas) Un excelente predictor — cada una de las cuatro recesiones desde 1980 fue precedida por aproximadamente tres trimestres de crecimiento interanual decreciente en esta medida."
+    },
+    {
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
+    },
+    {
+      "en": "GDP gap analysis: When actual GDP exceeds potential GDP (positive output gap), inflation pressures build as factories run at full capacity and labor markets tighten. When actual GDP falls below potential (negative output gap), unemployment rises and inflation subsides.",
+      "es": "Análisis de brecha del GDP: Cuando el GDP real supera al GDP potencial (brecha de producción positiva), se acumulan presiones inflacionarias a medida que las fábricas operan a plena capacidad y los mercados laborales se tensan. Cuando el GDP real cae por debajo del potencial (brecha de producción negativa), el desempleo aumenta y la inflación disminuye."
+    },
+    {
+      "en": "Key Figures: Figure 1-4 (Consumption breakdown), Figure 1-9 (Real GDP year-over-year with recessions), Figure 1-11 (Consumer expenditure growth before recessions), Figure 1-13 (Final sales to domestic purchasers as recession predictor), Figure 1-14 (Corporate profits and S&P 500), Figure 1-16 (GDP gap — actual vs. potential)",
+      "es": "Figuras clave: Figura 1-4 (Desglose del consumo), Figura 1-9 (GDP real interanual con recesiones), Figura 1-11 (Crecimiento del gasto del consumidor antes de recesiones), Figura 1-13 (Ventas finales a compradores nacionales como predictor de recesión), Figura 1-14 (Ganancias corporativas y S&P 500), Figura 1-16 (Brecha del GDP — real vs. potencial)"
     },
     {
       "en": "Summary: Chapter 2 — Indices of Leading, Lagging, and Coincident Indicators",
       "es": "Resumen: Capítulo 2 — Índices de indicadores adelantados, rezagados y coincidentes"
     },
     {
-      "en": "If an economist could have one wish, it would be a single indicator that predicts both the direction and pace of the economy. The Conference Board's composite indices are the closest thing available.",
-      "es": "Si un economista pudiera pedir un deseo, sería un indicador único que predijera tanto la dirección como el ritmo de la economía. Los índices compuestos del Conference Board son lo más cercano disponible."
+      "en": "The Big Picture: If an economist could have one wish, it would be a single indicator that predicts both the direction and pace of the economy. The Conference Board's composite indices — leading, coincident, and lagging — are the closest thing available.",
+      "es": "El panorama general: Si un economista pudiera pedir un deseo, sería un indicador único que predijera tanto la dirección como el ritmo de la economía. Los índices compuestos del Conference Board — adelantado, coincidente y rezagado — son lo más cercano disponible."
     },
     {
-      "en": "The Coincident Index has 4 components: nonfarm payroll employment, personal income less transfer payments, industrial production index, and manufacturing and trade sales. It mirrors real-time economic conditions with an 86% correlation to real GDP growth.",
-      "es": "El índice coincidente tiene 4 componentes: empleo en nóminas no agrícolas, ingreso personal menos pagos de transferencias, índice de producción industrial y ventas de manufactura y comercio. Refleja las condiciones económicas en tiempo real con una correlación del 86% con el crecimiento del GDP real."
+      "en": "The Three Composites",
+      "es": "Los tres compuestos"
     },
     {
-      "en": "The Leading Economic Index (LEI) has 10 components including average weekly hours in manufacturing, initial claims for unemployment insurance (inverted), manufacturers' new orders, building permits, S&P 500 stock index, money supply (M2), and the interest rate spread (10-year Treasury minus Fed funds rate).",
-      "es": "El Leading Economic Index (LEI) tiene 10 componentes, incluyendo las horas semanales promedio en manufactura, solicitudes iniciales de seguro de desempleo (invertidas), nuevos pedidos de fabricantes, permisos de construcción, el índice bursátil S&P 500, la oferta monetaria (M2) y el diferencial de tasas de interés (bonos del Tesoro a 10 años menos la tasa de fondos federales)."
+      "en": "Coincident Index (4 components):",
+      "es": "Índice coincidente (4 componentes):"
     },
     {
-      "en": "The interest rate spread is particularly notable: an inverted yield curve (short rates exceeding long rates) has preceded every modern recession.",
-      "es": "El diferencial de tasas de interés es particularmente notable: una curva de rendimiento invertida (tasas cortas superiores a las tasas largas) ha precedido cada recesión moderna."
+      "en": "• Nonfarm payroll employment",
+      "es": "• Empleo en nóminas no agrícolas"
     },
     {
-      "en": "The Lagging Index has 7 components including average duration of unemployment, inventories-to-sales ratio, average prime rate, and change in CPI for services.",
-      "es": "El índice rezagado tiene 7 componentes, incluyendo la duración promedio del desempleo, la relación inventarios-ventas, la tasa preferencial promedio y el cambio en el CPI de servicios."
+      "en": "• Personal income less transfer payments",
+      "es": "• Ingreso personal menos pagos de transferencias"
     },
     {
-      "en": "The old rule — three consecutive monthly declines in the LEI signal recession — is too simplistic. The coincident-to-lagging ratio may be the most powerful signal of all.",
-      "es": "La vieja regla —tres descensos mensuales consecutivos en el LEI señalan recesión— es demasiado simplista. La relación coincidente-rezagado puede ser la señal más poderosa de todas."
+      "en": "• Industrial production index",
+      "es": "• Índice de producción industrial"
+    },
+    {
+      "en": "• Manufacturing and trade sales",
+      "es": "• Ventas de manufactura y comercio"
+    },
+    {
+      "en": "This index mirrors real-time economic conditions with an 86% correlation to real GDP growth, making it a useful, more timely proxy.",
+      "es": "Este índice refleja las condiciones económicas en tiempo real con una correlación del 86% con el crecimiento del GDP real, haciéndolo un proxy útil y más oportuno."
+    },
+    {
+      "en": "Leading Economic Index (LEI, 10 components):",
+      "es": "Índice Económico Adelantado (LEI, 10 componentes):"
+    },
+    {
+      "en": "• Average weekly hours in manufacturing",
+      "es": "• Horas semanales promedio en manufactura"
+    },
+    {
+      "en": "• Average weekly initial claims for unemployment insurance (inverted)",
+      "es": "• Solicitudes iniciales semanales promedio de seguro de desempleo (invertidas)"
+    },
+    {
+      "en": "• Manufacturers' new orders for consumer goods and materials",
+      "es": "• Nuevos pedidos de fabricantes de bienes de consumo y materiales"
+    },
+    {
+      "en": "• ISM new orders index (vendor performance diffusion index)",
+      "es": "• Índice de nuevos pedidos ISM (índice de difusión de desempeño de proveedores)"
+    },
+    {
+      "en": "• Manufacturers' new orders for nondefense capital goods",
+      "es": "• Nuevos pedidos de fabricantes de bienes de capital no relacionados con defensa"
+    },
+    {
+      "en": "• Building permits for new private housing",
+      "es": "• Permisos de construcción para vivienda privada nueva"
+    },
+    {
+      "en": "• S&P 500 stock index",
+      "es": "• Índice bursátil S&P 500"
+    },
+    {
+      "en": "• Money supply (M2)",
+      "es": "• Oferta monetaria (M2)"
+    },
+    {
+      "en": "• Interest rate spread (10-year Treasury minus Fed funds rate)",
+      "es": "• Diferencial de tasas de interés (Bonos del Tesoro a 10 años menos tasa de fondos federales)"
+    },
+    {
+      "en": "• Index of consumer expectations (University of Michigan)",
+      "es": "• Índice de expectativas del consumidor (Universidad de Michigan)"
+    },
+    {
+      "en": "Each component is chosen for its forward-looking nature. The interest rate spread is particularly notable: an inverted yield curve (short rates exceeding long rates) has preceded every modern recession.",
+      "es": "Cada componente se elige por su naturaleza prospectiva. El diferencial de tasas de interés es particularmente notable: una curva de rendimiento invertida (tasas cortas que superan a las tasas largas) ha precedido cada recesión moderna."
+    },
+    {
+      "en": "Lagging Index (7 components):",
+      "es": "Índice rezagado (7 componentes):"
+    },
+    {
+      "en": "• Average duration of unemployment",
+      "es": "• Duración promedio del desempleo"
+    },
+    {
+      "en": "• Inventories-to-sales ratio",
+      "es": "• Relación inventarios-ventas"
+    },
+    {
+      "en": "• Manufacturing labor cost per unit of output",
+      "es": "• Costo laboral manufacturero por unidad de producción"
+    },
+    {
+      "en": "• Average prime rate",
+      "es": "• Tasa preferencial promedio"
+    },
+    {
+      "en": "• Commercial and industrial loans outstanding",
+      "es": "• Préstamos comerciales e industriales vigentes"
+    },
+    {
+      "en": "• Consumer installment credit to personal income ratio",
+      "es": "• Relación de crédito a plazos del consumidor respecto al ingreso personal"
+    },
+    {
+      "en": "• Change in CPI for services",
+      "es": "• Cambio en el CPI de servicios"
+    },
+    {
+      "en": "Key Analytical Insights",
+      "es": "Perspectivas analíticas clave"
+    },
+    {
+      "en": "The old rule of thumb — three consecutive monthly declines in the LEI signal recession — is too simplistic. Every recession has been preceded by LEI declines, but not every string of declines leads to recession.",
+      "es": "La vieja regla general — tres descensos mensuales consecutivos en el LEI señalan recesión — es demasiado simplista. Cada recesión ha sido precedida por descensos en el LEI, pero no toda serie de descensos conduce a una recesión."
+    },
+    {
+      "en": "The coincident-to-lagging ratio may be the most powerful signal: In early recovery, coincident indicators rise while lagging ones haven't caught up, producing a rising ratio. When the expansion peaks, the ratio declines. This ratio has an excellent track record.",
+      "es": "La relación coincidente-rezagado puede ser la señal más poderosa: En la recuperación temprana, los indicadores coincidentes suben mientras los rezagados aún no los alcanzan, produciendo una relación ascendente. Cuando la expansión alcanza su pico, la relación desciende. Esta relación tiene un excelente historial."
+    },
+    {
+      "en": "Key Figures: Figure 2-1 (Lead/lag months at cycle peaks and troughs), Figure 2-4 (Coincident index vs. real GDP), Figure 2-5 (Yield curve spread and recessions)",
+      "es": "Figuras clave: Figura 2-1 (Meses de adelanto/rezago en picos y valles del ciclo), Figura 2-4 (Índice coincidente vs. GDP real), Figura 2-5 (Diferencial de curva de rendimiento y recesiones)"
     },
     {
       "en": "Summary: Chapter 3 — The Employment Situation",
       "es": "Resumen: Capítulo 3 — La situación del empleo"
     },
     {
-      "en": "This is the most important monthly economic indicator, bar none. The first Friday of every month, when the BLS publishes this report, is the most anticipated day on Wall Street's economic calendar.",
-      "es": "Este es el indicador económico mensual más importante, sin excepción. El primer viernes de cada mes, cuando el BLS publica este informe, es el día más esperado en el calendario económico de Wall Street."
+      "en": "The Big Picture: This is the most important monthly economic indicator, bar none. No release moves stocks and bonds like employment. The first Friday of every month, when the Bureau of Labor Statistics (BLS) publishes this report, is the most anticipated day on Wall Street's economic calendar.",
+      "es": "El panorama general: Este es el indicador económico mensual más importante, sin excepción. Ninguna publicación mueve las acciones y los bonos como el empleo. El primer viernes de cada mes, cuando la Oficina de Estadísticas Laborales (BLS) publica este informe, es el día más esperado en el calendario económico de Wall Street."
     },
     {
-      "en": "Consumer spending is ~70% of GDP. Nothing stops spending like losing a job.",
-      "es": "El gasto del consumidor representa ~70% del GDP. Nada detiene el gasto como perder un empleo."
+      "en": "Why It Matters",
+      "es": "Por qué importa"
     },
     {
-      "en": "The Household Survey (A Tables) is based on ~60,000 telephone interviews and produces the unemployment rate. The Establishment Survey (B Tables) is based on payroll records from ~400,000 businesses and produces nonfarm payrolls — the headline number.",
-      "es": "La Encuesta de Hogares (Tablas A) se basa en ~60,000 entrevistas telefónicas y produce la tasa de desempleo. La Encuesta de Establecimientos (Tablas B) se basa en registros de nómina de ~400,000 empresas y produce las nóminas no agrícolas — la cifra principal."
+      "en": "Consumer spending is ~70% of GDP. Consumers can weather higher prices and declining portfolios, but nothing stops spending like losing a job. Employment data simultaneously tells you about growth, inflation, and consumer psychology.",
+      "es": "El gasto del consumidor representa ~70% del GDP. Los consumidores pueden soportar precios más altos y carteras en declive, pero nada detiene el gasto como perder un empleo. Los datos de empleo te informan simultáneamente sobre crecimiento, inflación y psicología del consumidor."
     },
     {
-      "en": "Average hourly earnings serve as an inflation proxy. Average weekly hours are a leading indicator — employers adjust hours before headcount. Temporary workers are the canary in the coal mine.",
-      "es": "Los ingresos promedio por hora sirven como indicador aproximado de inflación. Las horas semanales promedio son un indicador adelantado — los empleadores ajustan las horas antes que la plantilla. Los trabajadores temporales son la señal de alerta temprana."
+      "en": "Two Surveys, One Report",
+      "es": "Dos encuestas, un informe"
     },
     {
-      "en": "The employment diffusion index: when above 50, more industries are adding jobs than cutting; below 50 signals broad-based weakness.",
-      "es": "El índice de difusión del empleo: cuando está por encima de 50, más industrias están añadiendo empleos que recortando; por debajo de 50 señala debilidad generalizada."
+      "en": "Household Survey (A Tables): Based on ~60,000 telephone interviews of households. Produces the unemployment rate, labor force participation, and demographic breakdowns. Types of unemployment: frictional (between jobs), structural (skills mismatch from technological change), and cyclical (recession-driven).",
+      "es": "Encuesta de hogares (Tablas A): Basada en ~60,000 entrevistas telefónicas a hogares. Produce la tasa de desempleo, la participación en la fuerza laboral y desgloses demográficos. Tipos de desempleo: friccional (entre empleos), estructural (desajuste de habilidades por cambio tecnológico) y cíclico (provocado por recesión)."
+    },
+    {
+      "en": "Establishment Survey (B Tables): Based on payroll records from ~400,000 businesses covering ~40 million workers. Produces nonfarm payrolls (the headline number), average hourly earnings, average weekly hours, and industry breakdowns. Economists trust this more because data comes directly from corporate records rather than subjective phone interviews.",
+      "es": "Encuesta de establecimientos (Tablas B): Basada en registros de nómina de ~400,000 empresas que cubren ~40 millones de trabajadores. Produce las nóminas no agrícolas (la cifra principal), las ganancias promedio por hora, las horas semanales promedio y desgloses por industria. Los economistas confían más en esta porque los datos provienen directamente de registros corporativos en lugar de entrevistas telefónicas subjetivas."
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analíticas clave"
+    },
+    {
+      "en": "• Payrolls and the business cycle: Quarterly changes in nonfarm payrolls closely track quarterly GDP growth. Year-over-year payroll growth turns negative before or during recessions.",
+      "es": "• Nóminas y el ciclo económico: Los cambios trimestrales en las nóminas no agrícolas siguen de cerca el crecimiento trimestral del GDP. El crecimiento interanual de las nóminas se vuelve negativo antes o durante las recesiones."
+    },
+    {
+      "en": "• Average hourly earnings serve as an inflation proxy. Rising earnings can signal wage-push inflation; the Fed watches this closely.",
+      "es": "• Las ganancias promedio por hora sirven como indicador proxy de inflación. El aumento de las ganancias puede señalar inflación impulsada por salarios; la Fed observa esto de cerca."
+    },
+    {
+      "en": "• Average weekly hours are a leading indicator — employers adjust hours before headcount. A decline in hours signals management is pulling back and may soon cut workers.",
+      "es": "• Las horas semanales promedio son un indicador adelantado — los empleadores ajustan las horas antes que la plantilla. Una disminución en las horas señala que la gerencia está retrocediendo y pronto podría recortar trabajadores."
+    },
+    {
+      "en": "• Temporary workers are the canary in the coal mine — they're first hired in recovery and first fired when the economy weakens.",
+      "es": "• Los trabajadores temporales son el canario en la mina — son los primeros en ser contratados en la recuperación y los primeros en ser despedidos cuando la economía se debilita."
+    },
+    {
+      "en": "• Unemployment duration: As median weeks unemployed rises, consumer sentiment deteriorates in lockstep.",
+      "es": "• Duración del desempleo: A medida que la mediana de semanas en desempleo aumenta, el sentimiento del consumidor se deteriora al mismo ritmo."
+    },
+    {
+      "en": "• Employment diffusion index: When above 50, more industries are adding jobs than cutting; below 50 signals broad-based weakness. Most NBER-designated recessions coincide with sub-50 readings.",
+      "es": "• Índice de difusión del empleo: Cuando está por encima de 50, más industrias están añadiendo empleos que recortando; por debajo de 50 señala debilidad generalizada. La mayoría de las recesiones designadas por el NBER coinciden con lecturas por debajo de 50."
+    },
+    {
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
     },
     {
       "en": "Weekly initial claims for unemployment insurance (released every Thursday) are the best real-time predictor of the monthly payroll number.",
       "es": "Las solicitudes iniciales semanales de seguro de desempleo (publicadas cada jueves) son el mejor predictor en tiempo real de la cifra mensual de nóminas."
     },
     {
+      "en": "The BLS diffusion index of employment helps distinguish between isolated industry weakness and economy-wide deterioration.",
+      "es": "El índice de difusión del empleo del BLS ayuda a distinguir entre debilidad aislada de una industria y deterioro generalizado de la economía."
+    },
+    {
+      "en": "Key Figures: Figure 3-2 (Nonfarm payrolls vs. GDP), Figure 3-3 (Payroll growth rate and recessions), Figure 3-4 (Unemployment rate and recessions), Figure 3-6 (Unemployment duration vs. consumer sentiment), Figure 3-8 (Temporary help employment as leading indicator), Figure 3-9 (Employment diffusion index and recessions)",
+      "es": "Figuras clave: Figura 3-2 (Nóminas no agrícolas vs. GDP), Figura 3-3 (Tasa de crecimiento de nóminas y recesiones), Figura 3-4 (Tasa de desempleo y recesiones), Figura 3-6 (Duración del desempleo vs. sentimiento del consumidor), Figura 3-8 (Empleo de ayuda temporal como indicador adelantado), Figura 3-9 (Índice de difusión del empleo y recesiones)"
+    },
+    {
       "en": "Summary: Chapter 4 — Industrial Production and Capacity Utilization",
-      "es": "Resumen: Capítulo 4 — Producción industrial y utilización de la capacidad"
+      "es": "Resumen: Capítulo 4 — Producción industrial y utilización de capacidad"
     },
     {
-      "en": "Released around the 15th of each month by the Federal Reserve Board of Governors, this measures output from manufacturing, mining, and utilities.",
-      "es": "Publicado alrededor del día 15 de cada mes por la Junta de Gobernadores de la Reserva Federal, mide la producción de manufactura, minería y servicios públicos."
+      "en": "The Big Picture: Released around the 15th of each month by the Federal Reserve Board of Governors (the G17 report), this measures output from manufacturing, mining, and utilities. Despite the U.S. shift toward services, this indicator remains critical because manufacturing recessions have accompanied every broad economic recession.",
+      "es": "El panorama general: Publicado alrededor del día 15 de cada mes por la Junta de Gobernadores de la Reserva Federal (el informe G17), este mide la producción de manufactura, minería y servicios públicos. A pesar del giro de EE.UU. hacia los servicios, este indicador sigue siendo crítico porque las recesiones manufactureras han acompañado cada recesión económica general."
     },
     {
-      "en": "The Industrial Production Index measures physical output using a base year of 100. Capacity Utilization is the ratio of actual production to sustainable maximum output.",
-      "es": "El índice de producción industrial mide la producción física utilizando un año base de 100. La utilización de la capacidad es la relación entre la producción real y la producción máxima sostenible."
+      "en": "How the Data Works",
+      "es": "Cómo funcionan los datos"
     },
     {
-      "en": "Every broad recession has included a manufacturing downturn. When the ISM's PMI reads 50, industrial production typically advances at ~2% annually.",
-      "es": "Toda recesión generalizada ha incluido una caída en la manufactura. Cuando el PMI del ISM marca 50, la producción industrial normalmente avanza a ~2% anual."
+      "en": "Industrial Production Index: Measures physical output (steel in tons, autos in units) without respect to price, using a base year of 100. Organized by two classification systems: industry (manufacturing, mining, utilities) and market group (consumer goods, business equipment, materials).",
+      "es": "Índice de producción industrial: Mide la producción física (acero en toneladas, automóviles en unidades) sin considerar el precio, utilizando un año base de 100. Organizado por dos sistemas de clasificación: industria (manufactura, minería, servicios públicos) y grupo de mercado (bienes de consumo, equipos empresariales, materiales)."
     },
     {
-      "en": "Capacity utilization and inflation: when utilization exceeds approximately 84%, bottlenecks form and producers gain pricing power. The NAIRCU (non-accelerating inflation rate of capacity utilization) is analogous to NAIRU for unemployment.",
-      "es": "Utilización de la capacidad e inflación: cuando la utilización supera aproximadamente el 84%, se forman cuellos de botella y los productores ganan poder de fijación de precios. El NAIRCU (tasa de utilización de la capacidad que no acelera la inflación) es análogo al NAIRU para el desempleo."
+      "en": "Capacity Utilization: The ratio of actual production to sustainable maximum output. Computed for total industry and individual sectors (primary metals, petroleum, chemicals, etc.).",
+      "es": "Utilización de capacidad: La relación entre la producción real y la producción máxima sostenible. Se calcula para la industria total y sectores individuales (metales primarios, petróleo, químicos, etc.)."
     },
     {
-      "en": "You can estimate the IP reading early using manufacturing payroll data and average weekly hours from the Employment Situation report.",
-      "es": "Se puede estimar la lectura del IP de forma anticipada utilizando los datos de nóminas de manufactura y las horas semanales promedio del informe de la situación del empleo."
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analíticas clave"
     },
     {
-      "en": "Summary: Chapter 5 — ISM Indices (Purchasing Managers' Index)",
-      "es": "Resumen: Capítulo 5 — Índices ISM (Purchasing Managers' Index)"
+      "en": "• IP and GDP: The correlation between industrial production and GDP is extremely high. While manufacturing can be in recession without dragging down the broader economy (thanks to the service sector), every broad recession has included a manufacturing downturn.",
+      "es": "• IP y GDP: La correlación entre la producción industrial y el GDP es extremadamente alta. Si bien la manufactura puede estar en recesión sin arrastrar a la economía en general (gracias al sector de servicios), cada recesión general ha incluido una caída manufacturera."
     },
     {
-      "en": "The PMI is the second most market-moving release after the Employment Situation. It is reportedly Alan Greenspan's \"Desert Island Statistic.\" Released on the first business day of each month.",
-      "es": "El PMI es la segunda publicación con mayor impacto en los mercados después de la situación del empleo. Se dice que es la \"estadística de isla desierta\" de Alan Greenspan. Se publica el primer día hábil de cada mes."
+      "en": "• The PMI connection: When the ISM's PMI reads 50, industrial production typically advances at ~2% annually. Above 50 brings faster growth; below 50 brings contraction.",
+      "es": "• La conexión con el PMI: Cuando el PMI del ISM marca 50, la producción industrial típicamente avanza a ~2% anual. Por encima de 50 trae un crecimiento más rápido; por debajo de 50 trae contracción."
     },
     {
-      "en": "The ISM surveys purchasing managers at approximately 400 manufacturing companies. Diffusion index calculation: (% reporting \"higher\") + (0.5 × % reporting \"same\"). Above 50 = expansion; below 50 = contraction.",
-      "es": "El ISM encuesta a gerentes de compras en aproximadamente 400 empresas manufactureras. Cálculo del índice de difusión: (% que reporta \"mayor\") + (0.5 × % que reporta \"igual\"). Por encima de 50 = expansión; por debajo de 50 = contracción."
+      "en": "• High-tech IP: Technology output grew at 40%+ annually during the late-1990s boom, dwarfing the ~15% pace from just 18 months earlier. The subsequent collapse was severe — illustrating how concentrated booms create concentrated busts.",
+      "es": "• IP de alta tecnología: La producción tecnológica creció a más del 40% anual durante el auge de finales de los años 90, eclipsando el ritmo de ~15% de apenas 18 meses antes. El colapso posterior fue severo — ilustrando cómo los auges concentrados crean caídas concentradas."
     },
     {
-      "en": "The PMI is a composite of five sub-indices: new orders, production, employment, supplier deliveries, and inventories.",
-      "es": "El PMI es un compuesto de cinco subíndices: nuevos pedidos, producción, empleo, entregas de proveedores e inventarios."
+      "en": "• Capacity utilization and inflation: This is the key inflation signal. When utilization exceeds approximately 84%, equipment strains, bottlenecks form, and producers gain pricing power. The NAIRCU (non-accelerating inflation rate of capacity utilization) is analogous to NAIRU for unemployment. Sustained utilization above 84% has historically preceded accelerating producer prices.",
+      "es": "• Utilización de capacidad e inflación: Esta es la señal clave de inflación. Cuando la utilización supera aproximadamente el 84%, los equipos se fuerzan, se forman cuellos de botella y los productores obtienen poder de fijación de precios. El NAIRCU (tasa de utilización de capacidad que no acelera la inflación) es análogo al NAIRU para el desempleo. Una utilización sostenida por encima del 84% ha precedido históricamente la aceleración de los precios al productor."
     },
     {
-      "en": "A lower threshold (~46) identifies turning points in the broader economy. The Price Index is a leading indicator of producer price inflation. Supplier Deliveries above 50 means deliveries are slowing — indicating strong demand straining supply chains.",
-      "es": "Un umbral más bajo (~46) identifica puntos de inflexión en la economía en general. El índice de precios es un indicador adelantado de la inflación de precios al productor. Las entregas de proveedores por encima de 50 significan que las entregas se están desacelerando, lo que indica una demanda fuerte que tensiona las cadenas de suministro."
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
     },
     {
-      "en": "The NO-INV Index (New Orders minus Inventories): when this spread is zero or negative, economic growth tends to contract. New Orders minus Prices may proxy for corporate profits.",
-      "es": "El índice NO-INV (nuevos pedidos menos inventarios): cuando este diferencial es cero o negativo, el crecimiento económico tiende a contraerse. Nuevos pedidos menos precios puede servir como aproximación de las ganancias corporativas."
+      "en": "You can estimate the IP reading up to two weeks early using manufacturing payroll data and average weekly hours from the Employment Situation report, since production hours drive output.",
+      "es": "Se puede estimar la lectura del IP hasta dos semanas antes utilizando datos de nóminas manufactureras y horas semanales promedio del informe de situación del empleo, ya que las horas de producción impulsan la producción."
+    },
+    {
+      "en": "Key Figures: Figure 4-1 (IP index and recessions), Figure 4-4 (IP vs. real GDP growth), Figure 4-6 (High-tech IP growth), Figure 4-7 (Capacity utilization and PPI intermediate materials)",
+      "es": "Figuras clave: Figura 4-1 (Índice IP y recesiones), Figura 4-4 (IP vs. crecimiento del GDP real), Figura 4-6 (Crecimiento del IP de alta tecnología), Figura 4-7 (Utilización de capacidad y PPI de materiales intermedios)"
+    },
+    {
+      "en": "Summary: Chapter 5 — Institute for Supply Management (ISM) Indices",
+      "es": "Resumen: Capítulo 5 — Índices del Institute for Supply Management (ISM)"
+    },
+    {
+      "en": "The Big Picture: The PMI is the second most market-moving release after the Employment Situation. Legend has it that the PMI is Alan Greenspan's \"Desert Island Statistic\" — the one indicator he'd choose if stranded with access to only one. Released on the first business day of each month, it kicks off the monthly indicator cycle.",
+      "es": "El panorama general: El PMI es la segunda publicación con mayor impacto en el mercado después de la situación del empleo. Cuenta la leyenda que el PMI es la \"estadística de isla desierta\" de Alan Greenspan — el único indicador que elegiría si quedara varado con acceso a solo uno. Publicado el primer día hábil de cada mes, da inicio al ciclo mensual de indicadores."
+    },
+    {
+      "en": "How the Survey Works",
+      "es": "Cómo funciona la encuesta"
+    },
+    {
+      "en": "The ISM surveys purchasing managers at approximately 400 manufacturing companies across 20 industries, asking 12 questions about production, new orders, employment, prices, supplier deliveries, inventories, and more. Responses are \"higher,\" \"same,\" or \"lower\" than the previous month.",
+      "es": "El ISM encuesta a gerentes de compras en aproximadamente 400 empresas manufactureras en 20 industrias, formulando 12 preguntas sobre producción, nuevos pedidos, empleo, precios, entregas de proveedores, inventarios y más. Las respuestas son \"mayor\", \"igual\" o \"menor\" que el mes anterior."
+    },
+    {
+      "en": "Diffusion index calculation: (% reporting \"higher\") + (0.5 × % reporting \"same\"). Values above 50 indicate expansion; below 50, contraction. Historically, indices fluctuate between 35 and 70.",
+      "es": "Cálculo del índice de difusión: (% que reporta \"mayor\") + (0.5 × % que reporta \"igual\"). Valores por encima de 50 indican expansión; por debajo de 50, contracción. Históricamente, los índices fluctúan entre 35 y 70."
+    },
+    {
+      "en": "The PMI is a composite of five equally-weighted sub-indices: new orders, production, employment, supplier deliveries, and inventories.",
+      "es": "El PMI es un compuesto de cinco subíndices con igual ponderación: nuevos pedidos, producción, empleo, entregas de proveedores e inventarios."
+    },
+    {
+      "en": "Key Sub-Indices",
+      "es": "Subíndices clave"
+    },
+    {
+      "en": "• PMI overall: Above 50 = manufacturing expansion. But a lower threshold (~46) identifies turning points in the broader economy, because manufacturing is now a smaller share of GDP than it was decades ago.",
+      "es": "• PMI general: Por encima de 50 = expansión manufacturera. Pero un umbral más bajo (~46) identifica puntos de inflexión en la economía en general, porque la manufactura ahora es una proporción menor del GDP que hace décadas."
+    },
+    {
+      "en": "• Employment Index: Below 50 for a staggering 190 of 276 months from 1980–2002, reflecting the secular decline of manufacturing employment even as the service economy boomed.",
+      "es": "• Índice de empleo: Por debajo de 50 durante unos asombrosos 190 de 276 meses entre 1980 y 2002, reflejando el declive secular del empleo manufacturero incluso mientras la economía de servicios prosperaba."
+    },
+    {
+      "en": "• Price Index: A leading indicator of producer price inflation. Compiled from purchasing managers who know firsthand what they're paying for materials. Closely correlated with the PPI for intermediate materials.",
+      "es": "• Índice de precios: Un indicador adelantado de la inflación de precios al productor. Compilado a partir de gerentes de compras que saben de primera mano lo que están pagando por los materiales. Estrechamente correlacionado con el PPI de materiales intermedios."
+    },
+    {
+      "en": "• Supplier Deliveries Index: When above 50, deliveries are slowing — indicating strong demand is straining supply chains. Slow deliveries can foreshadow inflation if sustained.",
+      "es": "• Índice de entregas de proveedores: Cuando está por encima de 50, las entregas se están ralentizando — indicando que la fuerte demanda está tensando las cadenas de suministro. Las entregas lentas pueden presagiar inflación si se sostienen."
+    },
+    {
+      "en": "ISM Non-Manufacturing Survey",
+      "es": "Encuesta no manufacturera del ISM"
+    },
+    {
+      "en": "Covers services, construction, health, and essentially everything outside manufacturing. A reading of 50 equates to about 3.5% year-over-year growth in services consumption. As the service economy has grown, this survey has become increasingly important.",
+      "es": "Cubre servicios, construcción, salud y esencialmente todo fuera de la manufactura. Una lectura de 50 equivale a aproximadamente 3.5% de crecimiento interanual en el consumo de servicios. A medida que la economía de servicios ha crecido, esta encuesta se ha vuelto cada vez más importante."
+    },
+    {
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
+    },
+    {
+      "en": "• NO-INV Index (New Orders minus Inventories): When this spread is zero or negative, economic growth tends to contract. It serves as a quick-and-dirty recession gauge.",
+      "es": "• Índice NO-INV (Nuevos pedidos menos inventarios): Cuando este diferencial es cero o negativo, el crecimiento económico tiende a contraerse. Sirve como un indicador rápido e informal de recesión."
+    },
+    {
+      "en": "• New Orders minus Prices Index: This may proxy for corporate profits — New Orders as revenues, Prices as costs. The resulting spread shows a close association with S&P 500 year-over-year total returns.",
+      "es": "• Índice de nuevos pedidos menos precios: Este puede servir como proxy de las ganancias corporativas — nuevos pedidos como ingresos, precios como costos. El diferencial resultante muestra una estrecha asociación con los rendimientos totales interanuales del S&P 500."
+    },
+    {
+      "en": "• Regional manufacturing surveys (Philadelphia Fed, Empire State, etc.) provide more geographically targeted data and can preview the national ISM.",
+      "es": "• Las encuestas regionales de manufactura (Philadelphia Fed, Empire State, etc.) proporcionan datos geográficamente más específicos y pueden anticipar el ISM nacional."
+    },
+    {
+      "en": "Key Figures: Figure 5-1 (PMI and recessions), Figure 5-2 (PMI and year-over-year GDP), Figure 5-3 (ISM Employment vs. manufacturing payrolls), Figure 5-4 (ISM Prices vs. PPI intermediate materials), Figure 5-8 (New Orders minus Price Index vs. S&P 500 returns)",
+      "es": "Figuras clave: Figura 5-1 (PMI y recesiones), Figura 5-2 (PMI y GDP interanual), Figura 5-3 (Empleo ISM vs. nóminas manufactureras), Figura 5-4 (Precios ISM vs. PPI de materiales intermedios), Figura 5-8 (Índice de nuevos pedidos menos precios vs. rendimientos del S&P 500)"
     },
     {
       "en": "Summary: Chapter 6 — Manufacturers' Shipments, Inventories, and Orders",
-      "es": "Resumen: Capítulo 6 — Envíos, inventarios y pedidos de fabricantes"
+      "es": "Resumen: Capítulo 6 — Envíos, inventarios y pedidos de los fabricantes"
     },
     {
-      "en": "The M3 survey measures current activity and future commitments in U.S. manufacturing. It comes in two releases: the Advance Durable Goods Report and the complete Factory Orders Report.",
-      "es": "La encuesta M3 mide la actividad actual y los compromisos futuros en la manufactura estadounidense. Se publica en dos entregas: el informe anticipado de bienes duraderos y el informe completo de pedidos de fábrica."
+      "en": "The Big Picture: The M3 survey, published monthly by the Census Bureau, measures current activity and future commitments in U.S. manufacturing. It comes in two releases: the Advance Durable Goods Report (~26 days after month-end) and the complete Factory Orders Report (about a week later, adding nondurables).",
+      "es": "El panorama general: La encuesta M3, publicada mensualmente por la Oficina del Censo, mide la actividad actual y los compromisos futuros en la manufactura estadounidense. Se presenta en dos publicaciones: el Informe anticipado de bienes duraderos (~26 días después del fin de mes) y el Informe completo de pedidos de fábrica (aproximadamente una semana después, añadiendo los no duraderos)."
     },
     {
-      "en": "Durable goods are products with shelf lives of 3+ years. New Orders are the report's most forward-looking component. Data are extremely volatile month to month, especially in transportation and defense.",
-      "es": "Los bienes duraderos son productos con una vida útil de 3 o más años. Los nuevos pedidos son el componente más prospectivo del informe. Los datos son extremadamente volátiles de mes a mes, especialmente en transporte y defensa."
+      "en": "Key Concepts",
+      "es": "Conceptos clave"
     },
     {
-      "en": "Unfilled orders gauge demand strength. Nondefense capital goods excluding aircraft (NDCGXA) is arguably the most important line item — it proxies for business investment in the GDP report.",
-      "es": "Los pedidos pendientes miden la fortaleza de la demanda. Los bienes de capital no relacionados con defensa excluyendo aeronaves (NDCGXA) es posiblemente la partida más importante — sirve como aproximación de la inversión empresarial en el informe del GDP."
+      "en": "Durable Goods: Products with shelf lives of 3+ years — machinery, aircraft, defense equipment, computers, autos. These are expensive, bought infrequently, and extremely volatile month to month. The Census Bureau surveys manufacturers with annual shipments of $500M+ (voluntary participation).",
+      "es": "Bienes duraderos: Productos con vida útil de más de 3 años — maquinaria, aeronaves, equipo de defensa, computadoras, automóviles. Son costosos, se compran con poca frecuencia y son extremadamente volátiles de mes a mes. La Oficina del Censo encuesta a fabricantes con envíos anuales de más de $500 millones (participación voluntaria)."
+    },
+    {
+      "en": "New Orders are calculated as: current shipments + current unfilled orders – prior unfilled orders. They're the report's most forward-looking component.",
+      "es": "Los nuevos pedidos se calculan como: envíos actuales + pedidos pendientes actuales – pedidos pendientes anteriores. Son el componente más prospectivo del informe."
+    },
+    {
+      "en": "The Volatility Problem",
+      "es": "El problema de la volatilidad"
+    },
+    {
+      "en": "Durable goods data whipsaw dramatically month to month, especially in transportation and defense. Solutions:",
+      "es": "Los datos de bienes duraderos oscilan drásticamente de mes a mes, especialmente en transporte y defensa. Soluciones:"
+    },
+    {
+      "en": "• Exclude transportation: \"Core\" durable goods orders (ex-transportation) smooth out aircraft and auto noise.",
+      "es": "• Excluir transporte: Los pedidos de bienes duraderos \"subyacentes\" (excluyendo transporte) suavizan el ruido de aeronaves y automóviles."
+    },
+    {
+      "en": "• Year-over-year comparisons: Eliminate seasonal and monthly volatility.",
+      "es": "• Comparaciones interanuales: Eliminan la volatilidad estacional y mensual."
+    },
+    {
+      "en": "• Supplement with industry intelligence: Check automaker incentive programs, airline fleet orders, and corporate earnings calls for context.",
+      "es": "• Complementar con inteligencia de la industria: Consultar programas de incentivos de fabricantes de automóviles, pedidos de flotas de aerolíneas y conferencias de resultados corporativos para contexto."
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analíticas clave"
+    },
+    {
+      "en": "• Unfilled orders gauge demand strength — a rising backlog signals acceleration; declining backlogs signal softening.",
+      "es": "• Los pedidos pendientes miden la fortaleza de la demanda — una acumulación creciente señala aceleración; acumulaciones en declive señalan debilitamiento."
+    },
+    {
+      "en": "• Nondefense capital goods excluding aircraft (NDCGXA): This is arguably the most important line item in the entire report. It proxies for business investment in the GDP report. Trends in NDCGXA reveal corporate perceptions of the near-term economic outlook. Before the April 2001 recession, NDCGXA began a sharp decline in July 2000.",
+      "es": "• Bienes de capital no relacionados con defensa excluyendo aeronaves (NDCGXA): Este es posiblemente el renglón más importante de todo el informe. Sirve como proxy de la inversión empresarial en el informe del GDP. Las tendencias en NDCGXA revelan las percepciones corporativas sobre las perspectivas económicas a corto plazo. Antes de la recesión de abril de 2001, el NDCGXA comenzó un fuerte descenso en julio de 2000."
+    },
+    {
+      "en": "• New orders for consumer goods and materials and for nondefense capital goods are so accurate that the Conference Board includes them as components of the Leading Economic Index.",
+      "es": "• Los nuevos pedidos de bienes de consumo y materiales y de bienes de capital no relacionados con defensa son tan precisos que el Conference Board los incluye como componentes del Leading Economic Index."
+    },
+    {
+      "en": "Key Figures: Figure 6-1 (Durable goods shipments and new orders table), Figure 6-2 (Monthly durable goods new orders volatility), Figure 6-3 (Smoothing: ex-transportation and YOY view), Figure 6-4 (NDCGXA vs. business investment in GDP)",
+      "es": "Figuras clave: Figura 6-1 (Tabla de envíos y nuevos pedidos de bienes duraderos), Figura 6-2 (Volatilidad mensual de nuevos pedidos de bienes duraderos), Figura 6-3 (Suavización: excluyendo transporte y vista interanual), Figura 6-4 (NDCGXA vs. inversión empresarial en el GDP)"
     },
     {
       "en": "Summary: Chapter 7 — Manufacturing and Trade Inventories and Sales",
-      "es": "Resumen: Capítulo 7 — Inventarios y ventas de manufactura y comercio"
+      "es": "Resumen: Capitulo 7 — Inventarios y ventas de manufactura y comercio"
     },
     {
-      "en": "Inventories are the \"red-headed stepchild of economic indicators\" — few pay attention, but they're critical. Business inventories are goods manufactured but not yet sold. Too many force production cuts; too few mean missed sales.",
-      "es": "Los inventarios son \"el pariente olvidado de los indicadores económicos\" — pocos les prestan atención, pero son fundamentales. Los inventarios empresariales son bienes fabricados pero aún no vendidos. Demasiados obligan a recortar la producción; muy pocos significan ventas perdidas."
+      "en": "The Big Picture: Yamarone calls inventories \"the red-headed stepchild of economic indicators\" — few investors pay attention, but corporate managers and economists know they're critical. Miscalculating inventories can provoke recessions; some economists have argued that inventory misalignment contributed to the Great Crash of 1929.",
+      "es": "El panorama general: Yamarone llama a los inventarios \"el hijo adoptivo pelirrojo de los indicadores economicos\" — pocos inversores prestan atencion, pero los gerentes corporativos y los economistas saben que son fundamentales. Calcular mal los inventarios puede provocar recesiones; algunos economistas han argumentado que el desajuste de inventarios contribuyo al Gran Crash de 1929."
     },
     {
-      "en": "Inventory levels are lagging, but the change in inventories can be leading. Each sector has its own typical inventories-to-sales ratio range. A rising ratio suggests potential oversupply; a falling ratio suggests lean stocks.",
-      "es": "Los niveles de inventario son rezagados, pero el cambio en los inventarios puede ser adelantado. Cada sector tiene su propio rango típico de relación inventarios-ventas. Una relación en aumento sugiere posible sobreoferta; una relación en descenso sugiere existencias ajustadas."
+      "en": "Why Inventories Matter",
+      "es": "Por que importan los inventarios"
     },
     {
-      "en": "When companies realize they've overproduced, they cut orders, production, and workers — amplifying the downturn.",
-      "es": "Cuando las empresas se dan cuenta de que han sobreproducido, recortan pedidos, producción y trabajadores, amplificando la recesión."
+      "en": "Business inventories are \"waiting room\" goods — manufactured but not yet sold. Too many inventories force companies to slash production, cut workers, and discount prices. Too few mean missed sales during a boom. Modern inventory management (electronic scanners, just-in-time systems, supply chain software) has made companies much better at calibrating stock levels.",
+      "es": "Los inventarios empresariales son bienes en \"sala de espera\" — fabricados pero aun no vendidos. Demasiados inventarios obligan a las empresas a recortar la produccion, despedir trabajadores y reducir precios. Muy pocos significan ventas perdidas durante un auge. La gestion moderna de inventarios (escaneres electronicos, sistemas justo a tiempo, software de cadena de suministro) ha hecho que las empresas sean mucho mejores para calibrar los niveles de existencias."
+    },
+    {
+      "en": "Data Structure",
+      "es": "Estructura de datos"
+    },
+    {
+      "en": "The Census Bureau's Manufacturing and Trade Inventories and Sales (MTIS) report organizes data into three sectors: manufacturers, retailers, and merchant wholesalers. It presents:",
+      "es": "El informe de Inventarios y Ventas de Manufactura y Comercio (MTIS) de la Oficina del Censo organiza los datos en tres sectores: fabricantes, minoristas y mayoristas comerciales. Presenta:"
+    },
+    {
+      "en": "• Total business inventories and sales",
+      "es": "• Inventarios y ventas empresariales totales"
+    },
+    {
+      "en": "• Inventories-to-sales ratios for each sector",
+      "es": "• Ratios de inventarios a ventas para cada sector"
+    },
+    {
+      "en": "• Month-over-month changes",
+      "es": "• Cambios mes a mes"
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analiticas clave"
+    },
+    {
+      "en": "• Inventory levels are lagging — businesses are traditionally slow to recognize declining demand and even slower to adjust. But the change in inventories can be leading, as deliberate inventory building anticipates future demand.",
+      "es": "• Los niveles de inventario son rezagados — las empresas tradicionalmente tardan en reconocer la demanda decreciente y son aun mas lentas para ajustarse. Pero el cambio en los inventarios puede ser un indicador adelantado, ya que la acumulacion deliberada de inventarios anticipa la demanda futura."
+    },
+    {
+      "en": "• Inventories-to-sales ratios: Each sector has its own typical range. Retailers historically run the highest ratios, followed by manufacturers, then wholesalers. A rising ratio suggests building inventory relative to sales (potential oversupply); a falling ratio suggests lean stocks (possible production pickup ahead).",
+      "es": "• Ratios de inventarios a ventas: Cada sector tiene su propio rango tipico. Los minoristas historicamente tienen los ratios mas altos, seguidos por los fabricantes y luego los mayoristas. Un ratio en aumento sugiere acumulacion de inventario en relacion con las ventas (posible sobreoferta); un ratio en descenso sugiere existencias ajustadas (posible aumento de produccion por delante)."
+    },
+    {
+      "en": "• The inventory cycle and recessions: When companies realize they've overproduced, they cut orders, production, and workers — amplifying the downturn. The reverse applies in recovery: lean inventories must be restocked, adding to growth.",
+      "es": "• El ciclo de inventarios y las recesiones: Cuando las empresas se dan cuenta de que han sobreproducido, recortan pedidos, produccion y trabajadores — amplificando la recesion. Lo contrario aplica en la recuperacion: los inventarios ajustados deben reabastecerse, contribuyendo al crecimiento."
+    },
+    {
+      "en": "Key Figures: Figure 7-3 (Inventories-to-sales ratios by sector), Figure 7-5 (Total business I/S ratio with recession shading)",
+      "es": "Figuras clave: Figura 7-3 (Ratios de inventarios a ventas por sector), Figura 7-5 (Ratio I/V empresarial total con sombreado de recesion)"
     },
     {
       "en": "Summary: Chapter 8 — New Residential Construction",
-      "es": "Resumen: Capítulo 8 — Nueva construcción residencial"
+      "es": "Resumen: Capitulo 8 — Nueva construccion residencial"
     },
     {
-      "en": "Never underestimate the economic importance of housing. Building 1,000 single-family homes generates 2,448 full-time jobs, $79.4 million in wages, and $42.5 million in government revenues.",
-      "es": "Nunca subestimes la importancia económica de la vivienda. Construir 1,000 viviendas unifamiliares genera 2,448 empleos de tiempo completo, $79.4 millones en salarios y $42.5 millones en ingresos gubernamentales."
+      "en": "The Big Picture: If you learn one lesson from this book, Yamarone says, let it be this: never underestimate the economic importance of housing. Housing is a primary driver of the aggregate expenditure formula. The National Association of Home Builders estimated that building 1,000 single-family homes generates 2,448 full-time jobs, $79.4 million in wages, and $42.5 million in government revenues.",
+      "es": "El panorama general: Si aprendes una leccion de este libro, dice Yamarone, que sea esta: nunca subestimes la importancia economica de la vivienda. La vivienda es un motor principal de la formula de gasto agregado. La National Association of Home Builders estimo que construir 1,000 viviendas unifamiliares genera 2,448 empleos a tiempo completo, $79.4 millones en salarios y $42.5 millones en ingresos gubernamentales."
     },
     {
-      "en": "New Residential Construction contains building permits, housing starts, and housing completions. The 30-year mortgage rate is the key driver — rates at 7.25% or lower generally boost housing activity.",
-      "es": "La nueva construcción residencial incluye permisos de construcción, inicios de vivienda y viviendas terminadas. La tasa hipotecaria a 30 años es el factor clave — tasas del 7.25% o menos generalmente impulsan la actividad de vivienda."
+      "en": "Data Structure",
+      "es": "Estructura de datos"
     },
     {
-      "en": "Housing is \"first in, first out\" — one of the first sectors to weaken before a downturn and among the first to recover. Single-family starts are the headline number Wall Street cares most about.",
-      "es": "La vivienda es \"la primera en caer y la primera en salir\" — uno de los primeros sectores en debilitarse antes de una recesión y de los primeros en recuperarse. Los inicios de viviendas unifamiliares son la cifra principal que más importa a Wall Street."
+      "en": "Released jointly by the Census Bureau and the Department of Housing and Urban Development, New Residential Construction contains:",
+      "es": "Publicado conjuntamente por la Oficina del Censo y el Departamento de Vivienda y Desarrollo Urbano, el informe de Nueva Construccion Residencial contiene:"
     },
     {
-      "en": "The permits-minus-starts spread is informative. When permits exceed starts, it signals a boom in future construction activity.",
-      "es": "El diferencial entre permisos e inicios es informativo. Cuando los permisos superan a los inicios, señala un auge en la actividad de construcción futura."
+      "en": "• Building permits (authorization to build)",
+      "es": "• Permisos de construccion (autorizacion para construir)"
+    },
+    {
+      "en": "• Housing starts (excavation of foundation begun)",
+      "es": "• Inicios de vivienda (excavacion de cimientos iniciada)"
+    },
+    {
+      "en": "• Housing completions",
+      "es": "• Viviendas terminadas"
+    },
+    {
+      "en": "All are broken down by structure size (single-family, 2–4 units, 5+ units) and by four Census regions.",
+      "es": "Todos se desglosan por tamano de estructura (unifamiliar, 2–4 unidades, 5+ unidades) y por cuatro regiones censales."
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analiticas clave"
+    },
+    {
+      "en": "• The multiplier effect: After a house is built, owners spend on furnishings, appliances, landscaping, paint, and maintenance — boosting personal consumption expenditures.",
+      "es": "• El efecto multiplicador: Despues de construir una casa, los propietarios gastan en muebles, electrodomesticos, jardineria, pintura y mantenimiento — impulsando los gastos de consumo personal."
+    },
+    {
+      "en": "• Interest rate sensitivity: The 30-year mortgage rate is the key driver. A general rule: as long as income and employment are growing and home prices are reasonable, rates at 7.25% or lower boost housing activity. Because the Fed influences mortgage rates indirectly, it can boost or dampen housing.",
+      "es": "• Sensibilidad a las tasas de interes: La tasa hipotecaria a 30 anos es el motor clave. Una regla general: mientras los ingresos y el empleo crezcan y los precios de las viviendas sean razonables, tasas del 7.25% o menos impulsan la actividad inmobiliaria. Dado que la Fed influye indirectamente en las tasas hipotecarias, puede impulsar o frenar la vivienda."
+    },
+    {
+      "en": "• Demographics: The prime home-buying years are ages 25–45. Trends in this population cohort correlate with new and existing home sales.",
+      "es": "• Demografia: Los anos principales para la compra de vivienda son entre los 25 y 45 anos. Las tendencias en esta cohorte poblacional se correlacionan con las ventas de viviendas nuevas y existentes."
+    },
+    {
+      "en": "• FIFO relationship with the business cycle: Housing is \"first in, first out\" — one of the first sectors to weaken before a downturn and among the first to recover. Every post-WWII recession was accompanied by a precipitous decline in housing starts (though the 2001 recession broke this pattern due to historically low rates).",
+      "es": "• Relacion FIFO con el ciclo economico: La vivienda es \"primera en entrar, primera en salir\" — uno de los primeros sectores en debilitarse antes de una recesion y entre los primeros en recuperarse. Cada recesion posterior a la Segunda Guerra Mundial estuvo acompanada de una caida precipitada en los inicios de vivienda (aunque la recesion de 2001 rompio este patron debido a tasas historicamente bajas)."
+    },
+    {
+      "en": "• Single-family starts are the headline number — Wall Street cares most about this component because single-family construction generates the highest multiplier effects.",
+      "es": "• Los inicios de viviendas unifamiliares son la cifra titular — Wall Street se preocupa mas por este componente porque la construccion unifamiliar genera los mayores efectos multiplicadores."
+    },
+    {
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
+    },
+    {
+      "en": "The permits-minus-starts spread is informative. When permits exceed starts, it signals a boom in future construction activity. This positive spread from 1998–2002 preceded a 28% rise in median new home prices.",
+      "es": "El diferencial entre permisos menos inicios es informativo. Cuando los permisos superan a los inicios, senala un auge en la actividad de construccion futura. Este diferencial positivo de 1998 a 2002 precedio un aumento del 28% en el precio medio de las viviendas nuevas."
+    },
+    {
+      "en": "Watch the Fed's Senior Loan Officer Opinion Survey for bank lending practices around mortgages.",
+      "es": "Observe la Encuesta de Opinion de Oficiales de Prestamos Senior de la Fed para conocer las practicas bancarias de prestamos hipotecarios."
+    },
+    {
+      "en": "Key Figures: Figure 8-1 (Housing starts and recessions), Figure 8-2 (30-year mortgage rates vs. housing starts — inverse relationship), Figure 8-4 (Single-family starts and GDP)",
+      "es": "Figuras clave: Figura 8-1 (Inicios de vivienda y recesiones), Figura 8-2 (Tasas hipotecarias a 30 anos vs. inicios de vivienda — relacion inversa), Figura 8-4 (Inicios de viviendas unifamiliares y GDP)"
     },
     {
       "en": "Summary: Chapter 9 — Consumer Confidence and Consumer Sentiment",
-      "es": "Resumen: Capítulo 9 — Confianza del consumidor y sentimiento del consumidor"
+      "es": "Resumen: Capitulo 9 — Confianza del consumidor y sentimiento del consumidor"
     },
     {
-      "en": "Keynes's concept of \"animal spirits\" drives economic decisions. Two major surveys measure these impulses: the Conference Board's Consumer Confidence Index (CCI) and the University of Michigan's Index of Consumer Sentiment (ICS).",
-      "es": "El concepto de \"espíritus animales\" de Keynes impulsa las decisiones económicas. Dos encuestas principales miden estos impulsos: el índice de confianza del consumidor (CCI) del Conference Board y el índice de sentimiento del consumidor (ICS) de la Universidad de Michigan."
+      "en": "The Big Picture: Yamarone opens with Keynes's concept of \"animal spirits\" — the emotional impulses driving economic decisions. Two major surveys measure these impulses: the Conference Board's Consumer Confidence Index (CCI) and the University of Michigan's Index of Consumer Sentiment (ICS).",
+      "es": "El panorama general: Yamarone abre con el concepto de Keynes de \"espiritus animales\" — los impulsos emocionales que impulsan las decisiones economicas. Dos encuestas principales miden estos impulsos: el Indice de Confianza del Consumidor (CCI) del Conference Board y el Indice de Sentimiento del Consumidor (ICS) de la University of Michigan."
     },
     {
-      "en": "The Michigan survey interviews ~500 consumers monthly. The Conference Board mails questionnaires to ~5,000 households with a base year of 1985 = 100.",
-      "es": "La encuesta de Michigan entrevista a ~500 consumidores mensualmente. El Conference Board envía cuestionarios por correo a ~5,000 hogares con un año base de 1985 = 100."
+      "en": "Two Surveys Compared",
+      "es": "Dos encuestas comparadas"
     },
     {
-      "en": "A CCI reading above 100 indicates expansion. Both expectations measures typically decline before recessions. Confidence strongly correlates with durable goods spending.",
-      "es": "Una lectura del CCI por encima de 100 indica expansión. Ambas medidas de expectativas generalmente disminuyen antes de las recesiones. La confianza se correlaciona fuertemente con el gasto en bienes duraderos."
+      "en": "University of Michigan (ICS): Monthly telephone survey of ~500 consumers, asking about current financial conditions, expectations for the coming year, and plans for major purchases. Produces three indices: overall Sentiment, Current Economic Conditions (from questions 1 and 5), and Consumer Expectations (from questions 2, 3, and 4). Preliminary results released mid-month; final at month-end.",
+      "es": "University of Michigan (ICS): Encuesta telefonica mensual a ~500 consumidores, que pregunta sobre condiciones financieras actuales, expectativas para el proximo ano y planes para compras importantes. Produce tres indices: Sentimiento general, Condiciones Economicas Actuales (de las preguntas 1 y 5) y Expectativas del Consumidor (de las preguntas 2, 3 y 4). Resultados preliminares publicados a mediados de mes; finales a fin de mes."
     },
     {
-      "en": "The Michigan Price Expectations Index is a highly accurate predictor of near-term CPI inflation. When interpreting sentiment drops, always ask: \"Will this event actually change spending, or will people just be irritated and move on?\"",
-      "es": "El índice de expectativas de precios de Michigan es un predictor altamente preciso de la inflación del CPI a corto plazo. Al interpretar caídas en el sentimiento, siempre hay que preguntar: \"¿Este evento realmente cambiará el gasto, o la gente simplemente se molestará y seguirá adelante?\""
+      "en": "Conference Board (CCI): Mails questionnaires to ~5,000 households, asking about current and expected business conditions, employment, and income. Produces overall Confidence, Present Situation, and Expectations indices. Base year is 1985 = 100. Seasonally adjusted (unlike Michigan). Results reflect conditions 18–21 days into the month.",
+      "es": "Conference Board (CCI): Envia cuestionarios por correo a ~5,000 hogares, preguntando sobre condiciones empresariales actuales y esperadas, empleo e ingresos. Produce indices de Confianza general, Situacion Actual y Expectativas. El ano base es 1985 = 100. Ajustado estacionalmente (a diferencia de Michigan). Los resultados reflejan condiciones de los dias 18 a 21 del mes."
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analiticas clave"
+    },
+    {
+      "en": "• Confidence and the business cycle: A CCI reading above 100 indicates expansion. During the record 120-month expansion (1991–2001), the index was above 100 for 69 months. At recession onset, the index usually dips below 80.",
+      "es": "• La confianza y el ciclo economico: Una lectura del CCI por encima de 100 indica expansion. Durante la expansion record de 120 meses (1991–2001), el indice estuvo por encima de 100 durante 69 meses. Al inicio de una recesion, el indice generalmente cae por debajo de 80."
+    },
+    {
+      "en": "• Expectations indices as leading indicators: The Conference Board's Expectations Index is a component of the LEI. Both expectations measures typically decline before recessions and rise before recoveries, though with limited lead time.",
+      "es": "• Los indices de expectativas como indicadores adelantados: El Indice de Expectativas del Conference Board es un componente del LEI. Ambas medidas de expectativas tipicamente declinan antes de las recesiones y suben antes de las recuperaciones, aunque con un tiempo de anticipacion limitado."
+    },
+    {
+      "en": "• Confidence and durable goods spending: Because big-ticket purchases are bought on credit (committing to future payments), consumers must feel confident about their financial future. This link is so strong that automakers like Ford monitor sentiment closely when making production decisions.",
+      "es": "• La confianza y el gasto en bienes duraderos: Dado que las compras de alto valor se realizan a credito (comprometiendo pagos futuros), los consumidores deben sentirse confiados sobre su futuro financiero. Este vinculo es tan fuerte que fabricantes de automoviles como Ford monitorean el sentimiento de cerca al tomar decisiones de produccion."
+    },
+    {
+      "en": "• The psychology problem: Sentiment measures deal with emotions, not tangibles. Economists must distinguish between news events that actually change spending behavior and those that merely upset or excite people without affecting their wallets. The 1998 Clinton impeachment scare and the 2000 election drama both cratered sentiment — yet spending barely flinched.",
+      "es": "• El problema psicologico: Las medidas de sentimiento tratan con emociones, no con elementos tangibles. Los economistas deben distinguir entre eventos noticiosos que realmente cambian el comportamiento de gasto y aquellos que simplemente molestan o emocionan a las personas sin afectar sus billeteras. El susto del juicio politico a Clinton en 1998 y el drama electoral de 2000 hundieron el sentimiento — pero el gasto apenas se inmuto."
+    },
+    {
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
+    },
+    {
+      "en": "The University of Michigan's Price Expectations Index is a highly accurate predictor of near-term CPI inflation.",
+      "es": "El Indice de Expectativas de Precios de la University of Michigan es un predictor altamente preciso de la inflacion del CPI a corto plazo."
+    },
+    {
+      "en": "When interpreting sentiment drops, always ask: \"Will this event actually change people's spending, or will they just be irritated and move on?\"",
+      "es": "Al interpretar caidas en el sentimiento, siempre pregunte: \"Este evento realmente cambiara el gasto de las personas, o simplemente se irritaran y seguiran adelante?\""
+    },
+    {
+      "en": "Key Figures: Figure 9-1 (Michigan Sentiment vs. Coincident Index), Figure 9-2 (Conference Board Confidence with recession shading), Figure 9-5 (Confidence vs. durable goods spending), Figure 9-7 (Michigan Price Expectations vs. CPI)",
+      "es": "Figuras clave: Figura 9-1 (Sentimiento de Michigan vs. Indice Coincidente), Figura 9-2 (Confianza del Conference Board con sombreado de recesion), Figura 9-5 (Confianza vs. gasto en bienes duraderos), Figura 9-7 (Expectativas de Precios de Michigan vs. CPI)"
     },
     {
       "en": "Summary: Chapter 10 — Advance Monthly Retail Sales",
-      "es": "Resumen: Capítulo 10 — Ventas minoristas mensuales anticipadas"
+      "es": "Resumen: Capitulo 10 — Ventas minoristas mensuales anticipadas"
     },
     {
-      "en": "Released about two weeks after month-end by the Census Bureau. Strong retail sales boost stocks but hurt bonds; weak sales do the opposite.",
-      "es": "Publicado aproximadamente dos semanas después del cierre del mes por la Oficina del Censo. Las ventas minoristas sólidas impulsan las acciones pero perjudican a los bonos; las ventas débiles producen el efecto contrario."
+      "en": "The Big Picture: Released about two weeks after month-end by the Census Bureau, the retail sales report provides preliminary estimates of the nominal dollar value of sales across the entire retail sector. Strong retail sales boost stocks (higher revenues/profits) but hurt bonds (inflation fears); weak sales do the opposite.",
+      "es": "El panorama general: Publicado aproximadamente dos semanas despues del cierre del mes por la Oficina del Censo, el informe de ventas minoristas proporciona estimaciones preliminares del valor nominal en dolares de las ventas en todo el sector minorista. Las ventas minoristas fuertes impulsan las acciones (mayores ingresos/ganancias) pero perjudican a los bonos (temores de inflacion); las ventas debiles producen el efecto contrario."
     },
     {
-      "en": "Auto sales are extremely volatile — most economists focus on total sales excluding motor vehicles. The report is in nominal dollars; adjusting for CPI inflation reveals the \"real\" spending trend.",
-      "es": "Las ventas de automóviles son extremadamente volátiles — la mayoría de los economistas se enfocan en las ventas totales excluyendo vehículos de motor. El informe está en dólares nominales; ajustar por la inflación del CPI revela la tendencia \"real\" del gasto."
+      "en": "Data Structure",
+      "es": "Estructura de datos"
     },
     {
-      "en": "GAFO (General Merchandise, Apparel, Furniture, and Other) strips out the most volatile categories to reveal core discretionary spending. Holiday sales are reliable gauges of economic health.",
-      "es": "GAFO (mercancía general, ropa, muebles y otros) elimina las categorías más volátiles para revelar el gasto discrecional básico. Las ventas navideñas son indicadores fiables de la salud económica."
+      "en": "The Census Bureau surveys ~5,000 companies (a subsample of the 13,000 polled for the later, more comprehensive Monthly Retail Trade Survey). Major categories with approximate share of total sales:",
+      "es": "La Oficina del Censo encuesta a ~5,000 empresas (un subconjunto de las 13,000 consultadas para la posterior y mas completa Encuesta Mensual de Comercio Minorista). Categorias principales con participacion aproximada en las ventas totales:"
+    },
+    {
+      "en": "• Motor vehicle and parts dealers: ~24.5%",
+      "es": "• Concesionarios de vehiculos de motor y repuestos: ~24.5%"
+    },
+    {
+      "en": "• Food and beverage stores: ~12%",
+      "es": "• Tiendas de alimentos y bebidas: ~12%"
+    },
+    {
+      "en": "• General merchandise stores: ~11.5%",
+      "es": "• Tiendas de mercancias generales: ~11.5%"
+    },
+    {
+      "en": "• Gasoline stations: ~9%",
+      "es": "• Gasolineras: ~9%"
+    },
+    {
+      "en": "• Food services and drinking places: ~8.5%",
+      "es": "• Servicios de comida y establecimientos de bebidas: ~8.5%"
+    },
+    {
+      "en": "• Building material and garden supply: ~6%",
+      "es": "• Materiales de construccion y suministros de jardineria: ~6%"
+    },
+    {
+      "en": "• Health and personal care stores: ~5%",
+      "es": "• Tiendas de salud y cuidado personal: ~5%"
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analiticas clave"
+    },
+    {
+      "en": "• Total retail sales are heavily influenced by auto sales, which are extremely volatile due to incentive programs, seasonal cycles, and model changeovers. Most economists focus on total sales excluding motor vehicles for a cleaner trend.",
+      "es": "• Las ventas minoristas totales estan fuertemente influenciadas por las ventas de automoviles, que son extremadamente volatiles debido a programas de incentivos, ciclos estacionales y cambios de modelo. La mayoria de los economistas se enfocan en las ventas totales excluyendo vehiculos de motor para obtener una tendencia mas limpia."
+    },
+    {
+      "en": "• Nominal vs. real: The report is in nominal dollars. Adjusting for CPI inflation reveals the \"real\" spending trend, which is often significantly lower and sometimes negative during economic weakness.",
+      "es": "• Nominal vs. real: El informe esta en dolares nominales. Ajustar por la inflacion del CPI revela la tendencia de gasto \"real\", que a menudo es significativamente menor y a veces negativa durante la debilidad economica."
+    },
+    {
+      "en": "• GAFO (General Merchandise, Apparel, Furniture, and Other categories): This subset strips out autos, gas, building materials, and food — the most volatile and commodity-driven categories — to reveal the \"core\" discretionary spending trend. GAFO gives the clearest picture of true consumer shopping behavior.",
+      "es": "• GAFO (Mercancias Generales, Ropa, Muebles y Otras categorias): Este subconjunto elimina automoviles, gasolina, materiales de construccion y alimentos — las categorias mas volatiles e impulsadas por materias primas — para revelar la tendencia \"central\" del gasto discrecional. GAFO ofrece la imagen mas clara del verdadero comportamiento de compra del consumidor."
+    },
+    {
+      "en": "• E-commerce and superstores have transformed the retail landscape since the late 1990s, creating price transparency and competitive pressure that has helped contain inflation.",
+      "es": "• El comercio electronico y las grandes tiendas han transformado el panorama minorista desde finales de los anos 1990, creando transparencia de precios y presion competitiva que ha ayudado a contener la inflacion."
+    },
+    {
+      "en": "• Holiday sales are reliable gauges of economic health and consumer wellbeing. Robust holiday spending signals financial security; pullbacks may reflect fears about jobs and finances.",
+      "es": "• Las ventas navidenas son indicadores confiables de la salud economica y el bienestar del consumidor. Un gasto navideno robusto senala seguridad financiera; las reducciones pueden reflejar temores sobre el empleo y las finanzas."
+    },
+    {
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
+    },
+    {
+      "en": "Same-store sales data from individual retailers (released weekly/monthly) can preview the government's report.",
+      "es": "Los datos de ventas en tiendas comparables de minoristas individuales (publicados semanal/mensualmente) pueden anticipar el informe del gobierno."
+    },
+    {
+      "en": "Seasonal adjustment is critical — raw December sales are always massive but don't indicate economic strength on their own.",
+      "es": "El ajuste estacional es critico — las ventas brutas de diciembre siempre son enormes pero por si solas no indican fortaleza economica."
+    },
+    {
+      "en": "The National Retail Federation, ICSC, and other trade groups publish spending forecasts and seasonal patterns.",
+      "es": "La National Retail Federation, el ICSC y otros grupos comerciales publican pronosticos de gasto y patrones estacionales."
+    },
+    {
+      "en": "Key Figures: Figure 10-1 (Retail category breakdown table), Figure 10-3 (Nominal vs. real retail sales growth), Figure 10-4 (Total retail vs. ex-autos growth), Figure 10-6 (Holiday sales and GDP)",
+      "es": "Figuras clave: Figura 10-1 (Tabla de desglose de categorias minoristas), Figura 10-3 (Crecimiento de ventas minoristas nominales vs. reales), Figura 10-4 (Ventas minoristas totales vs. crecimiento sin automoviles), Figura 10-6 (Ventas navidenas y GDP)"
     },
     {
       "en": "Summary: Chapter 11 — Personal Income and Outlays",
-      "es": "Resumen: Capítulo 11 — Ingreso personal y gastos"
+      "es": "Resumen: Capitulo 11 — Ingresos personales y gastos"
     },
     {
-      "en": "Published monthly by the BEA, this report contains extraordinary detail on income sources and spending categories. The data feed directly into the quarterly GDP report.",
-      "es": "Publicado mensualmente por el BEA, este informe contiene un detalle extraordinario sobre fuentes de ingreso y categorías de gasto. Los datos alimentan directamente el informe trimestral del GDP."
+      "en": "The Big Picture: Published monthly by the BEA, this report contains extraordinary detail on income sources and spending categories. Commonly called \"income and spending\" on the Street, its spending detail may be the most comprehensive of all economic statistics. The data feed directly into the quarterly GDP report.",
+      "es": "El panorama general: Publicado mensualmente por el BEA, este informe contiene un detalle extraordinario sobre fuentes de ingresos y categorias de gasto. Comunmente llamado \"ingresos y gastos\" en Wall Street, su detalle de gastos puede ser el mas completo de todas las estadisticas economicas. Los datos alimentan directamente el informe trimestral del GDP."
     },
     {
-      "en": "Wages and salaries comprise ~55% of personal income. Personal Consumption Expenditures are divided into services (~60%), nondurable goods (~29%), and durable goods (~11%).",
-      "es": "Los sueldos y salarios comprenden ~55% del ingreso personal. Los gastos de consumo personal se dividen en servicios (~60%), bienes no duraderos (~29%) y bienes duraderos (~11%)."
+      "en": "Data Structure",
+      "es": "Estructura de datos"
     },
     {
-      "en": "Durable goods spending is the most effective recession caller among spending categories. The savings rate fell dramatically through the 1990s.",
-      "es": "El gasto en bienes duraderos es el predictor de recesión más efectivo entre las categorías de gasto. La tasa de ahorro cayó drásticamente durante la década de 1990."
+      "en": "Personal Income is built from seven major sources, with the largest being:",
+      "es": "El ingreso personal se construye a partir de siete fuentes principales, siendo las mayores:"
     },
     {
-      "en": "Three key spending drivers: (1) The Wealth Effect — rising household net worth increases spending. (2) Prices — higher prices for necessities leave less for discretionary items. (3) Employment — payroll growth boosts both income and confidence.",
-      "es": "Tres factores clave del gasto: (1) El efecto riqueza — el aumento del patrimonio neto de los hogares incrementa el gasto. (2) Precios — precios más altos en productos de primera necesidad dejan menos para artículos discrecionales. (3) Empleo — el crecimiento de las nóminas impulsa tanto el ingreso como la confianza."
+      "en": "• Wages and salaries (~55% of total) — from IRS records and BLS surveys",
+      "es": "• Sueldos y salarios (~55% del total) — de registros del IRS y encuestas del BLS"
+    },
+    {
+      "en": "• Supplements to wages (employer contributions to pensions, insurance)",
+      "es": "• Suplementos a los salarios (contribuciones del empleador a pensiones, seguros)"
+    },
+    {
+      "en": "• Transfer payments (Social Security, Medicare, unemployment benefits)",
+      "es": "• Pagos de transferencia (Social Security, Medicare, beneficios de desempleo)"
+    },
+    {
+      "en": "• Dividend and interest income",
+      "es": "• Ingresos por dividendos e intereses"
+    },
+    {
+      "en": "• Proprietors' income",
+      "es": "• Ingresos de propietarios"
+    },
+    {
+      "en": "• Rental income",
+      "es": "• Ingresos por alquiler"
+    },
+    {
+      "en": "Personal Consumption Expenditures (PCE) are divided into:",
+      "es": "Los Gastos de Consumo Personal (PCE) se dividen en:"
+    },
+    {
+      "en": "• Services (~60%) — insurance, medical care, legal, transportation, housing",
+      "es": "• Servicios (~60%) — seguros, atencion medica, legal, transporte, vivienda"
+    },
+    {
+      "en": "• Nondurable goods (~29%) — food, clothing, gasoline, drugs",
+      "es": "• Bienes no duraderos (~29%) — alimentos, ropa, gasolina, medicamentos"
+    },
+    {
+      "en": "• Durable goods (~11%) — autos, appliances, furniture",
+      "es": "• Bienes duraderos (~11%) — automoviles, electrodomesticos, muebles"
+    },
+    {
+      "en": "Personal Savings Rate = (disposable income – personal outlays) / disposable income",
+      "es": "Tasa de ahorro personal = (ingreso disponible – gastos personales) / ingreso disponible"
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analiticas clave"
+    },
+    {
+      "en": "• Income and spending: Rising incomes eventually translate to greater spending, though the relationship is more coincident than leading. Strong income growth signals expansion; declining income may signal recession.",
+      "es": "• Ingresos y gastos: Los ingresos en aumento eventualmente se traducen en mayor gasto, aunque la relacion es mas coincidente que adelantada. Un fuerte crecimiento de ingresos senala expansion; ingresos en descenso pueden senalar recesion."
+    },
+    {
+      "en": "• Consumer credit is a critical but unofficial component — it allows spending to exceed income for extended periods, obscuring the income-spending relationship.",
+      "es": "• El credito al consumo es un componente critico pero no oficial — permite que el gasto supere al ingreso por periodos prolongados, oscureciendo la relacion ingreso-gasto."
+    },
+    {
+      "en": "• Mortgage refinancing became a major force in the late 1990s and early 2000s, as record-low rates let homeowners reduce their interest burden and free up disposable income.",
+      "es": "• El refinanciamiento hipotecario se convirtio en una fuerza importante a finales de los anos 1990 y principios de los 2000, ya que las tasas historicamente bajas permitieron a los propietarios reducir su carga de intereses y liberar ingreso disponible."
+    },
+    {
+      "en": "• Durable goods spending is the most effective recession caller among spending categories. Three of the last four recessions (1981–82, 1990–91, 2001) were accompanied by simultaneous declines in year-over-year durable goods spending growth.",
+      "es": "• El gasto en bienes duraderos es el indicador de recesion mas efectivo entre las categorias de gasto. Tres de las ultimas cuatro recesiones (1981–82, 1990–91, 2001) estuvieron acompanadas de caidas simultaneas en el crecimiento interanual del gasto en bienes duraderos."
+    },
+    {
+      "en": "• The declining savings rate: The savings rate fell dramatically through the 1990s, driven by baby boomers inheriting Depression-era parents' assets, rising home values, and stock market wealth. This is a structural shift, not necessarily a sign of financial distress.",
+      "es": "• La tasa de ahorro en declive: La tasa de ahorro cayo dramaticamente a lo largo de los anos 1990, impulsada por los baby boomers que heredaban los activos de sus padres de la era de la Depresion, el aumento de los valores inmobiliarios y la riqueza del mercado bursatil. Este es un cambio estructural, no necesariamente una senal de dificultad financiera."
+    },
+    {
+      "en": "Three Key Spending Drivers",
+      "es": "Tres motores clave del gasto"
+    },
+    {
+      "en": "• The Wealth Effect: As household net worth rises (stocks, real estate), spending increases. The Fed's Flow of Funds report tracks this, but it primarily captures equity wealth, which only about 50% of households hold.",
+      "es": "• El efecto riqueza: A medida que el patrimonio neto de los hogares aumenta (acciones, bienes raices), el gasto se incrementa. El informe Flow of Funds de la Fed rastrea esto, pero captura principalmente la riqueza en acciones, que solo posee aproximadamente el 50% de los hogares."
+    },
+    {
+      "en": "• Prices (Law of Demand): Higher prices for necessities (gasoline, food, energy) leave less for discretionary spending. The BLS tracks thousands of specific prices.",
+      "es": "• Precios (Ley de la demanda): Los precios mas altos de las necesidades (gasolina, alimentos, energia) dejan menos para el gasto discrecional. El BLS rastrea miles de precios especificos."
+    },
+    {
+      "en": "• Employment: This is the ultimate spending driver. Payroll growth boosts both disposable income and consumer confidence; job losses paralyze spending.",
+      "es": "• Empleo: Este es el motor de gasto definitivo. El crecimiento de la nomina impulsa tanto el ingreso disponible como la confianza del consumidor; las perdidas de empleo paralizan el gasto."
+    },
+    {
+      "en": "Key Figures: Figure 11-1 (Personal income and outlays summary table), Figure 11-4 (Durable goods spending growth and recessions), Figure 11-5 (Personal savings rate decline), Figure 11-7 (Wealth effect: household net worth vs. consumer spending), Figure 11-9 (Payroll growth vs. consumer spending)",
+      "es": "Figuras clave: Figura 11-1 (Tabla resumen de ingresos personales y gastos), Figura 11-4 (Crecimiento del gasto en bienes duraderos y recesiones), Figura 11-5 (Declive de la tasa de ahorro personal), Figura 11-7 (Efecto riqueza: patrimonio neto de los hogares vs. gasto del consumidor), Figura 11-9 (Crecimiento de la nomina vs. gasto del consumidor)"
     },
     {
       "en": "Summary: Chapter 12 — Consumer and Producer Price Indices",
-      "es": "Resumen: Capítulo 12 — Índices de precios al consumidor y al productor"
+      "es": "Resumen: Capitulo 12 — Indices de precios al consumidor y al productor"
     },
     {
-      "en": "A certain level of inflation is normal, even healthy. Accelerating inflation can spark recession. The CPI and PPI are the two most watched price measures.",
-      "es": "Un cierto nivel de inflación es normal, incluso saludable. La inflación acelerada puede desencadenar una recesión. El CPI y el PPI son las dos medidas de precios más observadas."
+      "en": "The Big Picture: A certain level of inflation is normal, even healthy. Accelerating inflation, however, can spark recession. The CPI and PPI are the two most watched price measures, though many traders and the Fed actually prefer the PCE deflators from the GDP report.",
+      "es": "El panorama general: Un cierto nivel de inflacion es normal, incluso saludable. Sin embargo, una inflacion acelerada puede provocar una recesion. El CPI y el PPI son las dos medidas de precios mas observadas, aunque muchos operadores y la Fed en realidad prefieren los deflactores del PCE del informe del GDP."
     },
     {
-      "en": "The PPI measures prices at the producer level, organized by commodity, industry, and stage-of-processing indices. The CPI measures a basket of goods purchased by urban consumers, with housing (~42%) as the largest category.",
-      "es": "El PPI mide los precios a nivel del productor, organizado por índices de productos básicos, industria y etapa de procesamiento. El CPI mide una canasta de bienes adquiridos por consumidores urbanos, con la vivienda (~42%) como la categoría más grande."
+      "en": "Two Very Different Indices",
+      "es": "Dos indices muy diferentes"
     },
     {
-      "en": "Core inflation (excluding food and energy) is what the Fed and markets focus on. Demand-pull inflation is more worrisome than cost-push. True deflation is rare and dangerous.",
-      "es": "La inflación subyacente (excluyendo alimentos y energía) es en lo que se enfocan la Fed y los mercados. La inflación por demanda es más preocupante que la inflación por costos. La verdadera deflación es rara y peligrosa."
+      "en": "Producer Price Index (PPI):",
+      "es": "Indice de Precios al Productor (PPI):"
     },
     {
-      "en": "The Misery Index (unemployment rate + inflation rate) is a simple but politically powerful gauge. High readings before elections correlate with incumbent party losses.",
-      "es": "El índice de miseria (tasa de desempleo + tasa de inflación) es un indicador simple pero políticamente poderoso. Lecturas altas antes de elecciones se correlacionan con derrotas del partido en el poder."
+      "en": "• Originated in 1902 as the Wholesale Price Index",
+      "es": "• Se origino en 1902 como el Indice de Precios al por Mayor"
+    },
+    {
+      "en": "• Measures prices at the producer/wholesale level — what companies pay for materials and intermediate goods",
+      "es": "• Mide los precios a nivel de productor/mayorista — lo que las empresas pagan por materiales y bienes intermedios"
+    },
+    {
+      "en": "• Organized three ways: commodity indices, industry indices, and stage-of-processing indices (crude → intermediate → finished)",
+      "es": "• Organizado de tres formas: indices de materias primas, indices industriales e indices por etapa de procesamiento (crudo → intermedio → terminado)"
+    },
+    {
+      "en": "• Contains roughly 10,000 product line sub-indices and 3,200 commodity price indices",
+      "es": "• Contiene aproximadamente 10,000 subindices de lineas de productos y 3,200 indices de precios de materias primas"
+    },
+    {
+      "en": "• Released before the CPI, so some analysts use it to predict CPI (though the two are constructed very differently)",
+      "es": "• Se publica antes del CPI, por lo que algunos analistas lo usan para predecir el CPI (aunque los dos se construyen de manera muy diferente)"
+    },
+    {
+      "en": "Consumer Price Index (CPI):",
+      "es": "Indice de Precios al Consumidor (CPI):"
+    },
+    {
+      "en": "• Measures the price of a \"basket\" of goods and services purchased by urban consumers",
+      "es": "• Mide el precio de una \"canasta\" de bienes y servicios comprados por consumidores urbanos"
+    },
+    {
+      "en": "• Eight major expenditure categories: housing (~42%), transportation (~17%), food and beverages (~15%), medical care, recreation, education/communication, apparel, and other",
+      "es": "• Ocho categorias principales de gasto: vivienda (~42%), transporte (~17%), alimentos y bebidas (~15%), atencion medica, recreacion, educacion/comunicacion, vestimenta y otros"
+    },
+    {
+      "en": "• Base year 1982–84 = 100",
+      "es": "• Ano base 1982–84 = 100"
+    },
+    {
+      "en": "• The Boskin Commission (1996) found the CPI overstated inflation by about 1.1 percentage points annually due to substitution bias, quality improvements, and new product introduction. The BLS subsequently adopted methodological improvements.",
+      "es": "• La Comision Boskin (1996) encontro que el CPI sobreestimaba la inflacion en aproximadamente 1.1 puntos porcentuales anuales debido al sesgo de sustitucion, mejoras de calidad e introduccion de nuevos productos. El BLS posteriormente adopto mejoras metodologicas."
+    },
+    {
+      "en": "Calculating inflation: Rate = 100 x (Current index – Prior year index) / Prior year index",
+      "es": "Calculo de la inflacion: Tasa = 100 x (Indice actual – Indice del ano anterior) / Indice del ano anterior"
+    },
+    {
+      "en": "Key Analytical Relationships",
+      "es": "Relaciones analiticas clave"
+    },
+    {
+      "en": "• Core inflation: Both indices have \"headline\" (all items) and \"core\" (excluding food and energy) versions. Core is what the Fed and markets focus on, because food and energy prices are volatile and often driven by supply shocks rather than demand.",
+      "es": "• Inflacion subyacente: Ambos indices tienen versiones \"generales\" (todos los articulos) y \"subyacentes\" (excluyendo alimentos y energia). La subyacente es en lo que la Fed y los mercados se concentran, porque los precios de alimentos y energia son volatiles y a menudo impulsados por choques de oferta en lugar de demanda."
+    },
+    {
+      "en": "• Demand-pull vs. cost-push inflation: Price increases from heightened demand are more worrisome (and persistent) than those caused by supply disruptions (hurricanes, OPEC cuts). Traders must identify the cause of price movements.",
+      "es": "• Inflacion de demanda vs. inflacion de costos: Los aumentos de precios por mayor demanda son mas preocupantes (y persistentes) que los causados por interrupciones de oferta (huracanes, recortes de la OPEC). Los operadores deben identificar la causa de los movimientos de precios."
+    },
+    {
+      "en": "• Deflation vs. disinflation: Disinflation (slowing price growth) has occurred regularly. True deflation (falling prices) is rare and dangerous. While imported goods from China and other low-wage nations have pushed some product prices down, domestic service prices (tuition, medical care, rent) have continued rising.",
+      "es": "• Deflacion vs. desinflacion: La desinflacion (desaceleracion del crecimiento de precios) ha ocurrido regularmente. La verdadera deflacion (caida de precios) es rara y peligrosa. Mientras que los bienes importados de China y otras naciones de bajos salarios han empujado algunos precios de productos a la baja, los precios de servicios domesticos (matricula, atencion medica, alquiler) han seguido subiendo."
+    },
+    {
+      "en": "• The Fed's response: Accelerating inflation leads the Fed to raise the federal funds rate, which ripples through to mortgage rates, corporate borrowing costs, and consumer loan rates. This slows the economy. Falling inflation encourages rate cuts.",
+      "es": "• La respuesta de la Fed: Una inflacion acelerada lleva a la Fed a subir la tasa de fondos federales, lo cual se propaga a las tasas hipotecarias, los costos de endeudamiento corporativo y las tasas de prestamos al consumidor. Esto desacelera la economia. La inflacion a la baja fomenta los recortes de tasas."
+    },
+    {
+      "en": "• Crude PPI and corporate earnings: Year-over-year changes in the core crude PPI correlate with S&P 500 operating earnings growth, because declining commodity costs help profit margins while rising costs squeeze them.",
+      "es": "• PPI crudo y ganancias corporativas: Los cambios interanuales en el PPI crudo subyacente se correlacionan con el crecimiento de las ganancias operativas del S&P 500, porque la disminucion de costos de materias primas ayuda a los margenes de ganancia mientras que los costos en aumento los comprimen."
+    },
+    {
+      "en": "Tricks From the Trenches",
+      "es": "Trucos desde las trincheras"
+    },
+    {
+      "en": "The Misery Index (unemployment rate + inflation rate): A simple but politically powerful gauge. High misery index readings before elections correlate with incumbent party losses. The high readings of 1980 practically guaranteed Carter's defeat.",
+      "es": "El Indice de Miseria (tasa de desempleo + tasa de inflacion): Un indicador simple pero politicamente poderoso. Lecturas altas del indice de miseria antes de elecciones se correlacionan con derrotas del partido en el poder. Las altas lecturas de 1980 practicamente garantizaron la derrota de Carter."
+    },
+    {
+      "en": "Track commodity prices in real time through futures markets, trade publications, and ISM reports to anticipate CPI/PPI readings.",
+      "es": "Rastree los precios de las materias primas en tiempo real a traves de los mercados de futuros, publicaciones comerciales e informes del ISM para anticipar las lecturas del CPI/PPI."
+    },
+    {
+      "en": "When commodity prices rise, determine why: demand-pull inflation is a stronger, more sustained threat than cost-push from temporary supply disruptions.",
+      "es": "Cuando suban los precios de las materias primas, determine por que: la inflacion de demanda es una amenaza mas fuerte y sostenida que la inflacion de costos por interrupciones temporales de oferta."
+    },
+    {
+      "en": "Key Figures: Figure 12-1 (CPI category weights), Figure 12-2 (CPI and Core CPI year-over-year), Figure 12-3 (PPI stages of processing: crude, intermediate, finished), Figure 12-4 (Core crude PPI vs. S&P 500 operating earnings)",
+      "es": "Figuras clave: Figura 12-1 (Ponderaciones de categorias del CPI), Figura 12-2 (CPI y CPI subyacente interanual), Figura 12-3 (Etapas de procesamiento del PPI: crudo, intermedio, terminado), Figura 12-4 (PPI crudo subyacente vs. ganancias operativas del S&P 500)"
     },
     {
       "en": "Summary: Quick Reference Table",
-      "es": "Resumen: Tabla de referencia rápida"
+      "es": "Resumen: Tabla de referencia rapida"
     },
     {
       "en": "• GDP — Source: BEA, Quarterly — The ultimate economic scorecard measuring total output.",
-      "es": "• GDP — Fuente: BEA, Trimestral — El indicador económico definitivo que mide la producción total."
+      "es": "• GDP — Fuente: BEA, Trimestral — El marcador economico definitivo que mide la produccion total."
     },
     {
       "en": "• LEI/CEI/LAG — Source: Conference Board, Monthly — Composite indices; the coincident-to-lagging ratio is the most powerful signal.",
-      "es": "• LEI/CEI/LAG — Fuente: Conference Board, Mensual — Índices compuestos; la relación coincidente-rezagado es la señal más poderosa."
+      "es": "• LEI/CEI/LAG — Fuente: Conference Board, Mensual — Indices compuestos; el ratio coincidente-a-rezagado es la senal mas poderosa."
     },
     {
       "en": "• Employment Situation — Source: BLS, Monthly (1st Friday) — Highest market impact of any single indicator.",
-      "es": "• Employment Situation — Fuente: BLS, Mensual (1er viernes) — El mayor impacto en los mercados de cualquier indicador individual."
+      "es": "• Situacion del empleo — Fuente: BLS, Mensual (1er viernes) — Mayor impacto en el mercado de cualquier indicador individual."
     },
     {
       "en": "• Industrial Production — Source: Federal Reserve, Monthly (~15th) — Capacity utilization above 84% signals inflation threat.",
-      "es": "• Industrial Production — Fuente: Reserva Federal, Mensual (~día 15) — La utilización de la capacidad por encima del 84% señala amenaza de inflación."
+      "es": "• Produccion industrial — Fuente: Federal Reserve, Mensual (~dia 15) — La utilizacion de capacidad por encima del 84% senala amenaza de inflacion."
     },
     {
       "en": "• ISM PMI — Source: ISM, Monthly (1st business day) — A reading of ~46 marks the broad recession threshold.",
-      "es": "• ISM PMI — Fuente: ISM, Mensual (1er día hábil) — Una lectura de ~46 marca el umbral de recesión generalizada."
+      "es": "• ISM PMI — Fuente: ISM, Mensual (1er dia habil) — Una lectura de ~46 marca el umbral general de recesion."
     },
     {
       "en": "• Durable Goods / Factory Orders — Source: Census Bureau, Monthly — NDCGXA proxies business investment.",
-      "es": "• Durable Goods / Factory Orders — Fuente: Oficina del Censo, Mensual — NDCGXA sirve como aproximación de la inversión empresarial."
+      "es": "• Bienes duraderos / Pedidos de fabrica — Fuente: Census Bureau, Mensual — NDCGXA aproxima la inversion empresarial."
     },
     {
       "en": "• Business Inventories — Source: Census Bureau, Monthly — Rising inventory-to-sales ratio signals oversupply risk.",
-      "es": "• Business Inventories — Fuente: Oficina del Censo, Mensual — Una relación inventarios-ventas en aumento señala riesgo de sobreoferta."
+      "es": "• Inventarios empresariales — Fuente: Census Bureau, Mensual — Un ratio de inventarios a ventas en aumento senala riesgo de sobreoferta."
     },
     {
       "en": "• Housing Starts — Source: Census/HUD, Monthly — First in, first out with the business cycle.",
-      "es": "• Housing Starts — Fuente: Census/HUD, Mensual — La primera en caer y la primera en salir del ciclo económico."
+      "es": "• Inicios de vivienda — Fuente: Census/HUD, Mensual — Primero en entrar, primero en salir con el ciclo economico."
     },
     {
       "en": "• Consumer Confidence/Sentiment — Source: Conf. Board / U. Michigan, Monthly — Biggest impact near cycle turning points.",
-      "es": "• Consumer Confidence/Sentiment — Fuente: Conf. Board / U. Michigan, Mensual — Mayor impacto cerca de los puntos de inflexión del ciclo."
+      "es": "• Confianza/Sentimiento del consumidor — Fuente: Conf. Board / U. Michigan, Mensual — Mayor impacto cerca de los puntos de inflexion del ciclo."
     },
     {
       "en": "• Retail Sales — Source: Census Bureau, Monthly — Nominal data; must adjust for inflation.",
-      "es": "• Retail Sales — Fuente: Oficina del Censo, Mensual — Datos nominales; se deben ajustar por inflación."
+      "es": "• Ventas minoristas — Fuente: Census Bureau, Mensual — Datos nominales; se debe ajustar por inflacion."
     },
     {
-      "en": "• Personal Income & Outlays — Source: BEA, Monthly — Feeds directly into quarterly GDP calculation.",
-      "es": "• Personal Income & Outlays — Fuente: BEA, Mensual — Alimenta directamente el cálculo trimestral del GDP."
+      "en": "• Personal Income and Outlays — Source: BEA, Monthly — Feeds directly into quarterly GDP calculation.",
+      "es": "• Ingresos personales y gastos — Fuente: BEA, Mensual — Alimenta directamente el calculo trimestral del GDP."
     },
     {
       "en": "• CPI / PPI — Source: BLS, Monthly — Core rates are the Fed's primary policy trigger.",
-      "es": "• CPI / PPI — Fuente: BLS, Mensual — Las tasas subyacentes son el principal detonante de política de la Fed."
+      "es": "• CPI / PPI — Fuente: BLS, Mensual — Las tasas subyacentes son el detonante principal de politica de la Fed."
+    },
+    {
+      "en": "Note on Figures and Charts",
+      "es": "Nota sobre figuras y graficos"
+    },
+    {
+      "en": "This book contains approximately 60+ charts, tables, and figures throughout its 284 pages. The most analytically important figures include business cycle duration tables, scatter plots showing correlations between indicators and GDP, time-series charts overlaying indicators with recession shading, and data release summary tables. These visual elements are integral to understanding the relationships between indicators and cannot be reproduced here due to copyright. Readers seeking the full visual experience should consult the original publication.",
+      "es": "Este libro contiene aproximadamente mas de 60 graficos, tablas y figuras a lo largo de sus 284 paginas. Las figuras mas importantes analiticamente incluyen tablas de duracion de ciclos economicos, diagramas de dispersion que muestran correlaciones entre indicadores y el GDP, graficos de series temporales que superponen indicadores con sombreado de recesion, y tablas resumen de publicacion de datos. Estos elementos visuales son parte integral de la comprension de las relaciones entre indicadores y no pueden reproducirse aqui debido a derechos de autor. Los lectores que busquen la experiencia visual completa deben consultar la publicacion original."
+    },
+    {
+      "en": "Summary prepared from \"The Trader's Guide to Key Economic Indicators\" by Richard Yamarone, Bloomberg Press (Princeton), 2004. ISBN: 1-57660-108-7. All content in this summary represents the summarizer's own paraphrasing and interpretation of the book's concepts.",
+      "es": "Resumen preparado a partir de \"The Trader's Guide to Key Economic Indicators\" de Richard Yamarone, Bloomberg Press (Princeton), 2004. ISBN: 1-57660-108-7. Todo el contenido de este resumen representa la parafrasis e interpretacion propia del resumidor sobre los conceptos del libro."
     }
   ]
 }

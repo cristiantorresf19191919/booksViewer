@@ -249,3 +249,33 @@ html.light article p {
 html.dark article p {
   color: #d6d3d1;
 }
+
+/* ===== FOOTER CREATOR CREDIT ===== */
+@keyframes footer-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-creator-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.footer-creator-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-creator-link:hover::after {
+  width: 100%;
+}
