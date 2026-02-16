@@ -28,7 +28,6 @@ function isChapterHeading(text: string): boolean {
 /** Detect if paragraph is a major section heading (short title text, no period at end) */
 function isSectionHeading(text: string): boolean {
   const trimmed = text.trim();
-  // Section headings are short (under 60 chars), don't end with period, and start with capital
   const sectionPatterns = [
     /^Acknowledgments$/i,
     /^Introduction$/i,
@@ -74,36 +73,32 @@ export function ParagraphWithTooltips({ text }: ParagraphWithTooltipsProps) {
     });
   };
 
-  // Chapter headings get the largest, most prominent styling
   if (isChapterHeading(text)) {
     return (
-      <h2 className="mt-8 mb-6 text-2xl font-bold tracking-tight text-emerald-800 dark:text-emerald-300 border-b-2 border-emerald-200 dark:border-emerald-800 pb-3">
+      <h2 className="mt-8 mb-6 text-2xl font-bold tracking-tight text-violet-700 dark:text-violet-300 border-b-2 border-violet-200 dark:border-violet-800/50 pb-3">
         {renderTokens()}
       </h2>
     );
   }
 
-  // Section headings get medium styling
   if (isSectionHeading(text)) {
     return (
-      <h3 className="mt-6 mb-4 text-xl font-semibold text-stone-800 dark:text-stone-200 border-l-4 border-emerald-400 dark:border-emerald-600 pl-4">
+      <h3 className="mt-6 mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200 border-l-4 border-violet-400 dark:border-violet-600 pl-4">
         {renderTokens()}
       </h3>
     );
   }
 
-  // Bullet items get special formatting
   if (isBulletItem(text)) {
     return (
-      <p className="mb-2 ml-6 leading-relaxed text-stone-700 dark:text-stone-300">
+      <p className="mb-2 ml-6 leading-relaxed text-gray-700 dark:text-gray-300">
         {renderTokens()}
       </p>
     );
   }
 
-  // Regular paragraphs
   return (
-    <p className="mb-4 leading-relaxed text-stone-700 dark:text-stone-300">
+    <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
       {renderTokens()}
     </p>
   );

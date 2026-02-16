@@ -39,13 +39,13 @@ function TocItem({
   };
 
   return (
-    <div className={depth > 0 ? "ml-3 border-l border-stone-200 pl-3 dark:border-stone-600" : ""}>
+    <div className={depth > 0 ? "ml-3 border-l border-gray-200 pl-3 dark:border-[#1f1f30]" : ""}>
       <button
         type="button"
         onClick={handleClick}
-        className={`w-full text-left py-1.5 px-2 rounded-md text-sm transition-colors ${isActive
-          ? "bg-amber-100 font-medium text-amber-900 dark:bg-amber-900/40 dark:text-amber-100"
-          : "text-stone-700 hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-stone-800"
+        className={`w-full text-left py-1.5 px-2 rounded-xl text-sm transition-colors ${isActive
+          ? "bg-violet-50 font-medium text-violet-900 dark:bg-violet-900/20 dark:text-violet-200"
+          : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
           }`}
       >
         {title}
@@ -81,22 +81,22 @@ export function TableOfContents({
   return (
     <>
       <div
-        className="fixed inset-0 z-40 bg-black/30 dark:bg-black/50"
+        className="fixed inset-0 z-40 bg-black/30 dark:bg-black/60"
         aria-hidden="true"
         onClick={onClose}
       />
       <aside
-        className="fixed left-0 top-0 z-50 h-full w-80 max-w-[85vw] overflow-y-auto border-r border-stone-200 bg-white shadow-xl dark:border-stone-700 dark:bg-stone-900"
-        aria-label={t("Table of contents", "Índice del libro")}
+        className="fixed left-0 top-0 z-50 h-full w-80 max-w-[85vw] overflow-y-auto border-r border-gray-200 bg-white shadow-2xl dark:border-[#1f1f30] dark:bg-[#0c0c16]"
+        aria-label={t("Table of contents", "\u00cdndice del libro")}
       >
-        <div className="sticky top-0 flex items-center justify-between border-b border-stone-200 bg-white px-4 py-3 dark:border-stone-700 dark:bg-stone-900">
-          <h2 className="font-semibold text-stone-900 dark:text-stone-100">
-            {t("Contents", "Índice")}
+        <div className="sticky top-0 flex items-center justify-between border-b border-gray-200 bg-white px-4 py-3 dark:border-[#1f1f30] dark:bg-[#0c0c16]">
+          <h2 className="font-semibold text-gray-900 dark:text-gray-100">
+            {t("Contents", "\u00cdndice")}
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="rounded p-1.5 text-stone-500 hover:bg-stone-100 hover:text-stone-700 dark:hover:bg-stone-800 dark:hover:text-stone-300"
+            className="rounded-xl p-1.5 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-[#1a1a2e] dark:hover:text-gray-300"
             aria-label={t("Close", "Cerrar")}
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

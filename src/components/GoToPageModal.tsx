@@ -18,7 +18,6 @@ export function GoToPageModal({ totalPages, currentPage, onNavigate }: GoToPageM
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
-      // Delay state update to avoid synchronous setState in effect
       queueMicrotask(() => {
         setInputValue(String(currentPage + 1));
         inputRef.current?.select();
@@ -46,7 +45,7 @@ export function GoToPageModal({ totalPages, currentPage, onNavigate }: GoToPageM
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-1.5 rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700 transition-colors"
+        className="flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
         title={t("Go to page", "Ir a página")}
       >
         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,20 +57,20 @@ export function GoToPageModal({ totalPages, currentPage, onNavigate }: GoToPageM
       {isOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-black/30 dark:bg-black/50"
+            className="fixed inset-0 z-40 bg-black/30 dark:bg-black/60"
             onClick={() => setIsOpen(false)}
           />
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <div
-              className="w-full max-w-sm rounded-2xl border border-stone-200 bg-white p-6 shadow-xl dark:border-stone-700 dark:bg-stone-900"
+              className="w-full max-w-sm rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl p-6 shadow-2xl dark:border-[#2a2a3e] dark:bg-[#12121c]/95"
               onKeyDown={handleKeyDown}
             >
-              <h3 className="mb-4 text-lg font-semibold text-stone-900 dark:text-stone-100">
+              <h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
                 {t("Go to Page", "Ir a Página")}
               </h3>
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                  <label htmlFor="page-input" className="mb-2 block text-sm text-stone-600 dark:text-stone-400">
+                  <label htmlFor="page-input" className="mb-2 block text-sm text-gray-600 dark:text-gray-400">
                     {t("Enter page number", "Ingresa el número de página")} (1-{totalPages})
                   </label>
                   <input
@@ -82,7 +81,7 @@ export function GoToPageModal({ totalPages, currentPage, onNavigate }: GoToPageM
                     max={totalPages}
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-center text-lg font-medium text-stone-900 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-100"
+                    className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-center text-lg font-medium text-gray-900 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-100"
                     placeholder="1"
                   />
                 </div>
@@ -90,13 +89,13 @@ export function GoToPageModal({ totalPages, currentPage, onNavigate }: GoToPageM
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="flex-1 rounded-lg border border-stone-300 bg-white px-4 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+                    className="flex-1 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
                   >
                     {t("Cancel", "Cancelar")}
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 rounded-lg bg-amber-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                    className="flex-1 rounded-xl bg-violet-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 shadow-sm shadow-violet-500/20"
                   >
                     {t("Go", "Ir")}
                   </button>

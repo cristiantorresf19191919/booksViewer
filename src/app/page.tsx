@@ -62,22 +62,18 @@ export default function Home() {
       setPageDirection(dir);
       return nextIndex;
     });
-    // Set paragraph to scroll to after page renders
     if (paragraphIndex !== undefined) {
       setScrollToParagraph(paragraphIndex);
     }
   }, []);
 
-  // Handle scrolling to specific paragraph after page change
   useEffect(() => {
     if (scrollToParagraph !== null) {
-      // Small delay to ensure DOM is updated after page transition
       const timer = setTimeout(() => {
         const paragraphId = `paragraph-${scrollToParagraph}`;
         const element = document.getElementById(paragraphId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "center" });
-          // Add highlight effect
           element.classList.add("highlight-flash");
           setTimeout(() => element.classList.remove("highlight-flash"), 2000);
         }
@@ -87,7 +83,6 @@ export default function Home() {
     }
   }, [scrollToParagraph, pageIndex]);
 
-  // Load book content when book changes
   useEffect(() => {
     let cancelled = false;
 
@@ -95,7 +90,7 @@ export default function Home() {
       if (!cancelled) {
         setLoading(true);
         setError(null);
-        setPageIndex(0); // Reset to first page when switching books
+        setPageIndex(0);
       }
 
       try {
@@ -155,7 +150,6 @@ export default function Home() {
     window.getSelection()?.removeAllRanges();
   }, []);
 
-  // All hooks must run unconditionally (before any early return)
   const totalPages = content
     ? Math.max(1, Math.ceil(content.paragraphs.length / PARAGRAPHS_PER_PAGE))
     : 1;
@@ -168,7 +162,6 @@ export default function Home() {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLElement && (e.target.isContentEditable || e.target.closest("input, textarea, [role=textbox]"))) return;
-      // Only handle arrow keys in paginated mode
       if (!scrollMode && !fullscreenMode) {
         if (e.key === "ArrowLeft") {
           goToPage(Math.max(0, pageIndex - 1));
@@ -177,11 +170,9 @@ export default function Home() {
         }
       }
       if (e.key === "Escape") {
-        // Exit fullscreen on Escape
         if (fullscreenMode) {
           setFullscreenMode(false);
         }
-        // Stop speech on Escape
         if (speechStatus !== "idle") {
           stopSpeech();
         }
@@ -192,7 +183,6 @@ export default function Home() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [totalPages, pageIndex, speechStatus, stopSpeech, goToPage, scrollMode, fullscreenMode]);
 
-  // Close popup when clicking outside
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       if (selectionPopup && !(e.target as Element).closest(".selection-popup")) {
@@ -208,10 +198,10 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-stone-50 dark:bg-stone-950">
+      <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-[#08080f]">
         <div className="text-center">
-          <div className="mb-4 h-10 w-10 animate-spin rounded-full border-2 border-amber-500 border-t-transparent mx-auto" />
-          <p className="text-stone-600 dark:text-stone-400">{t("Loading book...", "Cargando libro...")}</p>
+          <div className="mb-4 h-10 w-10 animate-spin rounded-full border-2 border-violet-500 border-t-transparent mx-auto" />
+          <p className="text-gray-500 dark:text-gray-400">{t("Loading book...", "Cargando libro...")}</p>
         </div>
       </div>
     );
@@ -219,12 +209,12 @@ export default function Home() {
 
   if (error || !content) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-stone-50 dark:bg-stone-950">
+      <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-[#08080f]">
         <div className="max-w-md text-center px-4">
           <p className="text-red-600 dark:text-red-400 mb-2">
             {error ?? t("Book data not found.", "Datos del libro no encontrados.")}
           </p>
-          <p className="text-sm text-stone-500 dark:text-stone-400">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             {t("Paste your book text into app/public/book_raw.txt and run: node scripts/parse-book-content.js", "Pega el texto del libro en app/public/book_raw.txt y ejecuta: node scripts/parse-book-content.js")}
           </p>
         </div>
@@ -236,30 +226,31 @@ export default function Home() {
   const end = Math.min(start + PARAGRAPHS_PER_PAGE, content.paragraphs.length);
   const pageParagraphs = content.paragraphs.slice(start, end);
   const bookTitle = language === "es" ? currentBook.titleEs : currentBook.titleEn;
+  const progressPercent = totalPages > 1 ? Math.round(((pageIndex + 1) / totalPages) * 100) : 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50/80 via-stone-50 to-amber-50/50 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-[#08080f] dark:via-[#0c0c16] dark:to-[#08080f]">
       {/* Header */}
-      <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-white/90 backdrop-blur-md dark:border-stone-700/80 dark:bg-stone-900/90 shadow-sm">
+      <header className="sticky top-0 z-30 border-b border-gray-200/80 bg-white/90 backdrop-blur-xl dark:border-[#1f1f30]/80 dark:bg-[#0c0c16]/85 shadow-sm dark:shadow-[0_1px_0_rgba(255,255,255,0.03)]">
         <div className="mx-auto max-w-3xl px-4 py-3 sm:px-6">
-          {/* Logo on top */}
+          {/* Logo */}
           <Link href="/" className="group flex items-center justify-center gap-2.5 py-2">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-white shadow-md transition-transform group-hover:scale-105">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 text-white shadow-md shadow-violet-500/20 transition-transform group-hover:scale-105">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               </svg>
             </span>
-            <span className="font-literata text-lg font-bold tracking-tight text-stone-900 dark:text-stone-100">
-              Cristian<span className="text-amber-600 dark:text-amber-500">Lecturas</span>.com
+            <span className="font-literata text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
+              Cristian<span className="text-violet-600 dark:text-violet-400">Lecturas</span>.com
             </span>
           </Link>
-          {/* Book navigation and tools below */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-stone-200/80 dark:border-stone-700/80">
+          {/* Book navigation and tools */}
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gray-200/80 dark:border-[#1f1f30]/80">
             <div className="min-w-0 flex-1">
-              <h1 className="font-literata text-base font-semibold tracking-tight text-stone-800 dark:text-stone-200 truncate">
+              <h1 className="font-literata text-base font-semibold tracking-tight text-gray-800 dark:text-gray-200 truncate">
                 {bookTitle}
               </h1>
-              <p className="text-xs text-stone-500 dark:text-stone-400 truncate">
+              <p className="text-xs text-gray-500 dark:text-gray-500 truncate">
                 {currentBook.author}
               </p>
             </div>
@@ -268,7 +259,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setTocOpen(true)}
-                className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+                className="rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
               >
                 {t("Contents", "Indice")}
               </button>
@@ -276,10 +267,10 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setScrollMode(!scrollMode)}
-                className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
+                className={`rounded-xl border px-3 py-2 text-sm font-medium transition-all ${
                   scrollMode
-                    ? "border-emerald-400 bg-emerald-50 text-emerald-700 dark:border-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-300"
-                    : "border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+                    ? "border-emerald-400/50 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-900/20 dark:text-emerald-400"
+                    : "border-gray-200 bg-white text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
                 }`}
                 title={scrollMode ? t("Switch to paginated", "Cambiar a paginado") : t("Switch to scroll", "Cambiar a scroll")}
               >
@@ -295,7 +286,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setFullscreenMode(true)}
-                className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+                className="rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
                 title={t("Fullscreen reading", "Lectura pantalla completa")}
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -311,67 +302,98 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Page nav + hint */}
+      {/* Page nav + progress */}
       {!scrollMode && (
-        <div className="mx-auto max-w-3xl px-4 py-3 sm:px-6 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-sm text-amber-800 dark:text-amber-200">
-            {content.paragraphs.length} {t("paragraphs", "parrafos")} · {t("Use left/right to turn pages", "Usa izquierda/derecha para cambiar de pagina")}
-            {speechSupported && (
-              <span className="ml-2">· {t("Select text to read aloud", "Selecciona texto para leer en voz alta")}</span>
-            )}
-          </p>
-          <nav className="flex items-center gap-2 flex-wrap" aria-label={t("Pagination", "Paginacion")}>
-            <button
-              type="button"
-              onClick={() => goToPage(Math.max(0, pageIndex - 1))}
-              disabled={pageIndex === 0}
-              aria-label={t("Previous page", "Pagina anterior")}
-              className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
-            >
-              {t("Previous", "Anterior")}
-            </button>
-            <span className="text-sm text-stone-600 dark:text-stone-400" aria-live="polite">
-              {t("Page", "Pagina")} {pageIndex + 1} / {totalPages}
-            </span>
-            <button
-              type="button"
-              onClick={() => goToPage(Math.min(totalPages - 1, pageIndex + 1))}
-              disabled={pageIndex >= totalPages - 1}
-              aria-label={t("Next page", "Pagina siguiente")}
-              className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm font-medium text-stone-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
-            >
-              {t("Next", "Siguiente")}
-            </button>
-            <button
-              type="button"
-              onClick={() => goToPage(totalPages - 1)}
-              disabled={pageIndex >= totalPages - 1}
-              aria-label={t("Go to last page", "Ir a la ultima pagina")}
-              className="rounded-lg border border-amber-400 bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-amber-100 dark:border-amber-600 dark:bg-amber-900/30 dark:text-amber-300 dark:hover:bg-amber-900/50"
-            >
-              {t("Latest", "Ultima")}
-            </button>
-            <GoToPageModal
-              totalPages={totalPages}
-              currentPage={pageIndex}
-              onNavigate={goToPage}
-            />
-            <BookmarksPanel
-              currentPageIndex={pageIndex}
-              onNavigate={goToPage}
-            />
+        <div className="mx-auto max-w-3xl px-4 py-4 sm:px-6">
+          {/* Progress bar card */}
+          <div className="mb-3 rounded-2xl border border-gray-200/60 bg-white/80 p-4 dark:border-[#1f1f30] dark:bg-[#12121c]/80">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-medium text-gray-500 dark:text-gray-500">
+                {content.paragraphs.length} {t("paragraphs", "parrafos")}
+              </span>
+              <span className="text-xs font-semibold text-violet-600 dark:text-violet-400">
+                {progressPercent}%
+              </span>
+            </div>
+            {/* Gradient progress bar inspired by the design */}
+            <div className="h-2 w-full rounded-full bg-gray-100 dark:bg-[#1a1a2e] overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-500 ease-out"
+                style={{
+                  width: `${progressPercent}%`,
+                  background: "linear-gradient(90deg, #f472b6 0%, #a78bfa 25%, #6ee7b7 50%, #67e8f9 75%, #818cf8 100%)",
+                }}
+              />
+            </div>
+            <div className="flex items-center justify-between mt-2">
+              <span className="text-xs text-gray-400 dark:text-gray-600">
+                {speechSupported && t("Select text to read aloud", "Selecciona texto para leer en voz alta")}
+              </span>
+              <span className="text-xs text-gray-400 dark:text-gray-600">
+                {t("Use left/right to turn pages", "Usa izquierda/derecha para cambiar de pagina")}
+              </span>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <nav className="flex items-center justify-between gap-2 flex-wrap" aria-label={t("Pagination", "Paginacion")}>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => goToPage(Math.max(0, pageIndex - 1))}
+                disabled={pageIndex === 0}
+                aria-label={t("Previous page", "Pagina anterior")}
+                className="rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
+              >
+                {t("Previous", "Anterior")}
+              </button>
+              <span className="text-sm font-medium text-gray-600 dark:text-gray-400 px-2" aria-live="polite">
+                {t("Page", "Pagina")} {pageIndex + 1} / {totalPages}
+              </span>
+              <button
+                type="button"
+                onClick={() => goToPage(Math.min(totalPages - 1, pageIndex + 1))}
+                disabled={pageIndex >= totalPages - 1}
+                aria-label={t("Next page", "Pagina siguiente")}
+                className="rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
+              >
+                {t("Next", "Siguiente")}
+              </button>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => goToPage(totalPages - 1)}
+                disabled={pageIndex >= totalPages - 1}
+                aria-label={t("Go to last page", "Ir a la ultima pagina")}
+                className="rounded-xl border border-violet-300 bg-violet-50 px-3 py-2 text-sm font-medium text-violet-700 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-violet-100 dark:border-violet-500/30 dark:bg-violet-900/20 dark:text-violet-400 dark:hover:bg-violet-900/30"
+              >
+                {t("Latest", "Ultima")}
+              </button>
+              <GoToPageModal
+                totalPages={totalPages}
+                currentPage={pageIndex}
+                onNavigate={goToPage}
+              />
+              <BookmarksPanel
+                currentPageIndex={pageIndex}
+                onNavigate={goToPage}
+              />
+            </div>
           </nav>
         </div>
       )}
 
       {scrollMode && (
         <div className="mx-auto max-w-3xl px-4 py-3 sm:px-6">
-          <p className="text-sm text-emerald-800 dark:text-emerald-200">
-            {t("Scroll mode active - showing all content", "Modo scroll activo - mostrando todo el contenido")} · {content.paragraphs.length} {t("paragraphs", "parrafos")}
-            {speechSupported && (
-              <span className="ml-2">· {t("Select text to read aloud", "Selecciona texto para leer en voz alta")}</span>
-            )}
-          </p>
+          <div className="rounded-2xl border border-gray-200/60 bg-white/80 px-4 py-3 dark:border-[#1f1f30] dark:bg-[#12121c]/80">
+            <p className="text-sm text-emerald-700 dark:text-emerald-400">
+              {t("Scroll mode active - showing all content", "Modo scroll activo - mostrando todo el contenido")} · {content.paragraphs.length} {t("paragraphs", "parrafos")}
+              {speechSupported && (
+                <span className="ml-2">· {t("Select text to read aloud", "Selecciona texto para leer en voz alta")}</span>
+              )}
+            </p>
+          </div>
         </div>
       )}
 
@@ -381,19 +403,18 @@ export default function Home() {
           <article
             ref={articleRef}
             onMouseUp={handleMouseUp}
-            className="book-content rounded-2xl border border-stone-200/60 bg-white/70 p-8 shadow-sm dark:border-stone-700/60 dark:bg-stone-900/70 md:p-12 select-text min-h-[420px]"
+            className="book-content rounded-2xl border border-gray-200/60 bg-white/80 p-8 shadow-sm dark:border-[#1f1f30] dark:bg-[#12121c]/90 md:p-12 select-text min-h-[420px]"
           >
             {!scrollMode && (
-              <div className="mb-6 flex items-baseline justify-between border-b border-stone-200 pb-2 dark:border-stone-700">
-                <span className="text-xs font-medium uppercase tracking-wider text-amber-700 dark:text-amber-400">
+              <div className="mb-6 flex items-baseline justify-between border-b border-gray-200 pb-2 dark:border-[#1f1f30]">
+                <span className="text-xs font-medium uppercase tracking-wider text-violet-600 dark:text-violet-400">
                   {t("Page", "Pagina")} {pageIndex + 1}
                 </span>
               </div>
             )}
             <div className="relative overflow-hidden">
               {scrollMode ? (
-                // Scroll mode: show all content without pagination
-                <div className="font-literata text-stone-800 dark:text-stone-200 space-y-4">
+                <div className="font-literata text-gray-800 dark:text-gray-200 space-y-4">
                   {content.paragraphs.map((block, idx) => {
                     if (isImageBlock(block)) {
                       return (
@@ -407,7 +428,7 @@ export default function Home() {
                             alt=""
                             width={800}
                             height={500}
-                            className="w-full h-auto rounded-lg border border-stone-200/60 dark:border-stone-600/60 shadow-sm"
+                            className="w-full h-auto rounded-xl border border-gray-200/60 dark:border-[#1f1f30] shadow-sm"
                             unoptimized
                           />
                         </figure>
@@ -441,7 +462,6 @@ export default function Home() {
                   })}
                 </div>
               ) : (
-                // Paginated mode: show current page with animation
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={pageIndex}
@@ -462,7 +482,7 @@ export default function Home() {
                         opacity: { duration: 0.2, ease: "easeIn" },
                       },
                     }}
-                    className="font-literata text-stone-800 dark:text-stone-200"
+                    className="font-literata text-gray-800 dark:text-gray-200"
                   >
                     {pageParagraphs.map((block, idx) => {
                       const globalParagraphIndex = start + idx;
@@ -478,7 +498,7 @@ export default function Home() {
                               alt=""
                               width={800}
                               height={500}
-                              className="w-full h-auto rounded-lg border border-stone-200/60 dark:border-stone-600/60 shadow-sm"
+                              className="w-full h-auto rounded-xl border border-gray-200/60 dark:border-[#1f1f30] shadow-sm"
                               unoptimized
                             />
                           </figure>
@@ -532,13 +552,13 @@ export default function Home() {
             className="selection-popup fixed z-50 -translate-x-1/2 flex flex-col gap-1"
             style={{ left: selectionPopup.x, top: selectionPopup.y }}
           >
-            <div className="flex items-center gap-1 rounded-full border border-stone-200 bg-white px-2 py-1 shadow-lg dark:border-stone-700 dark:bg-stone-800">
+            <div className="flex items-center gap-1 rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-md px-2 py-1 shadow-xl dark:border-[#2a2a3e] dark:bg-[#14141f]/95">
               {/* Read Aloud button */}
               {speechSupported && (
                 <button
                   type="button"
                   onClick={readSelectionAloud}
-                  className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium text-emerald-700 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-900/30 transition-colors"
+                  className="flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-sm font-medium text-emerald-700 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-900/20 transition-colors"
                   title={t("Read aloud", "Leer en voz alta")}
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -552,7 +572,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={addSelectionToFavorites}
-                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium text-amber-700 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-900/30 transition-colors"
+                className="flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-sm font-medium text-violet-700 hover:bg-violet-50 dark:text-violet-400 dark:hover:bg-violet-900/20 transition-colors"
                 title={t("Add to favorites", "Anadir a favoritos")}
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -565,7 +585,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={closePopup}
-                className="flex items-center justify-center rounded-full p-1.5 text-stone-400 hover:bg-stone-100 hover:text-stone-600 dark:hover:bg-stone-700 dark:hover:text-stone-300 transition-colors"
+                className="flex items-center justify-center rounded-xl p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-[#1a1a2e] dark:hover:text-gray-300 transition-colors"
                 title={t("Close", "Cerrar")}
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -577,7 +597,7 @@ export default function Home() {
         )}
       </main>
 
-      {/* Read Aloud Highlighter - shows text with word-by-word highlighting */}
+      {/* Read Aloud Highlighter */}
       <ReadingHighlighter />
 
       {/* Read Aloud Controls */}
@@ -585,22 +605,22 @@ export default function Home() {
 
       {/* Fullscreen Reading Modal */}
       {fullscreenMode && (
-        <div className="fixed inset-0 z-[100] bg-white dark:bg-stone-950 overflow-y-auto">
+        <div className="fixed inset-0 z-[100] bg-white dark:bg-[#08080f] overflow-y-auto">
           {/* Fullscreen Header */}
-          <div className="sticky top-0 z-10 border-b border-stone-200/80 bg-white/95 backdrop-blur-md dark:border-stone-700/80 dark:bg-stone-900/95 shadow-sm">
+          <div className="sticky top-0 z-10 border-b border-gray-200/80 bg-white/95 backdrop-blur-xl dark:border-[#1f1f30] dark:bg-[#0c0c16]/95 shadow-sm">
             <div className="mx-auto max-w-4xl px-6 py-4 flex items-center justify-between">
               <div className="flex-1 min-w-0">
-                <h2 className="font-literata text-lg font-semibold tracking-tight text-stone-800 dark:text-stone-200 truncate">
+                <h2 className="font-literata text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-200 truncate">
                   {bookTitle}
                 </h2>
-                <p className="text-xs text-stone-500 dark:text-stone-400">
+                <p className="text-xs text-gray-500 dark:text-gray-500">
                   {currentBook.author}
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => setFullscreenMode(false)}
-                className="flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700 transition-colors"
+                className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
                 title={t("Exit fullscreen", "Salir de pantalla completa")}
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -613,7 +633,7 @@ export default function Home() {
 
           {/* Fullscreen Content */}
           <div className="mx-auto max-w-4xl px-6 py-8">
-            <article className="font-literata text-lg leading-relaxed text-stone-800 dark:text-stone-200 space-y-6">
+            <article className="font-literata text-lg leading-relaxed text-gray-800 dark:text-gray-200 space-y-6">
               {content.paragraphs.map((block, idx) => {
                 if (isImageBlock(block)) {
                   return (
@@ -626,7 +646,7 @@ export default function Home() {
                         alt=""
                         width={1000}
                         height={600}
-                        className="w-full h-auto rounded-lg border border-stone-200/60 dark:border-stone-600/60 shadow-md"
+                        className="w-full h-auto rounded-xl border border-gray-200/60 dark:border-[#1f1f30] shadow-md"
                         unoptimized
                       />
                     </figure>
@@ -657,7 +677,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-8 right-8 rounded-full bg-amber-500 p-4 text-white shadow-lg hover:bg-amber-600 transition-colors"
+            className="fixed bottom-8 right-8 rounded-full bg-violet-500 p-4 text-white shadow-lg shadow-violet-500/25 hover:bg-violet-600 transition-colors"
             title={t("Scroll to top", "Ir arriba")}
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -669,24 +689,24 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="border-t border-stone-200/80 bg-white/50 dark:border-stone-700/80 dark:bg-stone-900/50 py-8 mt-8"
+        className="border-t border-gray-200/80 bg-white/50 dark:border-[#1f1f30] dark:bg-[#0c0c16]/50 py-8 mt-8"
         style={{ animation: "footer-fade-in 0.6s ease-out forwards" }}
       >
         <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center space-y-4">
-          <p className="text-sm text-stone-500 dark:text-stone-400 flex items-center justify-center gap-1.5">
+          <p className="text-sm text-gray-500 dark:text-gray-500 flex items-center justify-center gap-1.5">
             <span>Con amor para</span>
-            <span className="font-semibold text-amber-600 dark:text-amber-500">Sandra Arisitzabal</span>
+            <span className="font-semibold text-violet-600 dark:text-violet-400">Sandra Arisitzabal</span>
             <svg className="h-4 w-4 text-rose-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
             </svg>
           </p>
-          <p className="text-xs text-stone-400 dark:text-stone-500 tracking-wide font-medium">
+          <p className="text-xs text-gray-400 dark:text-gray-600 tracking-wide font-medium">
             Created by{" "}
             <a
               href="https://agencypartner2.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-creator-link text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-400"
+              className="footer-creator-link text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300"
             >
               CristianScript
             </a>

@@ -14,7 +14,7 @@ export function GlossaryPanel() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 rounded-full border border-stone-300 bg-stone-100 px-4 py-2 text-sm font-medium text-stone-700 transition hover:bg-stone-200 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
+        className="flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
       >
         <span className="text-lg">📖</span>
         {t("Glossary", "Glosario")} ({glossary.length})
@@ -26,36 +26,36 @@ export function GlossaryPanel() {
             aria-hidden
             onClick={() => setOpen(false)}
           />
-          <div className="absolute right-0 top-full z-50 mt-2 w-80 max-h-[70vh] overflow-auto rounded-xl border border-stone-200 bg-white shadow-xl dark:border-stone-700 dark:bg-stone-900">
-            <div className="sticky top-0 border-b border-stone-200 bg-stone-50 px-4 py-3 dark:border-stone-700 dark:bg-stone-800">
-              <h3 className="font-semibold text-stone-900 dark:text-stone-100">
+          <div className="absolute right-0 top-full z-50 mt-2 w-80 max-h-[70vh] overflow-auto rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl shadow-2xl dark:border-[#2a2a3e] dark:bg-[#12121c]/95">
+            <div className="sticky top-0 border-b border-gray-200 bg-gray-50/90 backdrop-blur-md px-4 py-3 dark:border-[#1f1f30] dark:bg-[#14141f]/90 rounded-t-2xl">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100">
                 {t("Words to learn", "Palabras para aprender")}
               </h3>
-              <p className="text-xs text-stone-500 dark:text-stone-400">
+              <p className="text-xs text-gray-500 dark:text-gray-500">
                 {t("Hover words in the text to add them.", "Pasa el cursor sobre palabras en el texto para añadirlas.")}
               </p>
             </div>
-            <ul className="divide-y divide-stone-100 dark:divide-stone-800">
+            <ul className="divide-y divide-gray-100 dark:divide-[#1f1f30]">
               {glossary.length === 0 ? (
-                <li className="px-4 py-6 text-center text-sm text-stone-500 dark:text-stone-400">
-                  {t("No words yet. Hover over underlined words and click “Add to glossary”.", "Aún no hay palabras. Pasa el cursor sobre las palabras subrayadas y haz clic en «Añadir al glosario».")}
+                <li className="px-4 py-6 text-center text-sm text-gray-500 dark:text-gray-500">
+                  {t("No words yet. Hover over underlined words and click \u201cAdd to glossary\u201d.", "A\u00fan no hay palabras. Pasa el cursor sobre las palabras subrayadas y haz clic en \u00abA\u00f1adir al glosario\u00bb.")}
                 </li>
               ) : (
                 glossary.map((entry) => (
                   <li key={entry.word} className="px-4 py-3">
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0 flex-1">
-                        <span className="font-medium text-amber-800 dark:text-amber-200">
+                        <span className="font-medium text-violet-700 dark:text-violet-300">
                           {entry.word}
                         </span>
-                        <p className="mt-0.5 text-sm text-stone-600 dark:text-stone-300">
+                        <p className="mt-0.5 text-sm text-gray-600 dark:text-gray-400">
                           {language === "es" ? entry.definitionEs : entry.definition}
                         </p>
                       </div>
                       <button
                         type="button"
                         onClick={() => removeFromGlossary(entry.word)}
-                        className="shrink-0 rounded p-1 text-stone-400 hover:bg-stone-200 hover:text-stone-600 dark:hover:bg-stone-700 dark:hover:text-stone-300"
+                        className="shrink-0 rounded-lg p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-600 dark:hover:bg-[#1a1a2e] dark:hover:text-gray-300"
                         title={t("Remove", "Quitar")}
                       >
                         ×

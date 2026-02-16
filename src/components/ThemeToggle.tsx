@@ -12,14 +12,14 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="group relative flex h-10 w-20 items-center rounded-full p-1 transition-all duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
+      className="group relative flex h-10 w-20 items-center rounded-full p-1 transition-all duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2"
       style={{
         background: isDark
-          ? "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a5f 100%)"
-          : "linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%)",
+          ? "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%)"
+          : "linear-gradient(135deg, #ede9fe 0%, #c4b5fd 50%, #a78bfa 100%)",
         boxShadow: isDark
-          ? "inset 0 2px 4px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)"
-          : "inset 0 2px 4px rgba(251,191,36,0.3), 0 1px 2px rgba(0,0,0,0.1)",
+          ? "inset 0 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(139,92,246,0.1)"
+          : "inset 0 2px 4px rgba(167,139,250,0.3), 0 1px 2px rgba(0,0,0,0.1)",
       }}
       title={isDark ? t("Switch to light mode", "Cambiar a modo claro") : t("Switch to dark mode", "Cambiar a modo oscuro")}
       aria-label={isDark ? t("Switch to light mode", "Cambiar a modo claro") : t("Switch to dark mode", "Cambiar a modo oscuro")}
@@ -29,10 +29,10 @@ export function ThemeToggle() {
         className="absolute inset-0 overflow-hidden rounded-full transition-opacity duration-500"
         style={{ opacity: isDark ? 1 : 0 }}
       >
-        <div className="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 animate-pulse" style={{ animationDelay: "0s" }} />
-        <div className="absolute left-6 top-4 h-0.5 w-0.5 rounded-full bg-white/60 animate-pulse" style={{ animationDelay: "0.5s" }} />
+        <div className="absolute left-3 top-2 h-1 w-1 rounded-full bg-violet-300/80 animate-pulse" style={{ animationDelay: "0s" }} />
+        <div className="absolute left-6 top-4 h-0.5 w-0.5 rounded-full bg-violet-200/60 animate-pulse" style={{ animationDelay: "0.5s" }} />
         <div className="absolute right-8 top-2.5 h-0.5 w-0.5 rounded-full bg-white/70 animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute left-4 bottom-2 h-0.5 w-0.5 rounded-full bg-white/50 animate-pulse" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute left-4 bottom-2 h-0.5 w-0.5 rounded-full bg-violet-300/50 animate-pulse" style={{ animationDelay: "1.5s" }} />
       </div>
 
       {/* Clouds (visible in light mode) */}
@@ -61,15 +61,15 @@ export function ThemeToggle() {
           transform: isDark ? "translateX(38px)" : "translateX(0)",
           background: isDark
             ? "linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%)"
-            : "linear-gradient(135deg, #fef08a 0%, #fbbf24 100%)",
+            : "linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%)",
           boxShadow: isDark
             ? "0 0 20px rgba(226,232,240,0.5), inset -2px -2px 4px rgba(0,0,0,0.1)"
-            : "0 0 20px rgba(251,191,36,0.6), inset -2px -2px 4px rgba(0,0,0,0.05)",
+            : "0 0 20px rgba(167,139,250,0.6), inset -2px -2px 4px rgba(0,0,0,0.05)",
         }}
       >
         {/* Sun icon */}
         <svg
-          className="absolute h-5 w-5 text-amber-600 transition-all duration-500"
+          className="absolute h-5 w-5 text-violet-900 transition-all duration-500"
           style={{
             opacity: isDark ? 0 : 1,
             transform: isDark ? "rotate(-90deg) scale(0.5)" : "rotate(0deg) scale(1)",

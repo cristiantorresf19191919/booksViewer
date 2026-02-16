@@ -33,7 +33,6 @@ export function WordWithTooltip({ word, onAddToGlossary }: WordWithTooltipProps)
   const inGlossary = isInGlossary(normalized);
   const hasDefinition = !!entry;
 
-  // Clear any pending hide timeout
   const cancelHide = useCallback(() => {
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
@@ -41,21 +40,18 @@ export function WordWithTooltip({ word, onAddToGlossary }: WordWithTooltipProps)
     }
   }, []);
 
-  // Show tooltip immediately
   const handleMouseEnter = useCallback(() => {
     cancelHide();
     setShow(true);
   }, [cancelHide]);
 
-  // Hide tooltip with a small delay to allow moving to the tooltip
   const handleMouseLeave = useCallback(() => {
     cancelHide();
     hideTimeoutRef.current = setTimeout(() => {
       setShow(false);
-    }, 150); // 150ms delay to move mouse to tooltip
+    }, 150);
   }, [cancelHide]);
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (hideTimeoutRef.current) {
@@ -102,7 +98,7 @@ export function WordWithTooltip({ word, onAddToGlossary }: WordWithTooltipProps)
         ref={ref}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="cursor-help border-b border-dotted border-amber-600/60 text-amber-800 dark:text-amber-200 dark:border-amber-400/50"
+        className="cursor-help border-b border-dotted border-violet-500/60 text-violet-700 dark:text-violet-300 dark:border-violet-400/50"
       >
         {word}
       </span>
@@ -110,23 +106,23 @@ export function WordWithTooltip({ word, onAddToGlossary }: WordWithTooltipProps)
         <span
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="fixed z-50 max-w-xs rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm shadow-lg dark:border-amber-800 dark:bg-amber-950/95 dark:text-amber-100"
+          className="fixed z-50 max-w-xs rounded-xl border border-violet-200 bg-violet-50/95 backdrop-blur-md px-3 py-2 text-sm shadow-xl dark:border-violet-800/50 dark:bg-[#1a1a2e]/95 dark:text-violet-100"
           style={{
             left: pos?.x ?? 0,
             top: (pos?.y ?? 0) - 4,
             transform: "translateY(-100%)",
           }}
         >
-          <span className="block font-medium text-amber-900 dark:text-amber-100">
+          <span className="block font-medium text-violet-900 dark:text-violet-200">
             {entry?.word ?? normalized}
           </span>
-          <span className="block mt-0.5 text-amber-800 dark:text-amber-200">{displayDef}</span>
+          <span className="block mt-0.5 text-violet-800 dark:text-violet-300">{displayDef}</span>
           <span className="block mt-2 flex flex-wrap gap-1.5">
             {entry && !inGlossary && (
               <button
                 type="button"
                 onClick={handleAddGlossary}
-                className="rounded bg-amber-200 px-2 py-1 text-xs font-medium text-amber-900 hover:bg-amber-300 dark:bg-amber-800 dark:text-amber-100 dark:hover:bg-amber-700"
+                className="rounded-lg bg-violet-200 px-2 py-1 text-xs font-medium text-violet-900 hover:bg-violet-300 dark:bg-violet-800/60 dark:text-violet-100 dark:hover:bg-violet-700/60"
               >
                 + {t("Glossary", "Glosario")}
               </button>
@@ -134,7 +130,7 @@ export function WordWithTooltip({ word, onAddToGlossary }: WordWithTooltipProps)
             <button
               type="button"
               onClick={handleAddFavorite}
-              className="rounded bg-amber-100 px-2 py-1 text-xs font-medium text-amber-800 hover:bg-amber-200 dark:bg-amber-900/70 dark:text-amber-100 dark:hover:bg-amber-800"
+              className="rounded-lg bg-violet-100 px-2 py-1 text-xs font-medium text-violet-800 hover:bg-violet-200 dark:bg-violet-900/40 dark:text-violet-200 dark:hover:bg-violet-800/40"
             >
               + {t("Favorites (this page)", "Favoritos (esta página)")}
             </button>

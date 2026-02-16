@@ -24,7 +24,6 @@ export function ReadAloudControls() {
     return null;
   }
 
-  // Filter voices for current language
   const langCode = language === "es" ? "es" : "en";
   const languageVoices = availableVoices.filter((v) => v.lang.startsWith(langCode));
 
@@ -32,10 +31,8 @@ export function ReadAloudControls() {
 
   return (
     <div className="relative">
-      {/* Main control button */}
       {isActive && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 shadow-lg dark:bg-emerald-700">
-          {/* Play/Pause button */}
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-full bg-violet-600 px-4 py-2 shadow-lg shadow-violet-500/20 dark:bg-violet-700">
           <button
             type="button"
             onClick={togglePlayPause}
@@ -53,7 +50,6 @@ export function ReadAloudControls() {
             )}
           </button>
 
-          {/* Stop button */}
           <button
             type="button"
             onClick={stop}
@@ -65,7 +61,6 @@ export function ReadAloudControls() {
             </svg>
           </button>
 
-          {/* Status indicator */}
           <div className="flex items-center gap-2 text-white text-sm">
             {status === "speaking" && (
               <span className="flex items-center gap-1">
@@ -81,7 +76,6 @@ export function ReadAloudControls() {
             )}
           </div>
 
-          {/* Settings button */}
           <button
             type="button"
             onClick={() => setShowSettings(!showSettings)}
@@ -96,16 +90,14 @@ export function ReadAloudControls() {
         </div>
       )}
 
-      {/* Settings panel - positioned above the highlighter */}
       {showSettings && isActive && (
-        <div className="fixed bottom-[55%] left-1/2 -translate-x-1/2 z-50 w-80 rounded-xl bg-white p-4 shadow-xl dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
-          <h4 className="text-sm font-semibold text-stone-700 dark:text-stone-200 mb-3">
+        <div className="fixed bottom-[55%] left-1/2 -translate-x-1/2 z-50 w-80 rounded-2xl bg-white/95 backdrop-blur-xl p-4 shadow-2xl dark:bg-[#12121c]/95 border border-gray-200 dark:border-[#2a2a3e]">
+          <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-3">
             {t("Read Aloud Settings", "Configuración de Lectura")}
           </h4>
 
-          {/* Speed control */}
           <div className="mb-4">
-            <label className="block text-xs text-stone-500 dark:text-stone-400 mb-1">
+            <label className="block text-xs text-gray-500 dark:text-gray-500 mb-1">
               {t("Speed", "Velocidad")}: {rate.toFixed(1)}x
             </label>
             <input
@@ -115,19 +107,18 @@ export function ReadAloudControls() {
               step="0.1"
               value={rate}
               onChange={(e) => setRate(parseFloat(e.target.value))}
-              className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer dark:bg-stone-700 accent-emerald-600"
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-[#1a1a2e]"
             />
-            <div className="flex justify-between text-xs text-stone-400 mt-1">
+            <div className="flex justify-between text-xs text-gray-400 mt-1">
               <span>0.5x</span>
               <span>1x</span>
               <span>2x</span>
             </div>
           </div>
 
-          {/* Voice selection */}
           {languageVoices.length > 0 && (
             <div>
-              <label className="block text-xs text-stone-500 dark:text-stone-400 mb-1">
+              <label className="block text-xs text-gray-500 dark:text-gray-500 mb-1">
                 {t("Voice", "Voz")}
               </label>
               <select
@@ -136,7 +127,7 @@ export function ReadAloudControls() {
                   const voice = availableVoices.find((v) => v.name === e.target.value);
                   setSelectedVoice(voice || null);
                 }}
-                className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm text-stone-700 dark:border-stone-600 dark:bg-stone-700 dark:text-stone-200"
+                className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-200"
               >
                 {languageVoices.map((voice) => (
                   <option key={voice.name} value={voice.name}>
