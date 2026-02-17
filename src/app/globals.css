@@ -231,10 +231,25 @@ html.dark article {
 
 html.light article p {
   color: #374151;
+  line-height: 1.85;
 }
 
 html.dark article p {
   color: #c4c4d0;
+  line-height: 1.85;
+}
+
+/* Comfortable reading content area */
+.reading-content {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .reading-content {
+    max-width: 70ch;
+  }
 }
 
 /* ===== FOOTER CREATOR CREDIT ===== */
@@ -283,6 +298,23 @@ html.dark .glow-subtle {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ===== SLIDE ANIMATIONS ===== */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ===== CUSTOM RANGE INPUT ===== */

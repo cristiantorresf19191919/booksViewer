@@ -75,7 +75,7 @@ export function ParagraphWithTooltips({ text }: ParagraphWithTooltipsProps) {
 
   if (isChapterHeading(text)) {
     return (
-      <h2 className="mt-8 mb-6 text-2xl font-bold tracking-tight text-violet-700 dark:text-violet-300 border-b-2 border-violet-200 dark:border-violet-800/50 pb-3">
+      <h2 className="mt-10 mb-6 text-[1.5em] font-bold tracking-tight text-violet-700 dark:text-violet-300 border-b-2 border-violet-200/60 dark:border-violet-800/40 pb-4">
         {renderTokens()}
       </h2>
     );
@@ -83,7 +83,7 @@ export function ParagraphWithTooltips({ text }: ParagraphWithTooltipsProps) {
 
   if (isSectionHeading(text)) {
     return (
-      <h3 className="mt-6 mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200 border-l-4 border-violet-400 dark:border-violet-600 pl-4">
+      <h3 className="mt-8 mb-4 text-[1.15em] font-semibold text-gray-800 dark:text-gray-200 border-l-3 border-violet-400 dark:border-violet-600 pl-4">
         {renderTokens()}
       </h3>
     );
@@ -91,14 +91,14 @@ export function ParagraphWithTooltips({ text }: ParagraphWithTooltipsProps) {
 
   if (isBulletItem(text)) {
     return (
-      <p className="mb-2 ml-6 leading-relaxed text-gray-700 dark:text-gray-300">
+      <p className="mb-3 ml-6 leading-[1.85] text-gray-700 dark:text-gray-300">
         {renderTokens()}
       </p>
     );
   }
 
   return (
-    <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
+    <p className="mb-5 leading-[1.85] text-gray-700 dark:text-gray-300">
       {renderTokens()}
     </p>
   );
