@@ -42,7 +42,7 @@ export function FavoritesPanel() {
             aria-hidden
             onClick={() => setOpen(false)}
           />
-          <div className="absolute right-0 top-full z-50 mt-2 w-96 max-h-[70vh] overflow-auto rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl shadow-2xl dark:border-[#2a2a3e] dark:bg-[#12121c]/95">
+          <div className="fixed inset-x-3 z-50 mt-2 sm:absolute sm:inset-x-auto sm:right-0 sm:w-96 sm:max-w-96 max-h-[70vh] overflow-auto rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl shadow-2xl dark:border-[#2a2a3e] dark:bg-[#12121c]/95">
             <div className="sticky top-0 border-b border-gray-200 bg-gray-50/90 backdrop-blur-md px-4 py-3 dark:border-[#1f1f30] dark:bg-[#14141f]/90 rounded-t-2xl">
               <h3 className="font-semibold text-gray-900 dark:text-gray-100">
                 {t("Favorites by page", "Favoritos por p\u00e1gina")}

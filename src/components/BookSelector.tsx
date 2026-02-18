@@ -47,13 +47,13 @@ export function BookSelector() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
+        className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-2 py-2 sm:px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e]"
       >
         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
-        {t("Switch Book", "Cambiar Libro")}
-        <svg className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <span className="hidden sm:inline">{t("Switch Book", "Cambiar Libro")}</span>
+        <svg className={`h-4 w-4 transition-transform hidden sm:block ${isOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
@@ -64,7 +64,7 @@ export function BookSelector() {
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-full z-50 mt-2 w-96 rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl p-2 shadow-2xl dark:border-[#2a2a3e] dark:bg-[#14141f]/95">
+          <div className="fixed inset-x-3 z-50 mt-2 sm:absolute sm:inset-x-auto sm:right-0 sm:w-96 sm:max-w-96 max-h-[80vh] overflow-y-auto rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl p-2 shadow-2xl dark:border-[#2a2a3e] dark:bg-[#14141f]/95">
             <div className="mb-2 px-2 py-1">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500">
                 {t("Select a Book", "Selecciona un Libro")}

@@ -295,13 +295,13 @@ export default function Home() {
   const progressPercent = totalPages > 1 ? Math.round(((pageIndex + 1) / totalPages) * 100) : 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-[#08080f] dark:via-[#0c0c16] dark:to-[#08080f]">
+    <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-[#08080f] dark:via-[#0c0c16] dark:to-[#08080f]">
       {/* Reading Progress Bar */}
       {!scrollMode && <ReadingProgressBar currentPage={pageIndex} totalPages={totalPages} />}
 
       {/* Header */}
       <header className="sticky top-0 z-30 border-b border-gray-200/80 bg-white/90 backdrop-blur-xl dark:border-[#1f1f30]/80 dark:bg-[#0c0c16]/85 shadow-sm dark:shadow-[0_1px_0_rgba(255,255,255,0.03)]">
-        <div className="mx-auto max-w-4xl px-4 py-3 sm:px-6">
+        <div className="mx-auto max-w-4xl px-3 py-2.5 sm:px-6 sm:py-3">
           {/* Top row: Logo + Theme/Language */}
           <div className="flex items-center justify-between">
             <Link href="/" className="group flex items-center gap-2.5">
@@ -321,9 +321,9 @@ export default function Home() {
           </div>
 
           {/* Book info + tools row */}
-          <div className="flex items-center gap-3 pt-2.5 mt-2.5 border-t border-gray-100 dark:border-[#1f1f30]/60">
-            {/* Book title */}
-            <div className="min-w-0 flex-1">
+          <div className="pt-2.5 mt-2.5 border-t border-gray-100 dark:border-[#1f1f30]/60 sm:flex sm:items-center sm:gap-3">
+            {/* Book title - hidden on mobile to save space */}
+            <div className="min-w-0 flex-1 hidden sm:block">
               <h1 className="font-literata text-[0.95rem] font-semibold leading-tight text-gray-800 dark:text-gray-200 truncate">
                 {bookTitle}
               </h1>
@@ -332,13 +332,13 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Action buttons - organized in a clean row */}
-            <div className="flex items-center gap-1.5 flex-shrink-0">
+            {/* Action buttons - wrap on mobile */}
+            <div className="flex items-center gap-1 flex-wrap pb-1 sm:pb-0 sm:flex-nowrap sm:gap-1.5 sm:flex-shrink-0">
               <BookSelector />
               <button
                 type="button"
                 onClick={() => setTocOpen(true)}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-2.5 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-800 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-400 dark:hover:bg-[#1a1a2e] dark:hover:text-gray-200 transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white p-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-800 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-400 dark:hover:bg-[#1a1a2e] dark:hover:text-gray-200 transition-colors"
                 title={t("Table of Contents", "Indice")}
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -364,9 +364,6 @@ export default function Home() {
 
               {/* Reading Stats */}
               <ReadingStatsPanel currentPage={pageIndex} totalPages={totalPages} />
-
-              {/* Divider */}
-              <div className="h-6 w-px bg-gray-200 dark:bg-[#1f1f30] mx-0.5 hidden sm:block" />
 
               {/* Scroll/Paginated Toggle */}
               <button
@@ -400,9 +397,6 @@ export default function Home() {
                 </svg>
               </button>
 
-              {/* Divider */}
-              <div className="h-6 w-px bg-gray-200 dark:bg-[#1f1f30] mx-0.5 hidden sm:block" />
-
               <GlossaryPanel />
               <FavoritesPanel />
             </div>
@@ -412,14 +406,14 @@ export default function Home() {
 
       {/* Page nav + progress */}
       {!scrollMode && (
-        <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6">
+        <div className="mx-auto max-w-4xl px-3 py-3 sm:px-6 sm:py-4">
           {/* Progress bar card */}
-          <div className="mb-4 rounded-2xl border border-gray-200/60 bg-white/80 px-5 py-4 dark:border-[#1f1f30] dark:bg-[#12121c]/80 backdrop-blur-sm">
-            <div className="flex items-center justify-between mb-2.5">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-500">
+          <div className="mb-3 sm:mb-4 rounded-2xl border border-gray-200/60 bg-white/80 px-3 py-3 sm:px-5 sm:py-4 dark:border-[#1f1f30] dark:bg-[#12121c]/80 backdrop-blur-sm">
+            <div className="flex items-center justify-between mb-2 sm:mb-2.5">
+              <span className="text-[0.65rem] sm:text-xs font-medium text-gray-500 dark:text-gray-500 truncate mr-2">
                 {t("Progress", "Progreso")} &middot; {content.paragraphs.length} {t("paragraphs", "parrafos")}
               </span>
-              <span className="text-sm font-bold tabular-nums text-violet-600 dark:text-violet-400">
+              <span className="text-xs sm:text-sm font-bold tabular-nums text-violet-600 dark:text-violet-400 flex-shrink-0">
                 {progressPercent}%
               </span>
             </div>
@@ -436,14 +430,14 @@ export default function Home() {
           </div>
 
           {/* Navigation */}
-          <nav className="flex items-center justify-between gap-3" aria-label={t("Pagination", "Paginacion")}>
-            <div className="flex items-center gap-2">
+          <nav className="flex items-center justify-between gap-1.5 sm:gap-3" aria-label={t("Pagination", "Paginacion")}>
+            <div className="flex items-center gap-1 sm:gap-2">
               <button
                 type="button"
                 onClick={() => goToPage(Math.max(0, pageIndex - 1))}
                 disabled={pageIndex === 0}
                 aria-label={t("Previous page", "Pagina anterior")}
-                className="group inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm font-medium text-gray-600 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-gray-50 hover:text-gray-800 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
+                className="group inline-flex items-center gap-1 rounded-xl border border-gray-200 bg-white px-2 py-1.5 sm:px-3.5 sm:py-2.5 text-sm font-medium text-gray-600 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-gray-50 hover:text-gray-800 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
               >
                 <svg className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -451,11 +445,11 @@ export default function Home() {
                 <span className="hidden sm:inline">{t("Previous", "Anterior")}</span>
               </button>
 
-              <div className="flex items-center gap-1.5 rounded-xl bg-gray-100/80 dark:bg-[#14141f]/80 px-3 py-2">
-                <span className="text-sm font-semibold tabular-nums text-gray-700 dark:text-gray-300" aria-live="polite">
+              <div className="flex items-center gap-1 rounded-xl bg-gray-100/80 dark:bg-[#14141f]/80 px-2 py-1.5 sm:px-3 sm:py-2">
+                <span className="text-xs sm:text-sm font-semibold tabular-nums text-gray-700 dark:text-gray-300" aria-live="polite">
                   {pageIndex + 1}
                 </span>
-                <span className="text-xs text-gray-400 dark:text-gray-500">/ {totalPages}</span>
+                <span className="text-[0.65rem] sm:text-xs text-gray-400 dark:text-gray-500">/ {totalPages}</span>
               </div>
 
               <button
@@ -463,7 +457,7 @@ export default function Home() {
                 onClick={() => goToPage(Math.min(totalPages - 1, pageIndex + 1))}
                 disabled={pageIndex >= totalPages - 1}
                 aria-label={t("Next page", "Pagina siguiente")}
-                className="group inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm font-medium text-gray-600 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-gray-50 hover:text-gray-800 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
+                className="group inline-flex items-center gap-1 rounded-xl border border-gray-200 bg-white px-2 py-1.5 sm:px-3.5 sm:py-2.5 text-sm font-medium text-gray-600 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-gray-50 hover:text-gray-800 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
               >
                 <span className="hidden sm:inline">{t("Next", "Siguiente")}</span>
                 <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -472,13 +466,13 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1 sm:gap-1.5">
               <button
                 type="button"
                 onClick={() => goToPage(totalPages - 1)}
                 disabled={pageIndex >= totalPages - 1}
                 aria-label={t("Go to last page", "Ir a la ultima pagina")}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-violet-200 bg-violet-50 px-3 py-2.5 text-sm font-medium text-violet-700 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-violet-100 dark:border-violet-500/30 dark:bg-violet-900/20 dark:text-violet-400 dark:hover:bg-violet-900/30 transition-colors"
+                className="inline-flex items-center gap-1 rounded-xl border border-violet-200 bg-violet-50 px-1.5 py-1.5 sm:px-3 sm:py-2.5 text-sm font-medium text-violet-700 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-violet-100 dark:border-violet-500/30 dark:bg-violet-900/20 dark:text-violet-400 dark:hover:bg-violet-900/30 transition-colors"
               >
                 <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
@@ -500,7 +494,7 @@ export default function Home() {
       )}
 
       {scrollMode && (
-        <div className="mx-auto max-w-4xl px-4 py-3 sm:px-6">
+        <div className="mx-auto max-w-4xl px-3 py-3 sm:px-6">
           <div className="flex items-center gap-3 rounded-2xl border border-emerald-200/60 bg-emerald-50/60 px-5 py-3 dark:border-emerald-800/30 dark:bg-emerald-900/10 backdrop-blur-sm">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
               <svg className="h-4 w-4 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -530,12 +524,12 @@ export default function Home() {
       )}
 
       {/* Book content */}
-      <main className="mx-auto max-w-4xl px-4 pb-20 pt-2 sm:px-6 relative">
+      <main className="mx-auto max-w-4xl px-3 pb-20 pt-2 sm:px-6 relative">
         <CurrentPageProvider pageIndex={pageIndex}>
           <article
             ref={articleRef}
             onMouseUp={handleMouseUp}
-            className="book-content rounded-2xl border border-gray-200/60 bg-white/80 p-6 shadow-sm dark:border-[#1f1f30] dark:bg-[#12121c]/90 sm:p-8 md:p-10 lg:p-12 select-text min-h-[70vh]"
+            className="book-content rounded-2xl border border-gray-200/60 bg-white/80 p-4 shadow-sm dark:border-[#1f1f30] dark:bg-[#12121c]/90 sm:p-8 md:p-10 lg:p-12 select-text min-h-[70vh]"
             style={{ fontSize: `${fontSize}px` }}
           >
             {!scrollMode && (
@@ -881,7 +875,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-gray-200/60 bg-gradient-to-b from-white/50 to-gray-50/80 dark:border-[#1f1f30]/60 dark:from-[#0c0c16]/50 dark:to-[#08080f]/80 py-10 mt-12">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center space-y-3">
+        <div className="mx-auto max-w-4xl px-3 sm:px-6 text-center space-y-3">
           <p className="text-sm text-gray-500 dark:text-gray-500 flex items-center justify-center gap-1.5">
             <span>{t("With love for", "Con amor para")}</span>
             <span className="font-semibold text-violet-600 dark:text-violet-400">Sandra Aristizabal</span>

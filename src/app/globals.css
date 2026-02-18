@@ -97,6 +97,11 @@ html.dark header {
 }
 
 /* ===== BASE STYLES ===== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -140,6 +145,16 @@ html.dark ::-webkit-scrollbar-thumb {
 html.dark ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #3a3a52 0%, #2a2a3e 100%);
   background-clip: padding-box;
+}
+
+/* ===== TOOLBAR SCROLLBAR HIDE ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* ===== HIGHLIGHT FLASH ANIMATION ===== */
@@ -219,6 +234,8 @@ html.dark input:focus-visible {
 .book-content {
   position: relative;
   overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ===== READING AREA ENHANCEMENTS ===== */
@@ -241,9 +258,15 @@ html.dark article p {
 
 /* Comfortable reading content area */
 .reading-content {
-  max-width: 65ch;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .reading-content {
+    max-width: 65ch;
+  }
 }
 
 @media (min-width: 768px) {

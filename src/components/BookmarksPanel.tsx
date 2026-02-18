@@ -67,9 +67,13 @@ export function BookmarksPanel({ currentPageIndex, onNavigate }: BookmarksPanelP
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
+          className="flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-2 py-2 sm:px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-300 dark:hover:bg-[#1a1a2e] transition-colors"
+          title={t("Bookmarks", "Marcadores")}
         >
-          <span>{t("Bookmarks", "Marcadores")}</span>
+          <svg className="h-4 w-4 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+          <span className="hidden sm:inline">{t("Bookmarks", "Marcadores")}</span>
           {bookmarks.length > 0 && (
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-violet-100 px-1.5 text-xs font-semibold text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">
               {bookmarks.length}
@@ -84,7 +88,7 @@ export function BookmarksPanel({ currentPageIndex, onNavigate }: BookmarksPanelP
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-full z-50 mt-2 w-80 max-h-[70vh] overflow-auto rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl shadow-2xl dark:border-[#2a2a3e] dark:bg-[#12121c]/95">
+          <div className="fixed inset-x-3 z-50 mt-2 sm:absolute sm:inset-x-auto sm:right-0 sm:w-80 sm:max-w-80 max-h-[70vh] overflow-auto rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl shadow-2xl dark:border-[#2a2a3e] dark:bg-[#12121c]/95">
             <div className="sticky top-0 border-b border-gray-200 bg-gray-50/90 backdrop-blur-md px-4 py-3 dark:border-[#1f1f30] dark:bg-[#14141f]/90 rounded-t-2xl">
               <h3 className="font-semibold text-gray-900 dark:text-gray-100">
                 {t("Your Bookmarks", "Tus Marcadores")}
