@@ -8,6 +8,7 @@ import { GlossaryProvider } from "@/context/GlossaryContext";
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import { ReadAloudProvider } from "@/context/ReadAloudContext";
 import { BookmarkProvider } from "@/context/BookmarkContext";
+import { FontSizeProvider } from "@/context/FontSizeContext";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
@@ -18,7 +19,9 @@ export function Providers({ children }: { children: ReactNode }) {
             <FavoritesProvider>
               <BookmarkProvider>
                 <ReadAloudProvider>
-                  {children}
+                  <FontSizeProvider>
+                    {children}
+                  </FontSizeProvider>
                 </ReadAloudProvider>
               </BookmarkProvider>
             </FavoritesProvider>

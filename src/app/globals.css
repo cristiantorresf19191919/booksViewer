@@ -325,3 +325,70 @@ html.dark input[type="range"] {
 html.light input[type="range"] {
   accent-color: #7c3aed;
 }
+
+/* ===== READING PROGRESS BAR ===== */
+.reading-progress-bar {
+  background-size: 200% 100%;
+  animation: progress-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes progress-shimmer {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+}
+
+/* ===== SMOOTH ENTRANCE ANIMATIONS ===== */
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== SEARCH MODAL ANIMATION ===== */
+.search-modal-enter {
+  animation: scale-in 0.2s ease-out;
+}
+
+/* ===== READING STATS CARD HOVER ===== */
+.stats-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ENHANCED BOOK CONTENT TYPOGRAPHY ===== */
+.book-content p {
+  text-indent: 0;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-break: break-word;
+}
+
+/* ===== KEYBOARD SHORTCUT KEY STYLING ===== */
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ===== TOOLTIP ENTRANCE ===== */
+.tooltip-enter {
+  animation: slide-up-fade 0.15s ease-out;
+}

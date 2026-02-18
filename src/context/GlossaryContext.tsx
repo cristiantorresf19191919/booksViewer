@@ -8,6 +8,7 @@ const STORAGE_KEY_PREFIX = "book-friends-glossary";
 
 interface GlossaryContextValue {
   glossary: GlossaryEntry[];
+  glossaryCount: number;
   addToGlossary: (word: string) => boolean;
   removeFromGlossary: (word: string) => void;
   isInGlossary: (word: string) => boolean;
@@ -81,7 +82,7 @@ export function GlossaryProvider({ children }: { children: ReactNode }) {
 
   return (
     <GlossaryContext.Provider
-      value={{ glossary, addToGlossary, removeFromGlossary, isInGlossary }}
+      value={{ glossary, glossaryCount: glossary.length, addToGlossary, removeFromGlossary, isInGlossary }}
     >
       {children}
     </GlossaryContext.Provider>

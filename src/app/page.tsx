@@ -16,10 +16,16 @@ import { ReadingHighlighter } from "@/components/ReadingHighlighter";
 import { GoToPageModal } from "@/components/GoToPageModal";
 import { BookmarksPanel } from "@/components/BookmarksPanel";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
+import { FontSizeControls } from "@/components/FontSizeControls";
+import { SearchModal } from "@/components/SearchModal";
+import { KeyboardShortcutsModal } from "@/components/KeyboardShortcutsModal";
+import { ReadingStatsPanel } from "@/components/ReadingStatsPanel";
 import { useLanguage } from "@/context/LanguageContext";
 import { useBook } from "@/context/BookContext";
 import { useFavorites } from "@/context/FavoritesContext";
 import { useReadAloud } from "@/context/ReadAloudContext";
+import { useFontSize } from "@/context/FontSizeContext";
 import { CurrentPageProvider } from "@/context/CurrentPageContext";
 import { getBookToc } from "@/data/books";
 import { resolveToc } from "@/utils/toc";
@@ -44,6 +50,7 @@ export default function Home() {
   const { currentBook } = useBook();
   const { addFavorite } = useFavorites();
   const { speak, status: speechStatus, stop: stopSpeech, isSupported: speechSupported } = useReadAloud();
+  const { fontSize, increase: increaseFontSize, decrease: decreaseFontSize } = useFontSize();
   const [content, setContent] = useState<BookContent | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -56,6 +63,8 @@ export default function Home() {
   const [fullscreenMode, setFullscreenMode] = useState(false);
   const [fullscreenFontSize, setFullscreenFontSize] = useState(1.15);
   const [fullscreenProgress, setFullscreenProgress] = useState(0);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const articleRef = useRef<HTMLElement>(null);
   const fullscreenContentRef = useRef<HTMLDivElement>(null);
 
@@ -180,6 +189,33 @@ export default function Home() {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLElement && (e.target.isContentEditable || e.target.closest("input, textarea, [role=textbox]"))) return;
+
+      // Ctrl+K / Cmd+K for search
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+        return;
+      }
+
+      // ? key for keyboard shortcuts
+      if (e.key === "?" && !e.metaKey && !e.ctrlKey) {
+        setShortcutsOpen(true);
+        return;
+      }
+
+      // + / = for font size increase
+      if ((e.key === "+" || e.key === "=") && !e.metaKey && !e.ctrlKey) {
+        increaseFontSize();
+        return;
+      }
+
+      // - for font size decrease
+      if (e.key === "-" && !e.metaKey && !e.ctrlKey) {
+        decreaseFontSize();
+        return;
+      }
+
+      // Only handle arrow keys in paginated mode
       if (!scrollMode && !fullscreenMode) {
         if (e.key === "ArrowLeft") {
           goToPage(Math.max(0, pageIndex - 1));
@@ -188,6 +224,9 @@ export default function Home() {
         }
       }
       if (e.key === "Escape") {
+        // Close search/shortcuts modals
+        if (searchOpen) { setSearchOpen(false); return; }
+        if (shortcutsOpen) { setShortcutsOpen(false); return; }
         if (fullscreenMode) {
           setFullscreenMode(false);
         }
@@ -199,7 +238,7 @@ export default function Home() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [totalPages, pageIndex, speechStatus, stopSpeech, goToPage, scrollMode, fullscreenMode]);
+  }, [totalPages, pageIndex, speechStatus, stopSpeech, goToPage, scrollMode, fullscreenMode, searchOpen, shortcutsOpen, increaseFontSize, decreaseFontSize]);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -257,6 +296,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-[#08080f] dark:via-[#0c0c16] dark:to-[#08080f]">
+      {/* Reading Progress Bar */}
+      {!scrollMode && <ReadingProgressBar currentPage={pageIndex} totalPages={totalPages} />}
+
       {/* Header */}
       <header className="sticky top-0 z-30 border-b border-gray-200/80 bg-white/90 backdrop-blur-xl dark:border-[#1f1f30]/80 dark:bg-[#0c0c16]/85 shadow-sm dark:shadow-[0_1px_0_rgba(255,255,255,0.03)]">
         <div className="mx-auto max-w-4xl px-4 py-3 sm:px-6">
@@ -304,6 +346,24 @@ export default function Home() {
                 </svg>
                 <span className="hidden md:inline">{t("Contents", "Indice")}</span>
               </button>
+
+              {/* Search Button */}
+              <button
+                type="button"
+                onClick={() => setSearchOpen(true)}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:border-[#2a2a3e] dark:bg-[#14141f] dark:text-gray-400 dark:hover:bg-[#1a1a2e] dark:hover:text-gray-200 transition-colors"
+                title={t("Search (Ctrl+K)", "Buscar (Ctrl+K)")}
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+
+              {/* Font Size Controls */}
+              <FontSizeControls />
+
+              {/* Reading Stats */}
+              <ReadingStatsPanel currentPage={pageIndex} totalPages={totalPages} />
 
               {/* Divider */}
               <div className="h-6 w-px bg-gray-200 dark:bg-[#1f1f30] mx-0.5 hidden sm:block" />
@@ -476,6 +536,7 @@ export default function Home() {
             ref={articleRef}
             onMouseUp={handleMouseUp}
             className="book-content rounded-2xl border border-gray-200/60 bg-white/80 p-6 shadow-sm dark:border-[#1f1f30] dark:bg-[#12121c]/90 sm:p-8 md:p-10 lg:p-12 select-text min-h-[70vh]"
+            style={{ fontSize: `${fontSize}px` }}
           >
             {!scrollMode && (
               <div className="mb-8 flex items-center justify-between border-b border-gray-100 pb-3 dark:border-[#1f1f30]/60">
@@ -845,6 +906,34 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Search Modal */}
+      {content && (
+        <SearchModal
+          isOpen={searchOpen}
+          onClose={() => setSearchOpen(false)}
+          paragraphs={content.paragraphs}
+          onNavigate={goToPage}
+          language={language}
+        />
+      )}
+
+      {/* Keyboard Shortcuts Modal */}
+      <KeyboardShortcutsModal
+        isOpen={shortcutsOpen}
+        onClose={() => setShortcutsOpen(false)}
+      />
+
+      {/* Floating Keyboard Shortcuts Trigger */}
+      <button
+        type="button"
+        onClick={() => setShortcutsOpen(true)}
+        className="fixed bottom-6 left-6 z-40 flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white/90 text-sm font-bold text-gray-500 shadow-lg backdrop-blur-sm hover:bg-violet-50 hover:text-violet-600 dark:border-[#2a2a3e] dark:bg-[#14141f]/90 dark:text-gray-400 dark:hover:bg-violet-900/30 dark:hover:text-violet-400 transition-all"
+        title={t("Keyboard shortcuts (?)", "Atajos de teclado (?)")}
+        aria-label={t("Keyboard shortcuts", "Atajos de teclado")}
+      >
+        ?
+      </button>
     </div>
   );
 }
